@@ -57,6 +57,14 @@ enum TokenOrientation {
         print("Setting the token orientation")
         if value != token_facing:
             token_facing = value
+
+            # The token facing might get set when we're not fully available
+            # yet (presumably since its data type is intrinsic and not something
+            # that needs to be deferred to runtime). For that reason, don't
+            # fiddle the texture if we're not in the tree yet.
+            if not is_inside_tree():
+                return
+
             match token_facing:
                 TokenOrientation.FACE_UP:
                     set_texture(token_front)
@@ -94,6 +102,9 @@ func _get_configuration_warnings():
 # bounding rectangle for the object such that it has the same size.
 func set_texture(value: Texture) -> void:
     print("Setting the internal texture value")
+    if $Texture == null:
+        print("Cannot set texture; node is not ready yet")
+        return
     if value == null:
         print("There is no defined texture for this facing")
         value = _missing_placeholder
