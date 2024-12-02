@@ -6,7 +6,7 @@ and is a [Godot](https://godotengine.org/) version of
 least an attempt at one. I am not new to making small little games, but I *AM*
 new to doing it entirely within Godot.
 
-`Free Trader` is a free game created by Felbrigg Herriot in 2010 and is licensed
+`Free Trader` is a free game created by Felbrigg Herriot in 2008 and is licensed
 [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/), as is
 this particular project. More details about the source game can be found in a
 [blog post](https://blackdogofdoom.blogspot.com/2010/09/free-trader.html) on
