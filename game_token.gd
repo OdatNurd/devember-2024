@@ -75,6 +75,14 @@ enum TokenOrientation {
 ## -----------------------------------------------------------------------------
 
 
+# Whether or not this token is "active"; a token is considered active when it
+# has the mouse focus.
+var is_active := false
+
+
+## -----------------------------------------------------------------------------
+
+
 # This is called by Godot in the editor in order in order to collect a list of
 # warnings to be displayed next to nodes in the editor to provide hints that
 # someone is using them wrong.
@@ -115,8 +123,35 @@ func set_texture(value: Texture) -> void:
 ## -----------------------------------------------------------------------------
 
 
+# Change the orientation of the token such that if it's face up it goes face
+# down and vice versa.
+func flip_token() -> void:
+    if token_facing == TokenOrientation.FACE_UP:
+        token_facing = TokenOrientation.FACE_DOWN
+    else:
+        token_facing = TokenOrientation.FACE_UP
+
+
+## -----------------------------------------------------------------------------
+
+
 func _ready() -> void:
     print("The node is ready")
+
+
+## -----------------------------------------------------------------------------
+
+
+func _on_mouse_entered() -> void:
+    print("mouse in")
+    is_active = true
+    $Texture.modulate = Color(Color.LIGHT_GOLDENROD, 0.75)
+
+
+func _on_mouse_exited() -> void:
+    print("mouse out")
+    is_active = false
+    $Texture.modulate = Color.WHITE
 
 
 ## -----------------------------------------------------------------------------
