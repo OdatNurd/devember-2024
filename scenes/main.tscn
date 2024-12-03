@@ -16,4 +16,3 @@ metadata/_edit_lock_ = true
 position = Vector2(256, 240)
 token_front = ExtResource("2_yidb3")
 token_back = ExtResource("3_v3s2p")
-token_facing = 0

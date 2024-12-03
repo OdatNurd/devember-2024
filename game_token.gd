@@ -31,11 +31,10 @@ enum TokenOrientation {
 ## The texture for the front side of the token.
 @export var token_front : Texture:
     set(value):
-        print("Setting token front texture")
         if value != token_front:
             token_front = value
             if token_facing == TokenOrientation.FACE_UP:
-                set_texture(token_front)
+                set_texture_for_facing(token_facing)
             update_configuration_warnings()
 
 ## The texture for the back side of the token; if this is
@@ -44,32 +43,19 @@ enum TokenOrientation {
 ## for the back.
 @export var token_back : Texture:
     set(value):
-        print("Setting token back texture")
         if value != token_back:
             token_back = value
             if token_facing == TokenOrientation.FACE_DOWN:
-                set_texture(token_back)
+                set_texture_for_facing(token_facing)
             update_configuration_warnings()
 
 ## Which orientation the token is in
-@export var token_facing : TokenOrientation:
+@export var token_facing := TokenOrientation.FACE_UP:
     set(value):
-        print("Setting the token orientation")
         if value != token_facing:
             token_facing = value
-
-            # The token facing might get set when we're not fully available
-            # yet (presumably since its data type is intrinsic and not something
-            # that needs to be deferred to runtime). For that reason, don't
-            # fiddle the texture if we're not in the tree yet.
-            if not is_inside_tree():
-                return
-
-            match token_facing:
-                TokenOrientation.FACE_UP:
-                    set_texture(token_front)
-                TokenOrientation.FACE_DOWN:
-                    set_texture(token_back)
+            set_texture_for_facing(token_facing)
+            update_configuration_warnings()
 
 
 ## -----------------------------------------------------------------------------
@@ -105,19 +91,23 @@ func _get_configuration_warnings():
 ## -----------------------------------------------------------------------------
 
 
-# Given a passed in texture value, set the texture for the child node that is
-# used to visualy represent us to use that texture, as well as changing the
-# bounding rectangle for the object such that it has the same size.
-func set_texture(value: Texture) -> void:
-    print("Setting the internal texture value")
-    if $Texture == null:
-        print("Cannot set texture; node is not ready yet")
+# Given a passed in token facing, set the texture for the child node that is
+# used to visualy represent us to use the texture for that facing, as well as
+# changing the bounding rectangle for the object such that it has the same size.
+func set_texture_for_facing(facing: TokenOrientation):
+    # We get called when properties change, and not all property changes happen
+    # when we're actively a part of the scene tree.
+    if not is_node_ready():
         return
-    if value == null:
-        print("There is no defined texture for this facing")
-        value = _missing_placeholder
-    $Texture.texture = value
-    $Collider.shape.set_size(value.get_size())
+
+    # Determine the texture to use based on the facing provided
+    var texture: Texture = token_front if facing == TokenOrientation.FACE_UP else token_back
+    if texture == null:
+        print("There is no defined texture for this facing!")
+        texture = _missing_placeholder
+
+    $Texture.texture = texture
+    $Collider.shape.set_size(texture.get_size())
 
 
 ## -----------------------------------------------------------------------------
@@ -136,7 +126,8 @@ func flip_token() -> void:
 
 
 func _ready() -> void:
-    print("The node is ready")
+    # When we're ready, set the texture based on our current facing.
+    set_texture_for_facing(token_facing)
 
 
 ## -----------------------------------------------------------------------------

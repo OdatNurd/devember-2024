@@ -9,7 +9,6 @@ size = Vector2(70, 100)
 
 [node name="GameToken" type="Area2D"]
 script = ExtResource("1_3ve5j")
-token_facing = 1
 
 [node name="Texture" type="Sprite2D" parent="."]
 texture = ExtResource("3_bwlyi")
