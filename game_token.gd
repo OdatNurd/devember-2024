@@ -140,14 +140,38 @@ func _on_mouse_entered() -> void:
     is_active = true
     $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
 
-    scale = Vector2(1, 1)
-
 
 func _on_mouse_exited() -> void:
     is_active = false
     $Texture.modulate = Color.WHITE
 
-    scale = normal_scale
+
+## -----------------------------------------------------------------------------
+
+
+# This is the weird dildo fight of input; as far as input is concerned, it gets
+# everything everywhere all at once.
+func _input(event: InputEvent):
+    # Don't consume any input events if this node is not the active node
+    if not is_active:
+        return
+
+    # Flip the token front to back
+    if event.is_action_pressed("token_flip"): # W
+        flip_token()
+
+    # Zoom the token in somewhat for easier viewring
+    elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S
+        scale = Vector2(0.75, 0.75) if event.is_action_pressed("token_zoom") else normal_scale
+
+    # Rotate to the left or right 90 degrees
+    elif event.is_action_pressed("token_rotate_left") or event.is_action_pressed("token_rotate_right"): # A,D
+        var change := PI / 2 if event.is_action_pressed("token_rotate_right") else -PI / 2
+        rotation += change
+
+    # Reset token rotation back to the default; leaves the flip state alone
+    elif event.is_action_pressed("token_reset"): # R
+        rotation = 0;
 
 
 ## -----------------------------------------------------------------------------
