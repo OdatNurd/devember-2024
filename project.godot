@@ -24,3 +24,4 @@ window/stretch/mode="canvas_items"
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.354829, 0.218179, 0.471178, 1)
