@@ -8,5 +8,13 @@
 
 [node name="GameToken" parent="." instance=ExtResource("1_m52ne")]
 position = Vector2(256, 240)
+scale = Vector2(0.5, 0.5)
 token_front = ExtResource("2_yidb3")
 token_back = ExtResource("3_v3s2p")
+
+[node name="GameToken2" parent="." instance=ExtResource("1_m52ne")]
+position = Vector2(408, 240)
+scale = Vector2(0.5, 0.5)
+token_front = ExtResource("2_yidb3")
+token_back = ExtResource("3_v3s2p")
+token_facing = 1

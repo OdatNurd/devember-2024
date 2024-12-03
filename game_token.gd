@@ -65,6 +65,9 @@ enum TokenOrientation {
 # has the mouse focus.
 var is_active := false
 
+# The "normal" scale of this token; what the scale is set to when it is not
+# being hovered over by the mouse.
+@onready var normal_scale := scale
 
 ## -----------------------------------------------------------------------------
 
@@ -128,21 +131,23 @@ func flip_token() -> void:
 func _ready() -> void:
     # When we're ready, set the texture based on our current facing.
     set_texture_for_facing(token_facing)
-
+    normal_scale = scale
 
 ## -----------------------------------------------------------------------------
 
 
 func _on_mouse_entered() -> void:
-    print("mouse in")
     is_active = true
-    $Texture.modulate = Color(Color.LIGHT_GOLDENROD, 0.75)
+    $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
+
+    scale = Vector2(1, 1)
 
 
 func _on_mouse_exited() -> void:
-    print("mouse out")
     is_active = false
     $Texture.modulate = Color.WHITE
+
+    scale = normal_scale
 
 
 ## -----------------------------------------------------------------------------
