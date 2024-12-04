@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=5 format=3 uid="uid://6vnn22c55ymf"]
 
+[ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
 [ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/game_token.tscn" id="1_m52ne"]
 [ext_resource type="Texture2D" uid="uid://ccton1crupao5" path="res://assets/cards/planets/earth.png" id="2_yidb3"]
 [ext_resource type="Texture2D" uid="uid://brl7ygf5o5jw2" path="res://assets/cards/backs/back_dark.png" id="3_v3s2p"]
 
 [node name="Main" type="Node2D"]
 
-[node name="GameToken" parent="." instance=ExtResource("1_m52ne")]
+[node name="TokenManager" parent="." instance=ExtResource("1_d41io")]
+
+[node name="GameToken" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(256, 240)
 scale = Vector2(0.5, 0.5)
 token_front = ExtResource("2_yidb3")
 token_back = ExtResource("3_v3s2p")
 
-[node name="GameToken2" parent="." instance=ExtResource("1_m52ne")]
+[node name="GameToken2" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(408, 240)
 scale = Vector2(0.5, 0.5)
 token_front = ExtResource("2_yidb3")

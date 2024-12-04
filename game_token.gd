@@ -3,10 +3,22 @@ extends Area2D
 
 ## -----------------------------------------------------------------------------
 
+
+## The mouse has entered a GameToken
+signal token_mouse_in(token: Node2D)
+
+## The mouse has exited a GameToken
+signal token_mouse_out(token: Node2D)
+
+
+## -----------------------------------------------------------------------------
+
+
 # If the token is asked to display either a front or back side but there is no
 # such texture, this is the texture used; it is obnoxious to look at but allows
 # people to know that there is something missing.
 @onready var _missing_placeholder : Texture = load('res://assets/placeholder_missing.png')
+
 
 ## -----------------------------------------------------------------------------
 
@@ -136,15 +148,25 @@ func _ready() -> void:
 ## -----------------------------------------------------------------------------
 
 
-func _on_mouse_entered() -> void:
+# When the mouse enters or exits a token, emit a signal so that interested
+# parties can tell which token has the "mouse focus"
+func _mouse_thing(entered: bool) -> void:
+    if entered:
+        token_mouse_in.emit(self)
+    else:
+        token_mouse_out.emit(self)
+
+
+
+func activate() -> void:
     is_active = true
     $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
 
 
-func _on_mouse_exited() -> void:
+func deactivate() -> void:
     is_active = false
     $Texture.modulate = Color.WHITE
-
+    scale = normal_scale
 
 ## -----------------------------------------------------------------------------
 
