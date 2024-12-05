@@ -10,6 +10,9 @@ signal token_mouse_in(token: Node2D)
 ## The mouse has exited a GameToken
 signal token_mouse_out(token: Node2D)
 
+## Signal that a token has been grabbed or released
+signal token_grabbed_or_dropped(token: Node2D, grabbed: bool)
+
 
 ## -----------------------------------------------------------------------------
 
@@ -200,6 +203,8 @@ func _input(event: InputEvent):
             $Texture.modulate = Color(Color.FOREST_GREEN, 0.75)
         else:
             $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
+        token_grabbed_or_dropped.emit(self, is_grabbed)
+
     # Flip the token front to back
     elif event.is_action_pressed("token_flip"): # W
         flip_token()

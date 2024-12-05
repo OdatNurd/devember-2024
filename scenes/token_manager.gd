@@ -24,6 +24,8 @@ signal token_deactivated(token: Node2D)
 ## The currently active token, if any.
 var _active_token : Node = null
 
+## The grabbed token, if any.
+var _grabbed_token : Node = null
 
 ## -----------------------------------------------------------------------------
 
@@ -32,9 +34,18 @@ func _ready() -> void:
     for token in get_tree().get_nodes_in_group("tokens"):
         token.token_mouse_in.connect(_mouse_state_change.bind(true))
         token.token_mouse_out.connect(_mouse_state_change.bind(false))
+        token.token_grabbed_or_dropped.connect(_grab_stage_change)
 
 
 ## -----------------------------------------------------------------------------
+
+
+# This is connected to the signal from tokens that they generate when they are
+# grabbed or dropped. We use this to set an internal state that indicates
+# whether we should respond to mouse enter events or not.
+func _grab_stage_change(token: Node, grabbed: bool) -> void:
+    _grabbed_token = token if grabbed else null
+
 
 # This is connected to the mouse event signals of all tokens in the "tokens"
 # group in _ready(); every time a token has the mouse enter or exit it, we get
@@ -47,6 +58,11 @@ func _ready() -> void:
 func _mouse_state_change(token: Node, entered: bool) -> void:
     var new_active = null
     var old_active = null
+
+    # If there is currently a grabbed token, we don't want to respond to mouse
+    # enter or leave events because we're in the middle of a drag.
+    if _grabbed_token != null:
+        return
 
     # When the mouse enters a token, that token always gains the activation
     # status, possibly from an already active token.
