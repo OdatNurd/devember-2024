@@ -201,6 +201,7 @@ func _input(event: InputEvent):
         is_grabbed = not is_grabbed
         if is_grabbed == true:
             $Texture.modulate = Color(Color.FOREST_GREEN, 0.75)
+            move_to_front()
         else:
             $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
         token_grabbed_or_dropped.emit(self, is_grabbed)
