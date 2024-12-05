@@ -17,5 +17,5 @@ texture = ExtResource("3_bwlyi")
 visible = false
 shape = SubResource("RectangleShape2D_6v7r4")
 
-[connection signal="mouse_entered" from="." to="." method="_mouse_thing" binds= [true]]
-[connection signal="mouse_exited" from="." to="." method="_mouse_thing" binds= [false]]
+[connection signal="mouse_entered" from="." to="." method="_mouse_enter_exit_state_change" binds= [true]]
+[connection signal="mouse_exited" from="." to="." method="_mouse_enter_exit_state_change" binds= [false]]

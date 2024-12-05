@@ -155,7 +155,7 @@ func _ready() -> void:
 
 # When the mouse enters or exits a token, emit a signal so that interested
 # parties can tell which token has the "mouse focus"
-func _mouse_thing(entered: bool) -> void:
+func _mouse_enter_exit_state_change(entered: bool) -> void:
     if entered:
         token_mouse_in.emit(self)
     else:
