@@ -69,6 +69,10 @@ enum TokenOrientation {
             set_texture_for_facing(token_facing)
             update_configuration_warnings()
 
+## Name for this token; this is used in debug logging and the like to be able
+## to determine what token is being worked on.
+@export var token_name := 'Token'
+
 
 ## -----------------------------------------------------------------------------
 
@@ -80,6 +84,7 @@ var is_active := false
 # The "normal" scale of this token; what the scale is set to when it is not
 # being hovered over by the mouse.
 @onready var normal_scale := scale
+
 
 ## -----------------------------------------------------------------------------
 
