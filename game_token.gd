@@ -81,6 +81,10 @@ enum TokenOrientation {
 # has the mouse focus.
 var is_active := false
 
+# Whether or not this token is "grabbed"; if it is grabbed then it tracks where
+# the mouse moves and moves itself to that position.
+var is_grabbed := false
+
 # The "normal" scale of this token; what the scale is set to when it is not
 # being hovered over by the mouse.
 @onready var normal_scale := scale
@@ -170,6 +174,7 @@ func activate() -> void:
 
 func deactivate() -> void:
     is_active = false
+    is_grabbed = false
     $Texture.modulate = Color.WHITE
     scale = normal_scale
 
@@ -183,8 +188,20 @@ func _input(event: InputEvent):
     if not is_active:
         return
 
+    # If we are currently grabbed and this is a mouse motion event, then we want
+    # to change our location to the mouse location.
+    if is_grabbed == true and event is InputEventMouseMotion:
+        position = event.position
+
+    # Grab or drop the token
+    if event.is_action_pressed("token_grab_drop"): # E
+        is_grabbed = not is_grabbed
+        if is_grabbed == true:
+            $Texture.modulate = Color(Color.FOREST_GREEN, 0.75)
+        else:
+            $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
     # Flip the token front to back
-    if event.is_action_pressed("token_flip"): # W
+    elif event.is_action_pressed("token_flip"): # W
         flip_token()
 
     # Zoom the token in somewhat for easier viewring
