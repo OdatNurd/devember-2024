@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brl7ygf5o5jw2"
-path="res://.godot/imported/back_dark.png-522757bb752b93a768e0897b3dbc8876.ctex"
+uid="uid://cjhh40emwobbu"
+path="res://.godot/imported/event_pirate_2.png-914b5da6d309811296e7a71eb7f112df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/backs/back_dark.png"
-dest_files=["res://.godot/imported/back_dark.png-522757bb752b93a768e0897b3dbc8876.ctex"]
+source_file="res://assets/cards/events/event_pirate_2.png"
+dest_files=["res://.godot/imported/event_pirate_2.png-914b5da6d309811296e7a71eb7f112df.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3u1s5hhee7e2"
-path="res://.godot/imported/placeholder_front.png-ae3599670e61bb2b5304df2305139d78.ctex"
+uid="uid://caig4vj8cpnfw"
+path="res://.godot/imported/event_police_2.png-bca3bbdedb28397aeeb0e0d8d5fa104d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/placeholder_front.png"
-dest_files=["res://.godot/imported/placeholder_front.png-ae3599670e61bb2b5304df2305139d78.ctex"]
+source_file="res://assets/cards/events/event_police_2.png"
+dest_files=["res://.godot/imported/event_police_2.png-bca3bbdedb28397aeeb0e0d8d5fa104d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dct8rifosofxy"
-path="res://.godot/imported/placeholder_back.png-07f464dbd0f2fe2a12d53dd9a90c2a48.ctex"
+uid="uid://bpcliy44ouocn"
+path="res://.godot/imported/planet_rijel.png-c3837c9494d0d7cadd61ac5f453e2544.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/placeholder_back.png"
-dest_files=["res://.godot/imported/placeholder_back.png-07f464dbd0f2fe2a12d53dd9a90c2a48.ctex"]
+source_file="res://assets/cards/planets/planet_rijel.png"
+dest_files=["res://.godot/imported/planet_rijel.png-c3837c9494d0d7cadd61ac5f453e2544.ctex"]
 
 [params]
 

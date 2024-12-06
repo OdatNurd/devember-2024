@@ -212,7 +212,7 @@ func _input(event: InputEvent):
 
     # Zoom the token in somewhat for easier viewring
     elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S
-        scale = Vector2(0.75, 0.75) if event.is_action_pressed("token_zoom") else normal_scale
+        scale = Vector2(0.50, 0.50) if event.is_action_pressed("token_zoom") else normal_scale
 
     # Rotate to the left or right 90 degrees
     elif event.is_action_pressed("token_rotate_left") or event.is_action_pressed("token_rotate_right"): # A,D

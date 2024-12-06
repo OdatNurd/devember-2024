@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ck1j4k8x2sx7v"]
 
 [ext_resource type="Script" path="res://game_token.gd" id="1_3ve5j"]
-[ext_resource type="Texture2D" uid="uid://dpo4kvo6srr2i" path="res://assets/placeholder_missing.png" id="3_bwlyi"]
+[ext_resource type="Texture2D" uid="uid://c5b5knl3ldiwf" path="res://assets/placeholder.png" id="2_u5dg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6v7r4"]
 resource_local_to_scene = true
@@ -11,7 +11,7 @@ size = Vector2(70, 100)
 script = ExtResource("1_3ve5j")
 
 [node name="Texture" type="Sprite2D" parent="."]
-texture = ExtResource("3_bwlyi")
+texture = ExtResource("2_u5dg4")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 visible = false
