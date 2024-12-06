@@ -196,9 +196,13 @@ func _input(event: InputEvent):
     if is_grabbed == true and event is InputEventMouseMotion:
         position = event.position
 
-    # Grab or drop the token
-    if event.is_action_pressed("token_grab_drop"): # E
-        is_grabbed = not is_grabbed
+    # Grab or drop the token via the left mouse button; uses the press state to
+    # know what to do. We don't use an input action for this because it might
+    # end up accidentally mapped to a key. Also is_action_pressed() seems to
+    # only return true for the first frame this happens in, and then it starts
+    # reporting as unpressed, which would screw up dragging.
+    if event is InputEventMouseButton and event.button_index == 1:
+        is_grabbed = event.pressed
         if is_grabbed == true:
             $Texture.modulate = Color(Color.FOREST_GREEN, 0.75)
             move_to_front()
@@ -206,12 +210,12 @@ func _input(event: InputEvent):
             $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
-    # Flip the token front to back
-    elif event.is_action_pressed("token_flip"): # W
+    # Flip the token front to back; via keyboard or right click.
+    elif event.is_action_pressed("token_flip"): # W or right mouse button
         flip_token()
 
-    # Zoom the token in somewhat for easier viewring
-    elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S
+    # Zoom the token in somewhat for easier viewing
+    elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S or middle button click
         scale = Vector2(0.50, 0.50) if event.is_action_pressed("token_zoom") else normal_scale
 
     # Rotate to the left or right 90 degrees
