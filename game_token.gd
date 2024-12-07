@@ -183,15 +183,12 @@ func activate() -> void:
     is_active = true
     outline_width = $Texture.material.get_shader_parameter("width")
     $Texture.material.set_shader_parameter("width", 5)
-    #$Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
 
 
 func deactivate() -> void:
     is_active = false
     is_grabbed = false
     $Texture.material.set_shader_parameter("width", outline_width)
-
-    #$Texture.modulate = Color.WHITE
     scale = normal_scale
 
 ## -----------------------------------------------------------------------------
@@ -217,10 +214,7 @@ func _input(event: InputEvent):
     if event is InputEventMouseButton and event.button_index == 1:
         is_grabbed = event.pressed
         if is_grabbed == true:
-            $Texture.modulate = Color(Color.FOREST_GREEN, 0.75)
             move_to_front()
-        else:
-            $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
