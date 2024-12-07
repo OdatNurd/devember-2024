@@ -72,6 +72,11 @@ enum TokenOrientation {
             set_texture_for_facing(token_facing)
             update_configuration_warnings()
 
+## The amount of padding that the texture has around its edges to allow for the
+## selection hilight; this is the total number of empty pixels on each axis;
+## e.g. 8 pixels around all edges is a padding of 16
+@export var token_padding := 16
+
 ## Name for this token; this is used in debug logging and the like to be able
 ## to determine what token is being worked on.
 @export var token_name := 'Token'
@@ -87,6 +92,10 @@ var is_active := false
 # Whether or not this token is "grabbed"; if it is grabbed then it tracks where
 # the mouse moves and moves itself to that position.
 var is_grabbed := false
+
+# The outline width applied by the shader that marks us as being the active
+# token. A value of 0 means no outline.
+var outline_width := 0
 
 # The "normal" scale of this token; what the scale is set to when it is not
 # being hovered over by the mouse.
@@ -134,7 +143,7 @@ func set_texture_for_facing(facing: TokenOrientation):
         texture = _missing_placeholder
 
     $Texture.texture = texture
-    $Collider.shape.set_size(texture.get_size())
+    $Collider.shape.set_size(texture.get_size() - Vector2(token_padding, token_padding))
 
 
 ## -----------------------------------------------------------------------------
@@ -172,13 +181,17 @@ func _mouse_enter_exit_state_change(entered: bool) -> void:
 
 func activate() -> void:
     is_active = true
-    $Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
+    outline_width = $Texture.material.get_shader_parameter("width")
+    $Texture.material.set_shader_parameter("width", 5)
+    #$Texture.modulate = Color(Color.LIGHT_GREEN, 0.75)
 
 
 func deactivate() -> void:
     is_active = false
     is_grabbed = false
-    $Texture.modulate = Color.WHITE
+    $Texture.material.set_shader_parameter("width", outline_width)
+
+    #$Texture.modulate = Color.WHITE
     scale = normal_scale
 
 ## -----------------------------------------------------------------------------
