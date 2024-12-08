@@ -14,7 +14,7 @@ shader_parameter/minimal_flickering_alpha = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6v7r4"]
 resource_local_to_scene = true
-size = Vector2(70, 100)
+size = Vector2(86, 116)
 
 [node name="GameToken" type="Area2D"]
 script = ExtResource("1_3ve5j")

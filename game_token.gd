@@ -20,6 +20,11 @@ signal token_grabbed_or_dropped(token: Node2D, grabbed: bool)
 # If the token is asked to display either a front or back side but there is no
 # such texture, this is the texture used; it is obnoxious to look at but allows
 # people to know that there is something missing.
+#
+# TODO: This should be global and not per-node, since we're padding it out. Not
+#       sure how to pull that off though since padding is token specific; maybe
+#       we demand load the placeholder, or only pad it the first time it's
+#       actually referenced?
 @onready var _missing_placeholder : Texture = load('res://assets/placeholder_missing.png')
 
 
@@ -74,8 +79,8 @@ enum TokenOrientation {
 
 ## The amount of padding that the texture has around its edges to allow for the
 ## selection hilight; this is the total number of empty pixels on each axis;
-## e.g. 8 pixels around all edges is a padding of 16
-@export var token_padding := 16
+## e.g. a value of 8 pixels here is a final value of 16 pixels total.
+@export var token_padding := 8
 
 ## Name for this token; this is used in debug logging and the like to be able
 ## to determine what token is being worked on.
@@ -143,8 +148,76 @@ func set_texture_for_facing(facing: TokenOrientation):
         print("There is no defined texture for this facing!")
         texture = _missing_placeholder
 
+    # Since our textures are padded out on the sides, in order to set the
+    # collision rectangle at the right side, we need to adjust the size of the
+    # collision bounds.
+    var collision_adj = Vector2(token_padding * 2, token_padding * 2)
+
+    # If we're in the editor, we want to grow the bounds to show how big the
+    # actual token will be if someone hovers it, which helps with alignment.
+    # In the actual game, we want to shrink.
+    if Engine.is_editor_hint():
+        collision_adj *= -1
+
     $Texture.texture = texture
-    $Collider.shape.set_size(texture.get_size() - Vector2(token_padding, token_padding))
+    $Collider.shape.set_size(texture.get_size() - collision_adj)
+
+
+## -----------------------------------------------------------------------------
+
+
+# This takes an input texture and creates a new version of it that is grown in
+# all four directions based on the padding set in the node. The new texture is
+# first filled with transparency and then the original texture is drawn into it
+# offset by the padding distance.
+#
+# This causes the token texture to be surrounded by alpha, which allows our
+# shader to show an activation rectangle around it.
+#
+# Since this node is a tool script as well, while we're in the editor we just
+# return the input texture directly without changing it. Otherwise the editor
+# will notice the change and will pad the texture again. Also this tends to make
+# it inline the texture in the scene file, which is ginormous.
+func pad_texture(in_texture: Texture2D) -> Texture2D:
+    # If we're running in the editor, just return the original texture back;
+    # otherwise the node will get updated in memory and that will be persisted
+    # by the editor, which is no beuno.
+    #
+    # We also do this if there is no padding configured, since in that case
+    # this is just a huge waste of time.
+    if Engine.is_editor_hint() or token_padding <= 0:
+        return in_texture
+
+    # Capture the padding as a vector for later.
+    var padding = Vector2(token_padding, token_padding)
+
+    # Get the image that backs the texture as well as its size. Note that this
+    # does a fetch from the graphics card, so it is costly to do it frequently.
+    var image = in_texture.get_image()
+    var img_size = image.get_size()
+
+    # We require our textures to have transparency, since that is the whole
+    # point of what we're doing. If there is not any alpha, convert the souirce.
+    if image.detect_alpha() == Image.AlphaMode.ALPHA_NONE:
+        #print("token texture has no transparency (format=%s); converting" % image.get_format())
+        image.convert(Image.Format.FORMAT_RGBA8)
+
+    # Create the destination image, which should be bigger than the original
+    # in both directions based on the padding.
+    # 2. Create a new image that is bigger than the input texture, with padding
+    var new_image = Image.create_empty(
+        img_size.x + (2 * padding.x),
+        img_size.y + (2 * padding.y),
+        true, image.get_format())
+    new_image.fill(Color(Color.WHITE, 0.0))
+
+    # Draw into the new image the original image from the texture, with a
+    # padding offset on the upper left so that we get the appropriate padding.
+    var src_rect = Rect2(Vector2(0, 0), img_size)
+    new_image.blit_rect(image, src_rect, padding)
+
+    # Create and return the texture now.
+    return ImageTexture.create_from_image(new_image)
 
 
 ## -----------------------------------------------------------------------------
@@ -163,6 +236,15 @@ func flip_token() -> void:
 
 
 func _ready() -> void:
+    # Pad out our tokens to have the appropriate border so we can activate them.
+    # TODO: This should all be done in some global loader object of some sort or
+    #       something, so that all textures are padded at once, at start time.
+    #       this would include the placeholder that all nodes reference when a
+    #       texture is missing.
+    token_front = pad_texture(token_front)
+    token_back = pad_texture(token_back)
+    _missing_placeholder = pad_texture(_missing_placeholder)
+
     # When we're ready, set the texture based on our current facing.
     set_texture_for_facing(token_facing)
     normal_scale = scale
