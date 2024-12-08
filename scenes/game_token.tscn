@@ -7,7 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpn57"]
 resource_local_to_scene = true
 shader = ExtResource("2_suxru")
-shader_parameter/width = 0
+shader_parameter/width = 15
 shader_parameter/outline_color = Color(0, 1, 0, 1)
 shader_parameter/flickering_speed = 10.0
 shader_parameter/minimal_flickering_alpha = 0.3

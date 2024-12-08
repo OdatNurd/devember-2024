@@ -94,7 +94,8 @@ var is_active := false
 var is_grabbed := false
 
 # The outline width applied by the shader that marks us as being the active
-# token. A value of 0 means no outline.
+# token. This value is captured when the node is ready to get the configured
+# value; then it's turned off.
 var outline_width := 0
 
 # The "normal" scale of this token; what the scale is set to when it is not
@@ -166,6 +167,12 @@ func _ready() -> void:
     set_texture_for_facing(token_facing)
     normal_scale = scale
 
+    # Capture the configured outline width for this token, and then turn the
+    # width off.
+    outline_width = $Texture.material.get_shader_parameter("width")
+    $Texture.material.set_shader_parameter("width", 0)
+
+
 ## -----------------------------------------------------------------------------
 
 
@@ -178,18 +185,17 @@ func _mouse_enter_exit_state_change(entered: bool) -> void:
         token_mouse_out.emit(self)
 
 
-
 func activate() -> void:
     is_active = true
-    outline_width = $Texture.material.get_shader_parameter("width")
-    $Texture.material.set_shader_parameter("width", 5)
+    $Texture.material.set_shader_parameter("width", outline_width)
 
 
 func deactivate() -> void:
     is_active = false
     is_grabbed = false
-    $Texture.material.set_shader_parameter("width", outline_width)
+    $Texture.material.set_shader_parameter("width", 0)
     scale = normal_scale
+
 
 ## -----------------------------------------------------------------------------
 
