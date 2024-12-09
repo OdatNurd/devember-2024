@@ -80,12 +80,14 @@ enum TokenOrientation {
 ## The amount of padding that the texture has around its edges to allow for the
 ## selection hilight; this is the total number of empty pixels on each axis;
 ## e.g. a value of 8 pixels here is a final value of 16 pixels total.
-@export var token_padding := 8
+@export var token_padding := 16
 
 ## Name for this token; this is used in debug logging and the like to be able
 ## to determine what token is being worked on.
 @export var token_name := 'Token'
 
+## When this token is activated, create an outline of this width
+@export var outline_width := 25
 
 ## -----------------------------------------------------------------------------
 
@@ -97,11 +99,6 @@ var is_active := false
 # Whether or not this token is "grabbed"; if it is grabbed then it tracks where
 # the mouse moves and moves itself to that position.
 var is_grabbed := false
-
-# The outline width applied by the shader that marks us as being the active
-# token. This value is captured when the node is ready to get the configured
-# value; then it's turned off.
-var outline_width := 0
 
 # The "normal" scale of this token; what the scale is set to when it is not
 # being hovered over by the mouse.
@@ -248,11 +245,6 @@ func _ready() -> void:
     # When we're ready, set the texture based on our current facing.
     set_texture_for_facing(token_facing)
     normal_scale = scale
-
-    # Capture the configured outline width for this token, and then turn the
-    # width off.
-    outline_width = $Texture.material.get_shader_parameter("width")
-    $Texture.material.set_shader_parameter("width", 0)
 
 
 ## -----------------------------------------------------------------------------
