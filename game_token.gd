@@ -48,26 +48,13 @@ enum TokenOrientation {
 
 @export_group("Token Details", "token")
 
-## The texture for the front side of the token.
-@export var token_front : Texture:
-    set(value):
-        if value != token_front:
-            token_front = value
-            if token_facing == TokenOrientation.FACE_UP:
-                set_texture_for_facing(token_facing)
-            update_configuration_warnings()
 
-## The texture for the back side of the token; if this is
-## not set, the token assumes that the back side and the
-## front side are the same, and uses the front texture
-## for the back.
-@export var token_back : Texture:
+## The underlying statistics and information for this game token
+@export var stats : GenericCardResource:
     set(value):
-        if value != token_back:
-            token_back = value
-            if token_facing == TokenOrientation.FACE_DOWN:
-                set_texture_for_facing(token_facing)
-            update_configuration_warnings()
+        stats = value
+        set_texture_for_facing(token_facing)
+
 
 ## Which orientation the token is in
 @export var token_facing := TokenOrientation.FACE_UP:
@@ -114,14 +101,21 @@ var is_grabbed := false
 func _get_configuration_warnings():
     var warnings = []
 
+    # If we have no stats object, first of all that's a problem. And secondly,
+    # we can't check anything else because we check stat objects, so we can just
+    # return back in this case.
+    if stats == null:
+        warnings.append("Token does not have card statistics attached")
+        return warnings
+
     # The token always requires at a minimum a front texture.
-    if token_front == null:
+    if stats.front_image == null:
         warnings.append("Token does not have a front texture applied")
 
     # The back texture is optional, but if there is one it should have the same
     # dimensions as the front texture, since the bounds of the texture control
     # the area used to interact with the token.
-    if token_back != null and token_front != null and token_back.get_size() != token_front.get_size():
+    if stats.back_image != null and stats.front_image != null and stats.back_image.get_size() != stats.front_image.get_size():
         warnings.append("Token front and back textures are not the same size")
 
     return warnings
@@ -139,8 +133,12 @@ func set_texture_for_facing(facing: TokenOrientation):
     if not is_node_ready():
         return
 
-    # Determine the texture to use based on the facing provided
-    var texture: Texture = token_front if facing == TokenOrientation.FACE_UP else token_back
+    # Determine the texture to use based on the facing provided; this is either
+    # the front or back texture, BUT we can only do this if we have the proper
+    # stats object to query.
+    var texture: Texture = null
+    if stats != null:
+        texture = stats.front_image if facing == TokenOrientation.FACE_UP else stats.back_image
     if texture == null:
         print("There is no defined texture for this facing!")
         texture = _missing_placeholder
@@ -238,8 +236,9 @@ func _ready() -> void:
     #       something, so that all textures are padded at once, at start time.
     #       this would include the placeholder that all nodes reference when a
     #       texture is missing.
-    token_front = pad_texture(token_front)
-    token_back = pad_texture(token_back)
+    if stats != null:
+        stats.front_image = pad_texture(stats.front_image)
+        stats.back_image = pad_texture(stats.back_image)
     _missing_placeholder = pad_texture(_missing_placeholder)
 
     # When we're ready, set the texture based on our current facing.
@@ -295,6 +294,10 @@ func _input(event: InputEvent):
         is_grabbed = event.pressed
         if is_grabbed == true:
             move_to_front()
+            print("Moving card: %s" % stats.name)
+        else:
+            print("Dropped card")
+            stats.dump()
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
