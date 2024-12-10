@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PlanetCardStats" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+
+[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_graeq"]
+[ext_resource type="Texture2D" uid="uid://cggyvy618ocu7" path="res://assets/cards/planets/planet_telex.png" id="2_lichd"]
+[ext_resource type="Script" path="res://resources/cards/planets/planet_card.gd" id="3_xurm4"]
+
+[resource]
+script = ExtResource("3_xurm4")
+distance = 1
+agriculturals = 0
+weapons = -1
+industrials = -1
+illegals = -1
+police = 1
+front_image = ExtResource("2_lichd")
+back_image = ExtResource("1_graeq")
+name = "Telex"
+card_type = 0

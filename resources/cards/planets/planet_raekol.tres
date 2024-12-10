@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PlanetCardStats" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+
+[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_graeq"]
+[ext_resource type="Texture2D" uid="uid://bo0d0l1v5fm21" path="res://assets/cards/planets/planet_raekol.png" id="2_0jrfy"]
+[ext_resource type="Script" path="res://resources/cards/planets/planet_card.gd" id="3_xurm4"]
+
+[resource]
+script = ExtResource("3_xurm4")
+distance = 1
+agriculturals = 1
+weapons = 1
+industrials = 1
+illegals = 1
+police = 1
+front_image = ExtResource("2_0jrfy")
+back_image = ExtResource("1_graeq")
+name = "Raekol"
+card_type = 0

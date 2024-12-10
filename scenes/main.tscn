@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
 [ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/game_token.tscn" id="1_m52ne"]
-[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/cards/planets/planet_earth.tres" id="3_ilxjk"]
-[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/cards/events/event_police_1.tres" id="4_vmy4k"]
+[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/cards/events/event_police_2.tres" id="4_vmy4k"]
+[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/cards/planets/planet_zepht.tres" id="5_am201"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,7 +12,7 @@
 [node name="GameToken" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(256, 240)
 scale = Vector2(0.35, 0.35)
-stats = ExtResource("3_ilxjk")
+stats = ExtResource("5_am201")
 token_name = "Left"
 
 [node name="GameToken2" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
