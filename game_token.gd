@@ -50,7 +50,7 @@ enum TokenOrientation {
 
 
 ## The underlying statistics and information for this game token
-@export var stats : GenericCardResource:
+@export var stats : GenericCard:
     set(value):
         stats = value
         set_texture_for_facing(token_facing)

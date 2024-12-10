@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="EventCardStats" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
+[gd_resource type="Resource" script_class="EventCard" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
 
 [ext_resource type="Texture2D" uid="uid://c4vwlurusa2yn" path="res://assets/cards/events/event_back_dark.png" id="1_okapy"]
 [ext_resource type="Texture2D" uid="uid://wunewehk1kcl" path="res://assets/cards/events/event_none_7.png" id="2_y87yd"]
@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("3_wmnwt")
 event_type = 0
-jump = 0
+jump_type = 0
 agression = 1
 defensive = 1
 fine_multiplier = 3
@@ -18,4 +18,3 @@ illegals = Vector2i(1, 4)
 front_image = ExtResource("2_y87yd")
 back_image = ExtResource("1_okapy")
 name = "None"
-card_type = 1

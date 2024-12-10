@@ -1,7 +1,6 @@
-## The resouce type for planet cards
-extends GenericCardResource
-class_name PlanetCardStats
+class_name PlanetCard extends GenericCard
 
+## The resouce type for planet cards
 
 ## -----------------------------------------------------------------------------
 

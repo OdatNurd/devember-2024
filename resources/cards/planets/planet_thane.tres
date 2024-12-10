@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlanetCardStats" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+[gd_resource type="Resource" script_class="PlanetCard" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
 
 [ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_graeq"]
 [ext_resource type="Texture2D" uid="uid://dkq7t4hdsvlqm" path="res://assets/cards/planets/planet_thane.png" id="2_64hf2"]
@@ -15,4 +15,3 @@ police = 0
 front_image = ExtResource("2_64hf2")
 back_image = ExtResource("1_graeq")
 name = "Thane"
-card_type = 0
