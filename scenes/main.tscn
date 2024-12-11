@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
 [ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/tokens/generic_token.tscn" id="1_m52ne"]
-[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/cards/planets/planet_earth.tres" id="3_n0t8i"]
-[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/cards/events/event_pirate_4.tres" id="4_x0lxc"]
+[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/cards/planets/planet_zepht.tres" id="3_n0t8i"]
+[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/cards/events/event_police_2.tres" id="4_x0lxc"]
 
 [node name="Main" type="Node2D"]
 
