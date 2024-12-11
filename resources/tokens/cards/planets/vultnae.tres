@@ -1,18 +1,12 @@
-[gd_resource type="Resource" script_class="PlanetCard" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+[gd_resource type="Resource" script_class="BaseTokenDetails" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
 
-[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_graeq"]
-[ext_resource type="Texture2D" uid="uid://bta0jukgv3i38" path="res://assets/cards/planets/planet_vultnae.png" id="2_nvh8e"]
-[ext_resource type="Script" path="res://resources/planet_card.gd" id="3_xurm4"]
+[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_8rxvm"]
+[ext_resource type="Texture2D" uid="uid://bta0jukgv3i38" path="res://assets/cards/planets/planet_vultnae.png" id="2_5by46"]
+[ext_resource type="Script" path="res://resources/base_token.gd" id="3_posxp"]
 
 [resource]
-script = ExtResource("3_xurm4")
-distance = 3
-agriculturals = 0
-weapons = 1
-industrials = 0
-illegals = 2
-police = 1
+script = ExtResource("3_posxp")
 name = "Vultnae"
 token_type = 1
-front_image = ExtResource("2_nvh8e")
-back_image = ExtResource("1_graeq")
+front_image = ExtResource("2_5by46")
+back_image = ExtResource("1_8rxvm")

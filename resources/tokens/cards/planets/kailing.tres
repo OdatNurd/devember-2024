@@ -1,18 +1,12 @@
-[gd_resource type="Resource" script_class="PlanetCard" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+[gd_resource type="Resource" script_class="BaseTokenDetails" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
 
-[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_graeq"]
-[ext_resource type="Texture2D" uid="uid://bsidytut0rbm7" path="res://assets/cards/planets/planet_kailing.png" id="2_qus3p"]
-[ext_resource type="Script" path="res://resources/planet_card.gd" id="3_xurm4"]
+[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_as3bq"]
+[ext_resource type="Texture2D" uid="uid://bsidytut0rbm7" path="res://assets/cards/planets/planet_kailing.png" id="2_snc32"]
+[ext_resource type="Script" path="res://resources/base_token.gd" id="3_loasb"]
 
 [resource]
-script = ExtResource("3_xurm4")
-distance = 4
-agriculturals = 0
-weapons = 1
-industrials = 1
-illegals = 2
-police = 1
+script = ExtResource("3_loasb")
 name = "Kailing"
 token_type = 1
-front_image = ExtResource("2_qus3p")
-back_image = ExtResource("1_graeq")
+front_image = ExtResource("2_snc32")
+back_image = ExtResource("1_as3bq")

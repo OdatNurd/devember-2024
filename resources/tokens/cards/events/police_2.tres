@@ -1,20 +1,11 @@
-[gd_resource type="Resource" script_class="EventCard" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
+[gd_resource type="Resource" script_class="BaseTokenDetails" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
 
 [ext_resource type="Texture2D" uid="uid://c4vwlurusa2yn" path="res://assets/cards/events/event_back_dark.png" id="1_okapy"]
 [ext_resource type="Texture2D" uid="uid://caig4vj8cpnfw" path="res://assets/cards/events/event_police_2.png" id="2_db1at"]
-[ext_resource type="Script" path="res://resources/event_card.gd" id="3_wmnwt"]
+[ext_resource type="Script" path="res://resources/base_token.gd" id="3_owrnk"]
 
 [resource]
-script = ExtResource("3_wmnwt")
-event_type = 1
-jump_type = 1
-agression = 1
-defensive = 1
-fine_multiplier = 2
-agriculturals = Vector2i(-1, 1)
-weapons = Vector2i(3, 4)
-industrials = Vector2i(2, 2)
-illegals = Vector2i(1, 2)
+script = ExtResource("3_owrnk")
 name = "Police"
 token_type = 1
 front_image = ExtResource("2_db1at")

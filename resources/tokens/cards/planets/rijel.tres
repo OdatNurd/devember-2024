@@ -1,18 +1,12 @@
-[gd_resource type="Resource" script_class="PlanetCard" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+[gd_resource type="Resource" script_class="BaseTokenDetails" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
 
-[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_graeq"]
-[ext_resource type="Texture2D" uid="uid://bpcliy44ouocn" path="res://assets/cards/planets/planet_rijel.png" id="2_tbd1c"]
-[ext_resource type="Script" path="res://resources/planet_card.gd" id="3_xurm4"]
+[ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_636i0"]
+[ext_resource type="Texture2D" uid="uid://bpcliy44ouocn" path="res://assets/cards/planets/planet_rijel.png" id="2_xy5ku"]
+[ext_resource type="Script" path="res://resources/base_token.gd" id="3_npkrf"]
 
 [resource]
-script = ExtResource("3_xurm4")
-distance = 1
-agriculturals = 1
-weapons = -1
-industrials = 0
-illegals = 0
-police = 1
+script = ExtResource("3_npkrf")
 name = "Rijel"
 token_type = 1
-front_image = ExtResource("2_tbd1c")
-back_image = ExtResource("1_graeq")
+front_image = ExtResource("2_xy5ku")
+back_image = ExtResource("1_636i0")

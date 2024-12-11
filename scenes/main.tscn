@@ -12,10 +12,10 @@
 [node name="GameToken" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(256, 240)
 scale = Vector2(0.35, 0.35)
-stats = ExtResource("3_2pski")
+token_details = ExtResource("3_2pski")
 
 [node name="GameToken2" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(408, 240)
 scale = Vector2(0.35, 0.35)
-stats = ExtResource("4_efpl8")
+token_details = ExtResource("4_efpl8")
 token_facing = 1
