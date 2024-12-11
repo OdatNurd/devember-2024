@@ -70,12 +70,8 @@ enum TokenOrientation {
 ## e.g. a value of 8 pixels here is a final value of 16 pixels total.
 @export var token_padding := 16
 
-## Name for this token; this is used in debug logging and the like to be able
-## to determine what token is being worked on.
-@export var token_name := 'Token'
-
 ## When this token is activated, create an outline of this width
-@export var outline_width := 25
+@export var token_outline_width := 25
 
 ## -----------------------------------------------------------------------------
 
@@ -261,7 +257,7 @@ func _mouse_enter_exit_state_change(entered: bool) -> void:
 
 func activate() -> void:
     is_active = true
-    $Texture.material.set_shader_parameter("width", outline_width)
+    $Texture.material.set_shader_parameter("width", token_outline_width)
 
 
 func deactivate() -> void:
