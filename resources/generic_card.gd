@@ -1,4 +1,4 @@
-class_name GenericCard extends BaseToken
+class_name GenericCard extends BaseTokenDetails
 
 ## The generic base resource for all cards in the game.
 
