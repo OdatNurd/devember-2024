@@ -1,3 +1,7 @@
+// This shader is a slightly modified version of:
+//    https://godotshaders.com/shader/2d-outline-shader/
+//
+// The version herehas an enhanced hint range (for better or worse).
 shader_type canvas_item;
 
 uniform int width:hint_range(0, 25, 1);
