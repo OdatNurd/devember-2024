@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
-[ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/game_token.tscn" id="1_m52ne"]
-[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/cards/planets/planet_earth.tres" id="3_ckep1"]
-[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/cards/events/event_pirate_4.tres" id="4_2dttw"]
+[ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/tokens/generic_token.tscn" id="1_m52ne"]
+[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/cards/planets/planet_earth.tres" id="3_n0t8i"]
+[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/cards/events/event_pirate_4.tres" id="4_x0lxc"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,12 +12,12 @@
 [node name="GameToken" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(256, 240)
 scale = Vector2(0.35, 0.35)
-stats = ExtResource("3_ckep1")
+stats = ExtResource("3_n0t8i")
 token_name = "Left"
 
 [node name="GameToken2" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
 position = Vector2(408, 240)
 scale = Vector2(0.35, 0.35)
-stats = ExtResource("4_2dttw")
+stats = ExtResource("4_x0lxc")
 token_facing = 1
 token_name = "Right"
