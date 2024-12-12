@@ -1,9 +1,14 @@
-class_name GenericCard extends BaseTokenDetails
+class_name CardDetails extends Resource
 
-## The generic base resource for all cards in the game.
+
+## This class represents the details that are shared by all cards in the game,
+## regardless of their type and purpose. This is meant to be composed with an
+## instance of the TokenDetails resource, to provide the whole property set for
+## a card.
 
 
 ## -----------------------------------------------------------------------------
+
 
 ## The different types of card resources that there can be
 enum CardType { NONE, PLANET, EVENT }
@@ -13,7 +18,7 @@ enum CardType { NONE, PLANET, EVENT }
 
 
 ## The type of card that this is; this is not exported because it's intrinsic to
-## the card type.
+## the concrete card type, which will alter it as needed.
 var card_type := CardType.NONE
 
 
@@ -25,9 +30,15 @@ func is_planet() -> bool:
     return card_type == CardType.PLANET
 
 
+## -----------------------------------------------------------------------------
+
+
 ## Returns True if this resource represents an event card, false otherwise
 func is_event() -> bool:
     return card_type == CardType.EVENT
+
+
+## -----------------------------------------------------------------------------
 
 
 ## Return a textual version of the card type's name, suitable for display in
@@ -43,10 +54,13 @@ func card_type_name() -> String:
         _:
             return "???"
 
-## Dump information about this card to the console
+
+## -----------------------------------------------------------------------------
+
+
+## Dump information about this token to the console for debug purposes.
 func dump():
-    super.dump()
-    print("Type: Card (%s)" % card_type_name())
+    print("Card: %s" % card_type_name())
 
 
 ## -----------------------------------------------------------------------------

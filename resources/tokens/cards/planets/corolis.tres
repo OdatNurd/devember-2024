@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_t5uee"]
 [ext_resource type="Texture2D" uid="uid://1lfk7a834ml7" path="res://assets/cards/planets/planet_corolis.png" id="2_6fpq7"]
-[ext_resource type="Script" path="res://resources/base_token.gd" id="3_26j2x"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="3_26j2x"]
 
 [resource]
 script = ExtResource("3_26j2x")

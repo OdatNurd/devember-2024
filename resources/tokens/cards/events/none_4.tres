@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c4vwlurusa2yn" path="res://assets/cards/events/event_back_dark.png" id="1_rf54s"]
 [ext_resource type="Texture2D" uid="uid://4sq7u65cajp4" path="res://assets/cards/events/event_none_4.png" id="2_aaw3n"]
-[ext_resource type="Script" path="res://resources/base_token.gd" id="3_c5qam"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="3_c5qam"]
 
 [resource]
 script = ExtResource("3_c5qam")
