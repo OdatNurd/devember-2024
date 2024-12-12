@@ -294,11 +294,7 @@ func _input(event: InputEvent):
             print("Grabbing Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
         else:
             print("Dropping Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
-
-            # TODO: When we have the card details implemented, this should be
-            #       dumpign the card details and not the token details.
-            if token_details.token_type == TokenDetails.TokenType.CARD:
-                token_details.dump()
+            dump()
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
@@ -317,6 +313,18 @@ func _input(event: InputEvent):
     # Reset token rotation back to the default; leaves the flip state alone
     elif event.is_action_pressed("token_reset"): # R
         rotation = 0;
+
+
+## -----------------------------------------------------------------------------
+
+
+## Dump information about this token and all of its details out to the console
+## for debugging purposes.
+func dump() -> void:
+    if token_details != null:
+        token_details.dump()
+    else:
+        print("No token details to dump")
 
 
 ## -----------------------------------------------------------------------------

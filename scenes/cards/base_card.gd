@@ -15,3 +15,21 @@ class_name BaseCard extends BaseToken
 
 
 ## -----------------------------------------------------------------------------
+
+
+## Dump information about this card and all of its details out to the console
+## for debugging purposes.
+func dump() -> void:
+    super.dump()
+
+    # Only our subclasses have access to the actual property, but our contract
+    # is that it will always be the same (just a different distinguishable
+    # type). So, pluck the value of the property that way.
+    var card_details = get("card_details")
+    if card_details != null:
+        card_details.dump()
+    else:
+        print("No card details to dump")
+
+
+## -----------------------------------------------------------------------------
