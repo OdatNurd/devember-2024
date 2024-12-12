@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventCardDetails" load_steps=2 format=3 uid="uid://cu7sn4l1tbnqs"]
+
+[ext_resource type="Script" path="res://resources/event_card_details.gd" id="1_m8pm7"]
+
+[resource]
+script = ExtResource("1_m8pm7")
+event_type = 1
+jump_type = 1
+agression = 1
+defensive = 1
+fine_multiplier = 2
+agriculturals = Vector2i(-1, 1)
+weapons = Vector2i(3, 4)
+industrials = Vector2i(2, 2)
+illegals = Vector2i(1, 2)

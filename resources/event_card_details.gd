@@ -1,4 +1,4 @@
-class_name EventCard extends CardDetails
+class_name EventCardDetails extends CardDetails
 
 
 ## This class represents the details that are specific to event cards in the
@@ -50,6 +50,15 @@ enum JumpType { SAFE, MISJUMP }
 
 ## The buy/sell cost of illegals at this planet.
 @export var illegals : Vector2i
+
+
+## -----------------------------------------------------------------------------
+
+
+## Initialize an instance of the resouce by setting in an explicit value for the
+## card type based on the type of resource this is.
+func _init():
+    card_type = CardType.EVENT
 
 
 ## -----------------------------------------------------------------------------
