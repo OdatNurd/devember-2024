@@ -1,5 +1,5 @@
 @tool
-class_name GenericToken extends Area2D
+class_name BaseToken extends Area2D
 
 
 ## -----------------------------------------------------------------------------
@@ -291,10 +291,14 @@ func _input(event: InputEvent):
         is_grabbed = event.pressed
         if is_grabbed == true:
             move_to_front()
-            print("Moving card: %s" % token_details.name)
+            print("Grabbing Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
         else:
-            print("Dropped card")
-            token_details.dump()
+            print("Dropping Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
+
+            # TODO: When we have the card details implemented, this should be
+            #       dumpign the card details and not the token details.
+            if token_details.token_type == TokenDetails.TokenType.CARD:
+                token_details.dump()
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.

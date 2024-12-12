@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BaseTokenDetails" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
 
 [ext_resource type="Texture2D" uid="uid://c4vwlurusa2yn" path="res://assets/cards/events/event_back_dark.png" id="1_pkuw1"]
 [ext_resource type="Texture2D" uid="uid://dr1k38afes4tw" path="res://assets/cards/events/event_police_1.png" id="2_mr7ub"]

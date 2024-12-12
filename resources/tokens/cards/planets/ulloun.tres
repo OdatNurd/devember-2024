@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BaseTokenDetails" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=4 format=3 uid="uid://ddh4et8ijmoh5"]
 
 [ext_resource type="Texture2D" uid="uid://ctn7lm77j3asq" path="res://assets/cards/planets/planet_back_dark.png" id="1_16x17"]
 [ext_resource type="Texture2D" uid="uid://b0nlba0ma86rd" path="res://assets/cards/planets/planet_ulloun.png" id="2_t4jrc"]

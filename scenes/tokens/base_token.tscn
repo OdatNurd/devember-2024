@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck1j4k8x2sx7v"]
 
-[ext_resource type="Script" path="res://scenes/tokens/generic_token.gd" id="1_3ve5j"]
-[ext_resource type="Texture2D" uid="uid://dpo4kvo6srr2i" path="res://assets/placeholder_missing.png" id="2_4ohay"]
-[ext_resource type="Shader" path="res://assets/shaders/game_token.gdshader" id="2_suxru"]
+[ext_resource type="Script" path="res://scenes/tokens/base_token.gd" id="1_5sodw"]
+[ext_resource type="Shader" path="res://assets/shaders/game_token.gdshader" id="2_wufuq"]
+[ext_resource type="Texture2D" uid="uid://dpo4kvo6srr2i" path="res://assets/placeholder_missing.png" id="3_nyhsv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cpn57"]
 resource_local_to_scene = true
-shader = ExtResource("2_suxru")
+shader = ExtResource("2_wufuq")
 shader_parameter/width = 0
 shader_parameter/outline_color = Color(0, 1, 0, 1)
 shader_parameter/flickering_speed = 10.0
@@ -17,11 +17,11 @@ resource_local_to_scene = true
 size = Vector2(102, 132)
 
 [node name="GameToken" type="Area2D"]
-script = ExtResource("1_3ve5j")
+script = ExtResource("1_5sodw")
 
 [node name="Texture" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_cpn57")
-texture = ExtResource("2_4ohay")
+texture = ExtResource("3_nyhsv")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 visible = false
