@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlanetCardDetails" load_steps=2 format=3 uid="uid://566agt4laxrq"]
+
+[ext_resource type="Script" path="res://resources/planet_card_details.gd" id="1_r5fwt"]
+
+[resource]
+script = ExtResource("1_r5fwt")
+distance = 3
+agriculturals = 0
+weapons = -1
+industrials = 1
+illegals = -1
+police = 1

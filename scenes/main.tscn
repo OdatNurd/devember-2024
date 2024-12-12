@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=8 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
-[ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/tokens/base_token.tscn" id="1_m52ne"]
+[ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="2_8i1h4"]
+[ext_resource type="Resource" uid="uid://bc0kv63h2e0ex" path="res://resources/cards/planets/zepht.tres" id="3_1e4r8"]
 [ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/tokens/cards/planets/zepht.tres" id="3_2pski"]
 [ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_2.tres" id="4_efpl8"]
 [ext_resource type="Resource" uid="uid://cu7sn4l1tbnqs" path="res://resources/cards/events/police_2.tres" id="5_ftu66"]
@@ -11,9 +12,10 @@
 
 [node name="TokenManager" parent="." instance=ExtResource("1_d41io")]
 
-[node name="GameToken" parent="." groups=["tokens"] instance=ExtResource("1_m52ne")]
+[node name="PlanetCard" parent="." groups=["tokens"] instance=ExtResource("2_8i1h4")]
 position = Vector2(256, 240)
 scale = Vector2(0.35, 0.35)
+card_details = ExtResource("3_1e4r8")
 token_details = ExtResource("3_2pski")
 
 [node name="EventCard" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm5ydtkqjdcgr"]
+
+[ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/tokens/base_token.tscn" id="1_mke7u"]
+[ext_resource type="Script" path="res://scenes/cards/planet_card.gd" id="2_auwun"]
+[ext_resource type="Shader" path="res://assets/shaders/game_token.gdshader" id="2_jo4w6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5buie"]
+resource_local_to_scene = true
+shader = ExtResource("2_jo4w6")
+shader_parameter/width = 0
+shader_parameter/outline_color = Color(0, 1, 0, 1)
+shader_parameter/flickering_speed = 10.0
+shader_parameter/minimal_flickering_alpha = 0.3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld8k0"]
+resource_local_to_scene = true
+size = Vector2(102, 132)
+
+[node name="GameToken" instance=ExtResource("1_mke7u")]
+script = ExtResource("2_auwun")
+card_details = null
+
+[node name="Texture" parent="." index="0"]
+material = SubResource("ShaderMaterial_5buie")
+
+[node name="Collider" parent="." index="1"]
+shape = SubResource("RectangleShape2D_ld8k0")

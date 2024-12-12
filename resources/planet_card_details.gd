@@ -1,4 +1,4 @@
-class_name PlanetCard extends CardDetails
+class_name PlanetCardDetails extends CardDetails
 
 
 ## This class represents the details that are specific to planet  cards in the
@@ -28,6 +28,15 @@ class_name PlanetCard extends CardDetails
 
 ## The police presence on this planet.
 @export var police := 0
+
+
+## -----------------------------------------------------------------------------
+
+
+## Initialize an instance of the resouce by setting in an explicit value for the
+## card type based on the type of resource this is.
+func _init():
+    card_type = CardType.PLANET
 
 
 ## -----------------------------------------------------------------------------
