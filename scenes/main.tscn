@@ -6,8 +6,8 @@
 [ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_2.tres" id="4_efpl8"]
 [ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/tokens/cards/planets/zepht.tres" id="4_oox7g"]
 [ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="5_kx2b2"]
-[ext_resource type="Resource" uid="uid://3cs7mjugh011" path="res://resources/cards/events/invader_1.tres" id="6_5x7bx"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
+[ext_resource type="Resource" uid="uid://cu7sn4l1tbnqs" path="res://resources/cards/events/police_2.tres" id="9_7wsy8"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
 [ext_resource type="Resource" uid="uid://dc3bmdxd40yba" path="res://resources/components/event_card_deck.tres" id="9_rgc6p"]
 
@@ -36,6 +36,6 @@ token_details = ExtResource("4_oox7g")
 [node name="EventCard" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
 position = Vector2(440, 368)
 scale = Vector2(0.35, 0.35)
-card_details = ExtResource("6_5x7bx")
+card_details = ExtResource("9_7wsy8")
 token_details = ExtResource("4_efpl8")
 token_facing = 1

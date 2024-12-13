@@ -40,16 +40,16 @@ enum JumpType { SAFE, MISJUMP }
 @export var fine_multiplier := 1
 
 ## The buy/sell cost of agriculturals at this planet.
-@export var agriculturals : Vector2i
+@export var agriculturals : MarketData
 
 ## The buy/sell cost of weapons at this planet.
-@export var weapons : Vector2i
+@export var weapons : MarketData
 
 ## The buy/sell cost of industrials at this planet.
-@export var industrials : Vector2i
+@export var industrials : MarketData
 
 ## The buy/sell cost of illegals at this planet.
-@export var illegals : Vector2i
+@export var illegals : MarketData
 
 
 ## -----------------------------------------------------------------------------

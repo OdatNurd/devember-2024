@@ -1,6 +1,27 @@
-[gd_resource type="Resource" script_class="EventCardDetails" load_steps=2 format=3 uid="uid://71hlbknsbxwo"]
+[gd_resource type="Resource" script_class="EventCardDetails" load_steps=7 format=3 uid="uid://71hlbknsbxwo"]
 
 [ext_resource type="Script" path="res://resources/event_card_details.gd" id="1_eukeg"]
+[ext_resource type="Script" path="res://resources/market_data.gd" id="1_jjba4"]
+
+[sub_resource type="Resource" id="Resource_lhujv"]
+script = ExtResource("1_jjba4")
+buy = -1
+sell = 1
+
+[sub_resource type="Resource" id="Resource_31icl"]
+script = ExtResource("1_jjba4")
+buy = 2
+sell = 3
+
+[sub_resource type="Resource" id="Resource_vap6v"]
+script = ExtResource("1_jjba4")
+buy = 1
+sell = 2
+
+[sub_resource type="Resource" id="Resource_8lxho"]
+script = ExtResource("1_jjba4")
+buy = 2
+sell = 3
 
 [resource]
 script = ExtResource("1_eukeg")
@@ -9,7 +30,7 @@ jump_type = 1
 agression = 3
 defensive = 3
 fine_multiplier = 2
-agriculturals = Vector2i(-1, 1)
-weapons = Vector2i(2, 3)
-industrials = Vector2i(1, 2)
-illegals = Vector2i(2, 3)
+agriculturals = SubResource("Resource_lhujv")
+weapons = SubResource("Resource_8lxho")
+industrials = SubResource("Resource_vap6v")
+illegals = SubResource("Resource_31icl")
