@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_sajrf")
-distance = 3
-agriculturals = 0
+distance = 5
+agriculturals = -1
 weapons = 1
-industrials = 0
-illegals = 2
+industrials = 1
+illegals = 0
 police = 1
