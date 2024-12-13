@@ -84,6 +84,11 @@ var is_active := false
 # the mouse moves and moves itself to that position.
 var is_grabbed := false
 
+# Whenever a drag is started, this is calculated to be the offset between the
+# mouse at the point where it started the drag and our internal position, so
+# that when the mouse moves we can adjust accordingly.
+var drag_offset : Vector2
+
 # The "normal" scale of this token; what the scale is set to when it is not
 # being hovered over by the mouse.
 @onready var normal_scale := scale
@@ -280,7 +285,7 @@ func _input(event: InputEvent):
     # If we are currently grabbed and this is a mouse motion event, then we want
     # to change our location to the mouse location.
     if is_grabbed == true and event is InputEventMouseMotion:
-        position = event.position
+        position = event.position + drag_offset
 
     # Grab or drop the token via the left mouse button; uses the press state to
     # know what to do. We don't use an input action for this because it might
@@ -290,6 +295,7 @@ func _input(event: InputEvent):
     if event is InputEventMouseButton and event.button_index == 1:
         is_grabbed = event.pressed
         if is_grabbed == true:
+            drag_offset = position - event.position
             move_to_front()
             print("Grabbing Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
         else:
