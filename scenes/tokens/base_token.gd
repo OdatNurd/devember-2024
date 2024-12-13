@@ -181,8 +181,9 @@ func pad_texture(in_texture: Texture2D) -> Texture2D:
     # by the editor, which is no beuno.
     #
     # We also do this if there is no padding configured, since in that case
-    # this is just a huge waste of time.
-    if Engine.is_editor_hint() or token_padding <= 0:
+    # this is just a huge waste of time, and also when there is not actually a
+    # texture to pad.
+    if Engine.is_editor_hint() or token_padding <= 0 or in_texture == null:
         return in_texture
 
     # Capture the padding as a vector for later.
