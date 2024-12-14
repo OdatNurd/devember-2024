@@ -233,44 +233,63 @@ func pad_texture(in_texture: Texture2D) -> Texture2D:
 ## -----------------------------------------------------------------------------
 
 
-## Change the orientation of the token such that if it's face up it goes face
-## down and vice versa.
-func flip_token() -> void:
+## Takes a Callable which expects to be passed as its first argument an instance
+## of Tween, and calls it to set up the tween.
+##
+## The return value of the Callable should be a boolean and should be True if
+## there is actually an animation to play and False if there is not.
+##
+## This executor ensures that there is only ever one tween running at a time so
+## that they don't step on each others toes.
+func execute_tween(animation : Callable) -> void:
     # If there is currently a tween running, wait for it to finish first.
     if state_tween != null:
         await state_tween.finished
 
-    var org_scale = scale.x
-    var new_facing = (TokenOrientation.FACE_DOWN
-                      if token_facing == TokenOrientation.FACE_UP
-                      else TokenOrientation.FACE_UP)
+    # Create a new tween and then pass it off to the animation function we were
+    # given to set it up. The return value indicates if we should try to execute
+    # the animation or not; should be false if the tween has no steps, since
+    # in that case the debugger gets all cranky.
     state_tween = get_tree().create_tween()
-    state_tween.tween_property(self, "scale:x", 0, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
-    state_tween.tween_property(self, "token_facing", new_facing, 0.01)
-    state_tween.tween_property(self, "scale:x", org_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    var execute: bool =  animation.call(state_tween)
 
-    # Wait for this tween to finish and then clear the tween.
-    await state_tween.finished
+    # If we were asked to, let the tween execute and wait for it to finish;
+    # otherwise just kill it before it starts.
+    if execute:
+        await state_tween.finished
+    else:
+        state_tween.kill()
+
+    # Make sure that the tween is reset so we can be called again; when you
+    # kill() a tween, you can't await it because it's not actualy running.
     state_tween = null
 
 
 ## -----------------------------------------------------------------------------
 
 
+## Change the orientation of the token such that if it's face up it goes face
+## down and vice versa.
+func flip_token(tween : Tween) -> bool:
+    var org_scale = scale.x
+    var new_facing = (TokenOrientation.FACE_DOWN
+                      if token_facing == TokenOrientation.FACE_UP
+                      else TokenOrientation.FACE_UP)
+
+    tween.tween_property(self, "scale:x", 0, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    tween.tween_property(self, "token_facing", new_facing, 0.01)
+    tween.tween_property(self, "scale:x", org_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    return true
+
+## -----------------------------------------------------------------------------
+
+
 ## Rotate the token either clockwise or counter-clockwise by 90 degrees from its
 ## current rotation.
-func rotate_token(clockwise: bool) -> void:
-    # If there is currently a tween running, wait for it to finish first.
-    if state_tween != null:
-        await state_tween.finished
-
+func rotate_token(tween: Tween, clockwise: bool) -> bool:
     var change := PI / 2 if clockwise else -PI / 2
-    state_tween = get_tree().create_tween()
-    state_tween.tween_property(self, "rotation", rotation + change, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
-
-    # Wait for this tween to finish and then clear the tween.
-    await state_tween.finished
-    state_tween = null
+    tween.tween_property(self, "rotation", rotation + change, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    return true
 
 
 ## -----------------------------------------------------------------------------
@@ -278,17 +297,9 @@ func rotate_token(clockwise: bool) -> void:
 
 ## Change the current scale of the token from its current configuation to the
 ## scale passed in.
-func scale_token(new_scale: Vector2) -> void:
-    # If there is currently a tween running, wait for it to finish first.
-    if state_tween != null:
-        await state_tween.finished
-
-    state_tween = get_tree().create_tween()
-    state_tween.tween_property(self, "scale", new_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
-
-    # Wait for this tween to finish and then clear the tween.
-    await state_tween.finished
-    state_tween = null
+func scale_token(tween: Tween, new_scale: Vector2) -> bool:
+    tween.tween_property(self, "scale", new_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    return true
 
 
 ## -----------------------------------------------------------------------------
@@ -297,44 +308,38 @@ func scale_token(new_scale: Vector2) -> void:
 # Restore all of the token properties that can be manipulated by the player at
 # runtime back to their spawn settings. This will selectively tween only those
 # properties that have been changed.
-func restore_token() -> void:
-    # If there is currently a tween running, wait for it to finish first.
-    if state_tween != null:
-        await state_tween.finished
-
-    # If there is nothing to restore, we can just leave.
-    if (rotation == spawn_rotation and position == spawn_position and
-        scale == spawn_scale and token_facing == spawn_facing):
-        return
-
-    # Create a tween that we can use to restore state
-    state_tween = get_tree().create_tween()
+func restore_token(tween: Tween) -> bool:
+    # Count the number of restore operations we need to do
+    var ops := 0
 
     # Do we need to return to our starting position?
     if position != spawn_position:
-        state_tween.tween_property(self, "position", spawn_position, 0.1).set_trans(Tween.TransitionType.TRANS_QUART)
+        ops += 1
+        tween.tween_property(self, "position", spawn_position, 0.1).set_trans(Tween.TransitionType.TRANS_QUART)
 
     # Do we need to rotate back?
     if rotation != spawn_rotation:
-        state_tween.tween_property(self, "rotation", spawn_rotation, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
+        ops += 1
+        tween.tween_property(self, "rotation", spawn_rotation, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
 
     # Do we need to flip the card back to its spawn side?
     if token_facing != spawn_facing:
+        ops += 1
         var org_scale = scale.x
         var new_facing = (TokenOrientation.FACE_DOWN
                         if token_facing == TokenOrientation.FACE_UP
                         else TokenOrientation.FACE_UP)
-        state_tween.tween_property(self, "scale:x", 0, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
-        state_tween.tween_property(self, "token_facing", new_facing, 0.01)
-        state_tween.tween_property(self, "scale:x", org_scale, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
+        tween.tween_property(self, "scale:x", 0, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
+        tween.tween_property(self, "token_facing", new_facing, 0.01)
+        tween.tween_property(self, "scale:x", org_scale, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
 
     # Do we need to restore the scale of the card back to the original?
     if scale != spawn_scale:
-        state_tween.tween_property(self, "scale", spawn_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+        ops += 1
+        tween.tween_property(self, "scale", spawn_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
 
-    # Wait for this tween to finish and then clear the tween.
-    await state_tween.finished
-    state_tween = null
+    # Only let the animation run if there is at least one operation to execute.
+    return ops > 0
 
 
 ## -----------------------------------------------------------------------------
@@ -428,20 +433,20 @@ func _input(event: InputEvent):
 
     # Flip the token front to back; via keyboard or right click.
     elif event.is_action_pressed("token_flip"): # W or right mouse button
-        flip_token()
+        execute_tween(flip_token)
 
     # Zoom the token in somewhat for easier viewing
     elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S or middle button click
         var new_scale := Vector2(0.50, 0.50) if event.is_action_pressed("token_zoom") else spawn_scale
-        scale_token(new_scale)
+        execute_tween(scale_token.bind(new_scale))
 
     # Rotate to the left or right 90 degrees
     elif event.is_action_pressed("token_rotate_left") or event.is_action_pressed("token_rotate_right"): # A,D
-        rotate_token(event.is_action_pressed("token_rotate_right"))
+        execute_tween(rotate_token.bind(event.is_action_pressed("token_rotate_right")))
 
     # Reset token rotation back to the default; leaves the flip state alone
     elif event.is_action_pressed("token_reset"): # R
-        restore_token()
+        execute_tween(restore_token)
 
 
 ## -----------------------------------------------------------------------------
