@@ -71,7 +71,8 @@ enum TokenOrientation {
 @export var token_padding := 16
 
 ## When this token is activated, create an outline of this width
-@export var token_outline_width := 25
+@export var token_outline_width := 10
+
 
 ## -----------------------------------------------------------------------------
 

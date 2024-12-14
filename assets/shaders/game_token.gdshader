@@ -4,7 +4,7 @@
 // The version herehas an enhanced hint range (for better or worse).
 shader_type canvas_item;
 
-uniform int width:hint_range(0, 25, 1);
+uniform int width:hint_range(0, 10, 1);
 uniform vec4 outline_color:source_color;
 uniform float flickering_speed:hint_range(0.0, 50.0, 1.);
 uniform float minimal_flickering_alpha:hint_range(0.0, 0.9, 0.1);
