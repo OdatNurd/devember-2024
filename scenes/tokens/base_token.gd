@@ -288,7 +288,9 @@ func flip_token(tween : Tween) -> bool:
 ## current rotation.
 func rotate_token(tween: Tween, clockwise: bool) -> bool:
     var change := PI / 2 if clockwise else -PI / 2
-    tween.tween_property(self, "rotation", rotation + change, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    #tween.tween_property(self, "rotation", rotation + change, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    tween.tween_property(self, "rotation", rotation + change, 0.5).set_trans(Tween.TransitionType.TRANS_ELASTIC).set_ease(Tween.EaseType.EASE_OUT)
+
     return true
 
 
