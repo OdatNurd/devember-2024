@@ -73,6 +73,10 @@ enum TokenOrientation {
 ## When this token is activated, create an outline of this width
 @export var token_outline_width := 10
 
+## When zooming this token, what should the scale value be set to. If this is
+## smaller than the scale of the token in the scene, it will shrink instead.
+@export var token_zoom := 1.0
+
 
 ## -----------------------------------------------------------------------------
 
@@ -300,7 +304,12 @@ func rotate_token(tween: Tween, clockwise: bool) -> bool:
 ## Change the current scale of the token from its current configuation to the
 ## scale passed in.
 func scale_token(tween: Tween, new_scale: Vector2) -> bool:
-    tween.tween_property(self, "scale", new_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+    # If the destination scale is the same as the current scale, there is
+    # nothing to do.
+    if new_scale == scale:
+        return false
+
+    tween.tween_property(self, "scale", new_scale, 0.5).set_trans(Tween.TransitionType.TRANS_ELASTIC).set_ease(Tween.EaseType.EASE_OUT)
     return true
 
 
@@ -439,7 +448,7 @@ func _input(event: InputEvent):
 
     # Zoom the token in somewhat for easier viewing
     elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S or middle button click
-        var new_scale := Vector2(0.50, 0.50) if event.is_action_pressed("token_zoom") else spawn_scale
+        var new_scale := Vector2(token_zoom, token_zoom) if event.is_action_pressed("token_zoom") else spawn_scale
         execute_tween(scale_token.bind(new_scale))
 
     # Rotate to the left or right 90 degrees

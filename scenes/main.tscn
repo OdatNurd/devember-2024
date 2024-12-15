@@ -20,18 +20,21 @@ position = Vector2(112, 144)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
+token_zoom = 0.6
 
 [node name="EventDeck" parent="." groups=["tokens"] instance=ExtResource("8_7vjud")]
 position = Vector2(608, 144)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
+token_zoom = 0.6
 
 [node name="PlanetCard" parent="." groups=["tokens"] instance=ExtResource("2_8i1h4")]
 position = Vector2(272, 376)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("3_ldqra")
 token_details = ExtResource("4_oox7g")
+token_zoom = 0.75
 
 [node name="EventCard" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
 position = Vector2(456, 376)
@@ -39,3 +42,4 @@ scale = Vector2(0.35, 0.35)
 card_details = ExtResource("9_7wsy8")
 token_details = ExtResource("4_efpl8")
 token_facing = 1
+token_zoom = 0.75
