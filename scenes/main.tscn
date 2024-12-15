@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=12 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
 [ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="2_8i1h4"]
 [ext_resource type="Resource" uid="uid://bc0kv63h2e0ex" path="res://resources/cards/planets/zepht.tres" id="3_ldqra"]
-[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_2.tres" id="4_efpl8"]
+[ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
 [ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/tokens/cards/planets/zepht.tres" id="4_oox7g"]
 [ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="5_kx2b2"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
 [ext_resource type="Resource" uid="uid://cu7sn4l1tbnqs" path="res://resources/cards/events/police_2.tres" id="9_7wsy8"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
 [ext_resource type="Resource" uid="uid://dc3bmdxd40yba" path="res://resources/components/event_card_deck.tres" id="9_rgc6p"]
+[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_2.tres" id="13_gemug"]
 
 [node name="Main" type="Node2D"]
 
@@ -25,6 +26,7 @@ token_zoom = 0.6
 [node name="EventDeck" parent="." groups=["tokens"] instance=ExtResource("8_7vjud")]
 position = Vector2(608, 144)
 scale = Vector2(0.5, 0.5)
+deck_cards = ExtResource("4_2raot")
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6
@@ -40,6 +42,6 @@ token_zoom = 0.75
 position = Vector2(456, 376)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("9_7wsy8")
-token_details = ExtResource("4_efpl8")
+token_details = ExtResource("13_gemug")
 token_facing = 1
 token_zoom = 0.75
