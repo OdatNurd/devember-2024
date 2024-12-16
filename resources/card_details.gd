@@ -58,6 +58,14 @@ func card_type_name() -> String:
 ## -----------------------------------------------------------------------------
 
 
+func _to_string() -> String:
+    return "[Card Details: type='%s' (%s)]" % [card_type_name(), resource_path]
+
+
+
+## -----------------------------------------------------------------------------
+
+
 ## Dump information about this token to the console for debug purposes.
 func dump():
     print("Card: %s" % card_type_name())

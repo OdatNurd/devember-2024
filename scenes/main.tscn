@@ -7,10 +7,10 @@
 [ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/tokens/cards/planets/zepht.tres" id="4_oox7g"]
 [ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="5_kx2b2"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
-[ext_resource type="Resource" uid="uid://cu7sn4l1tbnqs" path="res://resources/cards/events/police_2.tres" id="9_7wsy8"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
 [ext_resource type="Resource" uid="uid://dc3bmdxd40yba" path="res://resources/components/event_card_deck.tres" id="9_rgc6p"]
-[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_2.tres" id="13_gemug"]
+[ext_resource type="Resource" uid="uid://c15yqvf1rd5qj" path="res://resources/cards/events/police_1.tres" id="10_g0exw"]
+[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_1.tres" id="11_10wni"]
 
 [node name="Main" type="Node2D"]
 
@@ -41,7 +41,6 @@ token_zoom = 0.75
 [node name="EventCard" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
 position = Vector2(456, 376)
 scale = Vector2(0.35, 0.35)
-card_details = ExtResource("9_7wsy8")
-token_details = ExtResource("13_gemug")
-token_facing = 1
+card_details = ExtResource("10_g0exw")
+token_details = ExtResource("11_10wni")
 token_zoom = 0.75

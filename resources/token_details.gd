@@ -48,6 +48,13 @@ func token_type_name() -> String:
 ## -----------------------------------------------------------------------------
 
 
+func _to_string() -> String:
+    return "[Token Details: name='%s' type='%s' (%s)]" % [name, token_type_name(), resource_path]
+
+
+## -----------------------------------------------------------------------------
+
+
 ## Dump information about this token to the console for debug purposes.
 func dump():
     print("Token: %s (%s)" % [name, token_type_name()])

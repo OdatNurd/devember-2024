@@ -53,6 +53,7 @@ enum TokenOrientation {
 ## The underlying statistics and information for this game token
 @export var token_details : TokenDetails:
     set(value):
+        print("setting token details: %s" % value)
         token_details = value
         set_texture_for_facing(token_facing)
 
