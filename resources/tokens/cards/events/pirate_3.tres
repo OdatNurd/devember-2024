@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="TokenDetails" load_steps=4 format=3 uid="uid://xj163qqidbuv"]
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=4 format=3 uid="uid://w2otaty5r5fe"]
 
-[ext_resource type="Texture2D" uid="uid://c4vwlurusa2yn" path="res://assets/cards/events/event_back_dark.png" id="1_8eepf"]
-[ext_resource type="Texture2D" uid="uid://d2kj0yxb6gyu5" path="res://assets/cards/events/event_pirate_3.png" id="2_hp15s"]
-[ext_resource type="Script" path="res://resources/token_details.gd" id="3_kvh7x"]
+[ext_resource type="Texture2D" uid="uid://c4vwlurusa2yn" path="res://assets/cards/events/event_back_dark.png" id="1_ufho8"]
+[ext_resource type="Texture2D" uid="uid://d2kj0yxb6gyu5" path="res://assets/cards/events/event_pirate_3.png" id="2_iypah"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="3_0xpdg"]
 
 [resource]
-script = ExtResource("3_kvh7x")
+script = ExtResource("3_0xpdg")
 name = "Pirate 2"
 token_type = 1
-front_image = ExtResource("2_hp15s")
-back_image = ExtResource("1_8eepf")
+front_image = ExtResource("2_iypah")
+back_image = ExtResource("1_ufho8")
