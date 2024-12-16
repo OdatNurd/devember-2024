@@ -1,16 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=16 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
 [ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="2_8i1h4"]
 [ext_resource type="Resource" uid="uid://bc0kv63h2e0ex" path="res://resources/cards/planets/zepht.tres" id="3_ldqra"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
-[ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/tokens/cards/planets/zepht.tres" id="4_oox7g"]
 [ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="5_kx2b2"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
+[ext_resource type="Resource" uid="uid://dyq8kggsvc4r" path="res://resources/tokens/cards/planets/zepht.tres" id="8_xbp4g"]
+[ext_resource type="Resource" uid="uid://b3t4fnqpxvcbb" path="res://resources/cards/planets/azerbot.tres" id="9_85dsw"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
 [ext_resource type="Resource" uid="uid://dc3bmdxd40yba" path="res://resources/components/event_card_deck.tres" id="9_rgc6p"]
-[ext_resource type="Resource" uid="uid://c15yqvf1rd5qj" path="res://resources/cards/events/police_1.tres" id="10_g0exw"]
-[ext_resource type="Resource" uid="uid://xj163qqidbuv" path="res://resources/tokens/cards/events/police_1.tres" id="11_10wni"]
+[ext_resource type="Resource" uid="uid://b263m77vikrb1" path="res://resources/cards/events/pirate_1.tres" id="10_j2i62"]
+[ext_resource type="Resource" uid="uid://ed0fjvn4dpx3" path="res://resources/tokens/cards/planets/azerbot.tres" id="10_mib77"]
+[ext_resource type="Resource" uid="uid://cid1l47u2yn4" path="res://resources/tokens/cards/events/pirate_1.tres" id="11_br11e"]
+[ext_resource type="Resource" uid="uid://3cs7mjugh011" path="res://resources/cards/events/invader_1.tres" id="12_1np4r"]
+[ext_resource type="Resource" uid="uid://bvg3sg8hgsg7c" path="res://resources/tokens/cards/events/invader_1.tres" id="13_ynbos"]
 
 [node name="Main" type="Node2D"]
 
@@ -32,15 +36,29 @@ token_facing = 1
 token_zoom = 0.6
 
 [node name="PlanetCard" parent="." groups=["tokens"] instance=ExtResource("2_8i1h4")]
-position = Vector2(272, 376)
+position = Vector2(249, 377)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("3_ldqra")
-token_details = ExtResource("4_oox7g")
+token_details = ExtResource("8_xbp4g")
+token_zoom = 0.75
+
+[node name="PlanetCard2" parent="." groups=["tokens"] instance=ExtResource("2_8i1h4")]
+position = Vector2(80, 377)
+scale = Vector2(0.35, 0.35)
+card_details = ExtResource("9_85dsw")
+token_details = ExtResource("10_mib77")
 token_zoom = 0.75
 
 [node name="EventCard" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
-position = Vector2(456, 376)
+position = Vector2(640, 377)
 scale = Vector2(0.35, 0.35)
-card_details = ExtResource("10_g0exw")
-token_details = ExtResource("11_10wni")
+card_details = ExtResource("10_j2i62")
+token_details = ExtResource("11_br11e")
+token_zoom = 0.75
+
+[node name="EventCard2" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
+position = Vector2(472, 377)
+scale = Vector2(0.35, 0.35)
+card_details = ExtResource("12_1np4r")
+token_details = ExtResource("13_ynbos")
 token_zoom = 0.75
