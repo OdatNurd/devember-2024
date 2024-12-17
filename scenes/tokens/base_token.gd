@@ -85,6 +85,11 @@ enum TokenOrientation {
 
 ## -----------------------------------------------------------------------------
 
+# A list of groups that this token should be added to when it enters the scene
+# tree. By default this is always the _token group, since this is a token.
+# This can be augmented at any point prior to us entering the tree to adjust
+# the groups to have more or fewer members.
+var _deferred_groups : Array[String] = ["_tokens"]
 
 # Whether or not this token is "active"; a token is considered active when it
 # has the mouse focus.
@@ -371,6 +376,14 @@ func save_spawn_state() -> void:
 
 
 ## -----------------------------------------------------------------------------
+
+
+# When this node gets added to the scene tree, dynamically add it to the list
+# of groups that are in its deferred groups list.
+func _enter_tree() -> void:
+    for group in _deferred_groups:
+        #print("add_token_group('%s')" % group)
+        add_to_group(group)
 
 
 func _ready() -> void:

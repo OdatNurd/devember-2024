@@ -17,6 +17,17 @@ class_name BaseCard extends BaseToken
 ## -----------------------------------------------------------------------------
 
 
+# When this node gets added to the scene tree, dynamically add it to the list
+# of groups that are in its deferred groups list defined by the parent, and also
+# a specific group that marks us as a card.
+func _enter_tree() -> void:
+    _deferred_groups.append("_base_cards")
+    super._enter_tree()
+
+
+## -----------------------------------------------------------------------------
+
+
 ## Dump information about this card and all of its details out to the console
 ## for debugging purposes.
 func dump() -> void:

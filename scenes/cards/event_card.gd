@@ -14,3 +14,14 @@ class_name EventCard extends BaseCard
 
 
 ## -----------------------------------------------------------------------------
+
+
+# When this node gets added to the scene tree, dynamically add it to the list
+# of groups that are in its deferred groups list defined by the parent, and also
+# a specific group that marks us as an event card.
+func _enter_tree() -> void:
+    _deferred_groups.append("_event_cards")
+    super._enter_tree()
+
+
+## -----------------------------------------------------------------------------

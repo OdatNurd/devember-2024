@@ -23,11 +23,15 @@ var _cards : Array[BaseCard]
 ## -----------------------------------------------------------------------------
 
 
-func _ready() -> void:
-    super._ready()
-    _load_cards()
+# When this node gets added to the scene tree, dynamically add it to the list
+# of groups that are in its deferred groups list defined by the parent, and also
+# a specific group that marks us as a card deck. Lastly, also load and create
+# all of the cards that are a part of the deck.
+func _enter_tree() -> void:
+    _deferred_groups.append("_card_decks")
+    super._enter_tree()
 
-    _cards = []
+    _load_cards()
 
 
 ## -----------------------------------------------------------------------------
@@ -53,13 +57,27 @@ func _load_cards() -> void:
 
     print("Creating %d cards for %s" % [len(deck_cards.cards), token_details.name])
 
+    # Create a group based on the ID of this deck, if any. This looks all super
+    # gross because apparently if a ternary can produce one of two different
+    # types in this duck typed language, the debugger loses its shit.
+    var deck_group = null
+    if token_id != null:
+        deck_group = "_%s_cards" % token_id
+    if deck_group == null:
+        print("Warning; cannot add deck cards to our group; we have no id")
+
     var card := deck_cards.card_scene
     for item in deck_cards.cards:
         print("Adding card: %s" % item.token)
 
-        # Create the card and set its position.
+        # Create the card and save it.
         var new_card = card.instantiate() as BaseCard
+        if deck_group != null:
+            new_card._deferred_groups.append(deck_group)
+
+        # Set the position and make it hidden
         new_card.position = Vector2(position.x - 200, position.y)
+        new_card.visible = false
 
         # Set up the visuals for the card itself.
         new_card.token_details = item.token
@@ -77,10 +95,8 @@ func _load_cards() -> void:
         new_card.token_zoom = deal_token.token_zoom
         new_card.scale = deal_token.scale
 
-        # Create and inject the cards; we can't add these to the tree right
-        # away; if you want to do that, you need to do
-        #     get_parent().add_child.call_deferred(new_card)
+        # Inject the card into the tree; it is currently invisible.
+        get_parent().add_child.call_deferred(new_card)
         _cards.append(new_card)
-
 
 ## -----------------------------------------------------------------------------
