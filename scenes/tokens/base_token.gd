@@ -49,11 +49,15 @@ enum TokenOrientation {
 
 @export_group("Token Details", "token")
 
+## The unique ID of this token, if any; some types of tokens use this to mark
+## their children so that they can be found easily. Can be empty in the general
+## case.
+@export var token_id : String
 
 ## The underlying statistics and information for this game token
 @export var token_details : TokenDetails:
     set(value):
-        print("setting token details: %s" % value)
+        #print("setting token details: %s" % value)
         token_details = value
         set_texture_for_facing(token_facing)
 
