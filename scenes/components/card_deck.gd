@@ -17,8 +17,6 @@ class_name CardDeck extends BaseToken
 ## The cards that should be populated into this deck.
 @export var deck_cards : DeckLayout
 
-## The list of cards that this deck contains.
-var _cards : Array[BaseCard]
 
 ## -----------------------------------------------------------------------------
 
@@ -97,6 +95,6 @@ func _load_cards() -> void:
 
         # Inject the card into the tree; it is currently invisible.
         get_parent().add_child.call_deferred(new_card)
-        _cards.append(new_card)
+
 
 ## -----------------------------------------------------------------------------
