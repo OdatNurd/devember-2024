@@ -29,7 +29,10 @@ func _enter_tree() -> void:
     _deferred_groups.append("_card_decks")
     super._enter_tree()
 
-    _load_cards()
+    # Only load cards when we're not in the editor, since otherwise we will
+    # keep creating tokens every time things get the focus.
+    if Engine.is_editor_hint() == false:
+        _load_cards()
 
 
 ## -----------------------------------------------------------------------------

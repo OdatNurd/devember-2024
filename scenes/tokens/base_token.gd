@@ -381,6 +381,11 @@ func save_spawn_state() -> void:
 # When this node gets added to the scene tree, dynamically add it to the list
 # of groups that are in its deferred groups list.
 func _enter_tree() -> void:
+    # Don't register this token with the token manager if we're running in the
+    # editor, since there the preload is not available.
+    if Engine.is_editor_hint() == false:
+        TokenManager.add_token(self)
+
     for group in _deferred_groups:
         #print("add_token_group('%s')" % group)
         add_to_group(group)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=15 format=3 uid="uid://6vnn22c55ymf"]
 
-[ext_resource type="PackedScene" uid="uid://ctxdojpcbvxsa" path="res://scenes/token_manager.tscn" id="1_d41io"]
 [ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="2_8i1h4"]
 [ext_resource type="Resource" uid="uid://bc0kv63h2e0ex" path="res://resources/cards/planets/zepht.tres" id="3_ldqra"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
@@ -18,9 +17,7 @@
 
 [node name="Main" type="Node2D"]
 
-[node name="TokenManager" parent="." instance=ExtResource("1_d41io")]
-
-[node name="PlanetDeck" parent="." groups=["tokens"] instance=ExtResource("8_7vjud")]
+[node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(112, 144)
 scale = Vector2(0.5, 0.5)
 token_id = "planet_deck"
@@ -28,7 +25,7 @@ token_details = ExtResource("9_gmk7r")
 token_facing = 1
 token_zoom = 0.6
 
-[node name="EventDeck" parent="." groups=["tokens"] instance=ExtResource("8_7vjud")]
+[node name="EventDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(608, 144)
 scale = Vector2(0.5, 0.5)
 deck_cards = ExtResource("4_2raot")
@@ -37,28 +34,28 @@ token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6
 
-[node name="PlanetCard" parent="." groups=["tokens"] instance=ExtResource("2_8i1h4")]
+[node name="PlanetCard" parent="." instance=ExtResource("2_8i1h4")]
 position = Vector2(249, 377)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("3_ldqra")
 token_details = ExtResource("8_xbp4g")
 token_zoom = 0.75
 
-[node name="PlanetCard2" parent="." groups=["tokens"] instance=ExtResource("2_8i1h4")]
+[node name="PlanetCard2" parent="." instance=ExtResource("2_8i1h4")]
 position = Vector2(80, 377)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("9_85dsw")
 token_details = ExtResource("10_mib77")
 token_zoom = 0.75
 
-[node name="EventCard" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
+[node name="EventCard" parent="." instance=ExtResource("5_kx2b2")]
 position = Vector2(640, 377)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("10_j2i62")
 token_details = ExtResource("11_br11e")
 token_zoom = 0.75
 
-[node name="EventCard2" parent="." groups=["tokens"] instance=ExtResource("5_kx2b2")]
+[node name="EventCard2" parent="." instance=ExtResource("5_kx2b2")]
 position = Vector2(472, 377)
 scale = Vector2(0.35, 0.35)
 card_details = ExtResource("12_1np4r")

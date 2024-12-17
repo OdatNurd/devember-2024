@@ -30,11 +30,13 @@ var _grabbed_token : Node = null
 ## -----------------------------------------------------------------------------
 
 
-func _ready() -> void:
-    for token in get_tree().get_nodes_in_group("tokens"):
-        token.token_mouse_in.connect(_mouse_state_change.bind(true))
-        token.token_mouse_out.connect(_mouse_state_change.bind(false))
-        token.token_grabbed_or_dropped.connect(_grab_stage_change)
+## Add the provided token to the list of tokens that are managed by this
+## token manager; This will connect it to all of the signals for that token to
+## allow the user to interact with the token.
+func add_token(token: BaseToken) -> void:
+    token.token_mouse_in.connect(_mouse_state_change.bind(true))
+    token.token_mouse_out.connect(_mouse_state_change.bind(false))
+    token.token_grabbed_or_dropped.connect(_grab_stage_change)
 
 
 ## -----------------------------------------------------------------------------
