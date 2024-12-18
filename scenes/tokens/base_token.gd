@@ -437,6 +437,49 @@ func deactivate() -> void:
 ## -----------------------------------------------------------------------------
 
 
+## Given a token group name, return a list of all tokens that exist in that
+## group; the list may be empty.
+func find_token_by_group(group: String) -> Array[BaseToken]:
+    # Get the scene tree, but only if there is a group provided to look in.
+    var tree := null if group == null else get_tree()
+
+    # Find all of the tokens in the group, if we found the tree
+    if tree != null:
+        var result = tree.get_nodes_in_group(group) as Array[BaseToken]
+
+        # The resulting value is actually an array of nodes of type BaseToken
+        # at a minimum, but you can't type cast an array, so we need to do some
+        # weird hackery to shut the compiler up. *sigh*
+        var superhack : Array[BaseToken]
+        superhack.assign(result)
+
+        return superhack
+
+    # If there is no scene tree or no group, we can't look up the contents.
+    return []
+
+
+## Given a token group name and a token ID, find the token with that ID in
+## the given token group.
+##
+## The return value is null if the token can't be found; otherwise it is the
+## token.
+func find_token_by_id(search_id: String, group: String) -> BaseToken:
+    # If we were given a token ID that is non-empty and non-null, find all of
+    # the tokens in the provided group and then distill it down to the one
+    # selected.
+    if search_id != null and search_id != '':
+        var tokens := find_token_by_group(group)
+        for token in tokens:
+            if token.token_id == search_id:
+                return token
+
+    return null
+
+
+## -----------------------------------------------------------------------------
+
+
 # This is the weird dildo fight of input; as far as input is concerned, it gets
 # everything everywhere all at once.
 func _input(event: InputEvent):
