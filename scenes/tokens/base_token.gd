@@ -366,6 +366,57 @@ func restore_token(tween: Tween) -> bool:
 ## -----------------------------------------------------------------------------
 
 
+## Move this node from the position and state that it is currently in to the
+## designated position. This is done via an animation tween on the tween
+## provided, and all of the animations occur in the order the paramters appear
+## in the method.
+##
+## Once the animation is complete, the token can optionally be told to save its
+## new size and location as the default state that it will return to.
+##
+## This always makes sure that the token provided is first brought to the top
+## of the scene and then made visible, so that the animation is always visible.
+func move_card(tween: Tween,
+               new_rotation: float, new_scale: Vector2, new_pos: Vector2,
+               new_facing: TokenOrientation, new_visiblity: bool,
+               save_state_on_finish: bool):
+    # First step is to bring card to the front, second is to make it visible
+    tween.tween_callback(move_to_front)
+    tween.tween_property(self, "visible", true, 0.01)
+
+    # Do we need to rotate to get into the right orientation?
+    if rotation != new_rotation:
+        tween.tween_property(self, "rotation", new_rotation, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
+
+    # Do we need to flip the token to a different facing?
+    if token_facing != new_facing:
+        var org_scale = scale.x
+        tween.tween_property(self, "scale:x", 0, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
+        tween.tween_property(self, "token_facing", new_facing, 0.01)
+        tween.tween_property(self, "scale:x", org_scale, 0.15).set_trans(Tween.TransitionType.TRANS_QUART)
+
+    # Do we need to change the scale of the token
+    if scale != new_scale:
+        tween.tween_property(self, "scale", new_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
+
+    # Do we need to change the position of the token on the screen?
+    if position != new_pos:
+        tween.tween_property(self, "position", new_pos, 0.4).set_trans(Tween.TransitionType.TRANS_QUART)
+
+    # If the token is supposed to be hidden, tween that now; if it's supposed to
+    # visible, good news, it already is.
+    if new_visiblity == false:
+        tween.tween_property(self, "visible", new_visiblity, 0.01)
+
+    # Are we supposed to save the state of this move as the new base state?
+    if save_state_on_finish:
+        tween.tween_callback(save_spawn_state)
+    return true
+
+
+## -----------------------------------------------------------------------------
+
+
 # Capture the current position, rotation, scale and facing of this token so that
 # it can be later restored.
 func save_spawn_state() -> void:
