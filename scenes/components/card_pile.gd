@@ -26,7 +26,7 @@ func _enter_tree() -> void:
 ## -----------------------------------------------------------------------------
 
 
-func _input(event: InputEvent):
+func _input(_event: InputEvent):
     # Don't consume any input events if this node is not the active node
     if not is_active:
         return
