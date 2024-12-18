@@ -17,6 +17,15 @@ class_name CardDeck extends BaseToken
 ## The cards that should be populated into this deck.
 @export var deck_cards : DeckLayout
 
+## Cards dealt from this deck are sent to the location of the pile with this
+## id; if invalid or empty, cards deal on top of the deck.
+@export var deck_pile_id : String
+
+# The cards that appear in the deck; this stores the nodes, which have already
+# been added to the tree (or will be, if we're still starting up), but this
+# gives us an easy handle on them.
+var _cards : Array[BaseCard]
+
 
 ## -----------------------------------------------------------------------------
 
@@ -43,14 +52,12 @@ func _enter_tree() -> void:
 # This creates the appropriate card instances and gets them ready to be used in
 # the game.
 #
-# The deck can have a placeholder set for where the cards should go when they
-# are dealt; the initial properties of the created cards are duplicates of
-# these properties.
+# This will create all of the cards, ensure they're in a group named for this
+# deck, and will add them to the tree as invisible.
 #
-# None of these resources will be added to the tree, hence they will not
-# actually be visible anyway until they are "dealt".
-#
-# TODO: For the time being, the destination location is based on our own token.
+# The new cards will take on the position and display properties of the deck
+# itself (position, scale, outline, etc) but this can be altered  when the card
+# is dealt.
 func _load_cards() -> void:
     if deck_cards == null:
         print("cannot load cards; no deck defined")
@@ -77,27 +84,59 @@ func _load_cards() -> void:
             new_card._deferred_groups.append(deck_group)
 
         # Set the position and make it hidden
-        new_card.position = Vector2(position.x - 200, position.y)
+        new_card.position = Vector2(position.x, position.y)
+        new_card.token_facing = TokenOrientation.FACE_DOWN
         new_card.visible = false
 
         # Set up the visuals for the card itself.
         new_card.token_details = item.token
         new_card.card_details = item.card
 
-        # Get the token that says where we should deal cards to and what other
-        # token properties exist.
-        # TODO: This should not be us; this should be some pre designated token
-        #       that represents this location.
-        var deal_token : BaseToken = self
-
         # Set up the other token properties to match those of the deal token.
-        new_card.token_padding = deal_token.token_padding
-        new_card.token_outline_width = deal_token.token_outline_width
-        new_card.token_zoom = deal_token.token_zoom
-        new_card.scale = deal_token.scale
+        new_card.token_padding = token_padding
+        new_card.token_outline_width = token_outline_width
+        new_card.token_zoom = token_zoom
+        new_card.scale = scale
 
         # Inject the card into the tree; it is currently invisible.
         get_parent().add_child.call_deferred(new_card)
+        _cards.append(new_card)
+
+
+## -----------------------------------------------------------------------------
+
+
+## If this deck has at least one card still in it, deal that card out. Otherwise
+## this will do nothing.
+##
+## The card will be dealt either face up or face down and will be sized and
+## positioned to be over top of the provided dest_token.
+func deal_card(dest_token: BaseToken, face_up: bool) -> void:
+    # Get the card that we want to deal; if there is not one, then we can just
+    # leave.
+    var card := _cards.pop_back() as BaseCard
+    if card == null:
+        return
+
+    var orientation = TokenOrientation.FACE_UP if face_up else TokenOrientation.FACE_DOWN
+    card.execute_tween(card.move_card.bind(dest_token.rotation, dest_token.scale,
+                                      dest_token.position, orientation,
+                                      true, true))
+
+
+func _input(event: InputEvent):
+    # Don't consume any input events if this node is not the active node
+    if not is_active:
+        return
+
+    if event is InputEventMouseButton and event.pressed:
+        # Try to find the token that represents the pile we should be dealing
+        # to; if we don't find one, then deal to our own location instead.
+        var dest_token = find_token_by_id(deck_pile_id, "_card_piles")
+        if dest_token == null:
+            dest_token = self
+
+        deal_card(dest_token, event.button_index == 1)
 
 
 ## -----------------------------------------------------------------------------

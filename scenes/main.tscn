@@ -22,6 +22,7 @@
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(112, 144)
 scale = Vector2(0.5, 0.5)
+deck_pile_id = null
 token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
@@ -31,13 +32,14 @@ token_zoom = 0.6
 position = Vector2(608, 144)
 scale = Vector2(0.5, 0.5)
 deck_cards = ExtResource("4_2raot")
+deck_pile_id = "_event_pile"
 token_id = "_event_deck"
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6
 
 [node name="EventPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(432, 144)
+position = Vector2(280, 176)
 scale = Vector2(0.35, 0.35)
 token_id = "_event_pile"
 token_details = ExtResource("6_hfabm")
