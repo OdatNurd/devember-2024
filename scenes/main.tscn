@@ -22,7 +22,7 @@
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(112, 144)
 scale = Vector2(0.5, 0.5)
-token_id = "planet_deck"
+token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
 token_zoom = 0.6
@@ -31,7 +31,7 @@ token_zoom = 0.6
 position = Vector2(608, 144)
 scale = Vector2(0.5, 0.5)
 deck_cards = ExtResource("4_2raot")
-token_id = "event_deck"
+token_id = "_event_deck"
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6

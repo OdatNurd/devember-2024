@@ -62,8 +62,8 @@ func _load_cards() -> void:
     # gross because apparently if a ternary can produce one of two different
     # types in this duck typed language, the debugger loses its shit.
     var deck_group = null
-    if token_id != null:
-        deck_group = "_%s_cards" % token_id
+    if token_id != null and token_id != '':
+        deck_group = "%s_cards" % token_id
     if deck_group == null:
         print("Warning; cannot add deck cards to our group; we have no id")
 
