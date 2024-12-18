@@ -1,9 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=17 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="2_8i1h4"]
 [ext_resource type="Resource" uid="uid://bc0kv63h2e0ex" path="res://resources/cards/planets/zepht.tres" id="3_ldqra"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
+[ext_resource type="PackedScene" uid="uid://clmahh3f61741" path="res://scenes/components/card_pile.tscn" id="5_ca025"]
 [ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="5_kx2b2"]
+[ext_resource type="Resource" uid="uid://dhf3q54t22jdb" path="res://resources/components/event_card_pile.tres" id="6_hfabm"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
 [ext_resource type="Resource" uid="uid://dyq8kggsvc4r" path="res://resources/tokens/cards/planets/zepht.tres" id="8_xbp4g"]
 [ext_resource type="Resource" uid="uid://b3t4fnqpxvcbb" path="res://resources/cards/planets/azerbot.tres" id="9_85dsw"]
@@ -33,6 +35,12 @@ token_id = "event_deck"
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6
+
+[node name="EventPile" parent="." instance=ExtResource("5_ca025")]
+position = Vector2(432, 144)
+scale = Vector2(0.35, 0.35)
+token_id = "_event_pile"
+token_details = ExtResource("6_hfabm")
 
 [node name="PlanetCard" parent="." instance=ExtResource("2_8i1h4")]
 position = Vector2(249, 377)

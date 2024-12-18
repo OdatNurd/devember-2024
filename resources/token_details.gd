@@ -9,7 +9,7 @@ class_name TokenDetails extends Resource
 
 ## This lists the distinct types of tokens that the game provides. This is
 ## stored as part of the intrinsic resource information for the token.
-enum TokenType { NONE, CARD, DECK }
+enum TokenType { NONE, CARD, DECK, PILE }
 
 
 ## -----------------------------------------------------------------------------
@@ -41,6 +41,8 @@ func token_type_name() -> String:
             return "Card"
         TokenType.DECK:
             return "Deck"
+        TokenType.PILE:
+            return "Pile"
         _:
             return "???"
 
