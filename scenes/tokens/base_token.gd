@@ -368,8 +368,7 @@ func restore_token(tween: Tween) -> bool:
 
 ## Move this node from the position and state that it is currently in to the
 ## designated position. This is done via an animation tween on the tween
-## provided, and all of the animations occur in the order the paramters appear
-## in the method.
+## provided.
 ##
 ## Once the animation is complete, the token can optionally be told to save its
 ## new size and location as the default state that it will return to.
@@ -383,6 +382,10 @@ func move_card(tween: Tween,
     # First step is to bring card to the front, second is to make it visible
     tween.tween_callback(move_to_front)
     tween.tween_property(self, "visible", true, 0.01)
+
+    # Do we need to change the position of the token on the screen?
+    if position != new_pos:
+        tween.tween_property(self, "position", new_pos, 0.4).set_trans(Tween.TransitionType.TRANS_QUART)
 
     # Do we need to rotate to get into the right orientation?
     if rotation != new_rotation:
@@ -398,10 +401,6 @@ func move_card(tween: Tween,
     # Do we need to change the scale of the token
     if scale != new_scale:
         tween.tween_property(self, "scale", new_scale, 0.2).set_trans(Tween.TransitionType.TRANS_QUART)
-
-    # Do we need to change the position of the token on the screen?
-    if position != new_pos:
-        tween.tween_property(self, "position", new_pos, 0.4).set_trans(Tween.TransitionType.TRANS_QUART)
 
     # If the token is supposed to be hidden, tween that now; if it's supposed to
     # visible, good news, it already is.
