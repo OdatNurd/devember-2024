@@ -123,6 +123,10 @@ func deal_card(dest_token: BaseToken, face_up: bool) -> void:
                                       dest_token.position, orientation,
                                       true, true))
 
+    # If the deck is empty now, flip it over.
+    if len(_cards) == 0:
+        execute_tween(flip_token)
+
 
 func _input(event: InputEvent):
     # Don't consume any input events if this node is not the active node
