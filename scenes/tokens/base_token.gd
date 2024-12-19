@@ -91,6 +91,13 @@ enum TokenOrientation {
 # the groups to have more or fewer members.
 var _deferred_groups : Array[String] = ["_tokens"]
 
+# Should we detect the mouse or not; when this is true, the collider that
+# detects the mouse is enabled; otherwise it is disabled.
+var detect_mouse := true :
+    set(value):
+        detect_mouse = value
+        $Collider.disabled = not value
+
 # Whether or not this token is "active"; a token is considered active when it
 # has the mouse focus.
 var is_active := false
@@ -379,7 +386,9 @@ func move_card(tween: Tween,
                new_rotation: float, new_scale: Vector2, new_pos: Vector2,
                new_facing: TokenOrientation, new_visiblity: bool,
                save_state_on_finish: bool):
-    # First step is to bring card to the front, second is to make it visible
+    # Turn off mouse detection for the token, move it to the front of the stack,
+    # and unhide it.
+    tween.tween_property(self, "detect_mouse", false, 0.01)
     tween.tween_callback(move_to_front)
     tween.tween_property(self, "visible", true, 0.01)
 
@@ -406,6 +415,9 @@ func move_card(tween: Tween,
     # visible, good news, it already is.
     if new_visiblity == false:
         tween.tween_property(self, "visible", new_visiblity, 0.01)
+
+    # Turn mouse detection back on
+    tween.tween_property(self, "detect_mouse", true, 0.01)
 
     # Are we supposed to save the state of this move as the new base state?
     if save_state_on_finish:
