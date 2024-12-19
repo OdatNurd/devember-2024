@@ -22,7 +22,7 @@
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(112, 144)
 scale = Vector2(0.5, 0.5)
-deck_pile_id = null
+deck_pile_id = ""
 token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1

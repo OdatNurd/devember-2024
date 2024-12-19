@@ -1,18 +1,123 @@
-[gd_resource type="Resource" script_class="DeckLayout" load_steps=7 format=3 uid="uid://ciuuqonw5luly"]
+[gd_resource type="Resource" script_class="DeckLayout" load_steps=52 format=3 uid="uid://ciuuqonw5luly"]
 
 [ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="1_mj4i1"]
 [ext_resource type="Script" path="res://resources/deck_contents.gd" id="1_ydnem"]
 [ext_resource type="Resource" uid="uid://cqj6p6tsgfg07" path="res://resources/cards/events/none_1.tres" id="3_1033f"]
 [ext_resource type="Script" path="res://resources/deck_card.gd" id="3_l53fo"]
+[ext_resource type="Resource" uid="uid://3cs7mjugh011" path="res://resources/cards/events/invader_1.tres" id="3_xprm6"]
+[ext_resource type="Resource" uid="uid://bvg3sg8hgsg7c" path="res://resources/tokens/cards/events/invader_1.tres" id="4_o2kwy"]
 [ext_resource type="Resource" uid="uid://ddjtykdt3446m" path="res://resources/tokens/cards/events/none_1.tres" id="4_yjcuh"]
+[ext_resource type="Resource" uid="uid://b3e42aneckdq2" path="res://resources/cards/events/none_2.tres" id="7_f8jkp"]
+[ext_resource type="Resource" uid="uid://b8tskxs5i0eej" path="res://resources/tokens/cards/events/none_2.tres" id="8_y0gfg"]
+[ext_resource type="Resource" uid="uid://cagqlly23c4mm" path="res://resources/cards/events/none_3.tres" id="9_qxbxc"]
+[ext_resource type="Resource" uid="uid://c2tgc70b23gpv" path="res://resources/tokens/cards/events/none_3.tres" id="10_1mhhm"]
+[ext_resource type="Resource" uid="uid://blug0pky82i7k" path="res://resources/cards/events/none_4.tres" id="11_5cbyb"]
+[ext_resource type="Resource" uid="uid://sb6nwu5wcb5n" path="res://resources/tokens/cards/events/none_4.tres" id="12_67uei"]
+[ext_resource type="Resource" uid="uid://bqra7068n0akt" path="res://resources/cards/events/none_5.tres" id="13_lra6w"]
+[ext_resource type="Resource" uid="uid://d34wh0ea0o52n" path="res://resources/tokens/cards/events/none_5.tres" id="14_66it6"]
+[ext_resource type="Resource" uid="uid://dxck2ghqkpsyh" path="res://resources/cards/events/none_6.tres" id="15_1yfxj"]
+[ext_resource type="Resource" uid="uid://b5gdqxxgwmytf" path="res://resources/tokens/cards/events/none_6.tres" id="16_qrg3l"]
+[ext_resource type="Resource" uid="uid://bpux7jfrxaylk" path="res://resources/cards/events/none_7.tres" id="17_gxned"]
+[ext_resource type="Resource" uid="uid://b4mpxj4n567jg" path="res://resources/tokens/cards/events/none_7.tres" id="18_5qbfg"]
+[ext_resource type="Resource" uid="uid://b263m77vikrb1" path="res://resources/cards/events/pirate_1.tres" id="19_xxtg2"]
+[ext_resource type="Resource" uid="uid://cid1l47u2yn4" path="res://resources/tokens/cards/events/pirate_1.tres" id="20_j7g1i"]
+[ext_resource type="Resource" uid="uid://bdcbn5bb80ey7" path="res://resources/cards/events/pirate_2.tres" id="21_x0s8i"]
+[ext_resource type="Resource" uid="uid://vfab3pd8n2vw" path="res://resources/tokens/cards/events/pirate_2.tres" id="22_knqgf"]
+[ext_resource type="Resource" uid="uid://b7ksyjpddls0e" path="res://resources/cards/events/pirate_3.tres" id="23_vvhwu"]
+[ext_resource type="Resource" uid="uid://w2otaty5r5fe" path="res://resources/tokens/cards/events/pirate_3.tres" id="24_w00ga"]
+[ext_resource type="Resource" uid="uid://bssu1jef01f5b" path="res://resources/cards/events/pirate_4.tres" id="25_wr16p"]
+[ext_resource type="Resource" uid="uid://cuptjoouxrduo" path="res://resources/tokens/cards/events/pirate_4.tres" id="26_3vqap"]
+[ext_resource type="Resource" uid="uid://dixgrmjxc5gmd" path="res://resources/cards/events/pirate_5.tres" id="27_iiuta"]
+[ext_resource type="Resource" uid="uid://bqn7houey4yei" path="res://resources/tokens/cards/events/pirate_5.tres" id="28_7a11g"]
+[ext_resource type="Resource" uid="uid://71hlbknsbxwo" path="res://resources/cards/events/pirate_6.tres" id="29_kcmak"]
+[ext_resource type="Resource" uid="uid://cdn5iyu4se2ln" path="res://resources/tokens/cards/events/pirate_6.tres" id="30_y7xj7"]
+[ext_resource type="Resource" uid="uid://c15yqvf1rd5qj" path="res://resources/cards/events/police_1.tres" id="31_hkbr4"]
+[ext_resource type="Resource" uid="uid://mbj78t8mcsq5" path="res://resources/tokens/cards/events/police_1.tres" id="32_krhwl"]
+[ext_resource type="Resource" uid="uid://cu7sn4l1tbnqs" path="res://resources/cards/events/police_2.tres" id="33_u5ukf"]
+[ext_resource type="Resource" uid="uid://lpdo46j1jmtx" path="res://resources/tokens/cards/events/police_2.tres" id="34_8jlt1"]
+
+[sub_resource type="Resource" id="Resource_l2nd8"]
+script = ExtResource("3_l53fo")
+token = ExtResource("4_o2kwy")
+card = ExtResource("3_xprm6")
 
 [sub_resource type="Resource" id="Resource_tdqim"]
 script = ExtResource("3_l53fo")
 token = ExtResource("4_yjcuh")
 card = ExtResource("3_1033f")
 
+[sub_resource type="Resource" id="Resource_noep1"]
+script = ExtResource("3_l53fo")
+token = ExtResource("8_y0gfg")
+card = ExtResource("7_f8jkp")
+
+[sub_resource type="Resource" id="Resource_hl7c2"]
+script = ExtResource("3_l53fo")
+token = ExtResource("10_1mhhm")
+card = ExtResource("9_qxbxc")
+
+[sub_resource type="Resource" id="Resource_w7w14"]
+script = ExtResource("3_l53fo")
+token = ExtResource("12_67uei")
+card = ExtResource("11_5cbyb")
+
+[sub_resource type="Resource" id="Resource_iehep"]
+script = ExtResource("3_l53fo")
+token = ExtResource("14_66it6")
+card = ExtResource("13_lra6w")
+
+[sub_resource type="Resource" id="Resource_6g1mo"]
+script = ExtResource("3_l53fo")
+token = ExtResource("16_qrg3l")
+card = ExtResource("15_1yfxj")
+
+[sub_resource type="Resource" id="Resource_uweif"]
+script = ExtResource("3_l53fo")
+token = ExtResource("18_5qbfg")
+card = ExtResource("17_gxned")
+
+[sub_resource type="Resource" id="Resource_uhein"]
+script = ExtResource("3_l53fo")
+token = ExtResource("20_j7g1i")
+card = ExtResource("19_xxtg2")
+
+[sub_resource type="Resource" id="Resource_d8dgk"]
+script = ExtResource("3_l53fo")
+token = ExtResource("22_knqgf")
+card = ExtResource("21_x0s8i")
+
+[sub_resource type="Resource" id="Resource_bw2u5"]
+script = ExtResource("3_l53fo")
+token = ExtResource("24_w00ga")
+card = ExtResource("23_vvhwu")
+
+[sub_resource type="Resource" id="Resource_543eh"]
+script = ExtResource("3_l53fo")
+token = ExtResource("26_3vqap")
+card = ExtResource("25_wr16p")
+
+[sub_resource type="Resource" id="Resource_nsu3t"]
+script = ExtResource("3_l53fo")
+token = ExtResource("28_7a11g")
+card = ExtResource("27_iiuta")
+
+[sub_resource type="Resource" id="Resource_2qqt4"]
+script = ExtResource("3_l53fo")
+token = ExtResource("30_y7xj7")
+card = ExtResource("29_kcmak")
+
+[sub_resource type="Resource" id="Resource_i6v5y"]
+script = ExtResource("3_l53fo")
+token = ExtResource("32_krhwl")
+card = ExtResource("31_hkbr4")
+
+[sub_resource type="Resource" id="Resource_ajvuk"]
+script = ExtResource("3_l53fo")
+token = ExtResource("34_8jlt1")
+card = ExtResource("33_u5ukf")
+
 [resource]
 script = ExtResource("1_ydnem")
 card_scene = ExtResource("1_mj4i1")
-cards = Array[ExtResource("3_l53fo")]([SubResource("Resource_tdqim")])
+cards = Array[ExtResource("3_l53fo")]([SubResource("Resource_l2nd8"), SubResource("Resource_tdqim"), SubResource("Resource_noep1"), SubResource("Resource_hl7c2"), SubResource("Resource_w7w14"), SubResource("Resource_iehep"), SubResource("Resource_6g1mo"), SubResource("Resource_uweif"), SubResource("Resource_uhein"), SubResource("Resource_d8dgk"), SubResource("Resource_bw2u5"), SubResource("Resource_543eh"), SubResource("Resource_nsu3t"), SubResource("Resource_2qqt4"), SubResource("Resource_i6v5y"), SubResource("Resource_ajvuk")])
 shuffled = true
