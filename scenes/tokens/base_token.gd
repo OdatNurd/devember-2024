@@ -449,7 +449,6 @@ func _enter_tree() -> void:
         TokenManager.add_token(self)
 
     for group in _deferred_groups:
-        #print("add_token_group('%s')" % group)
         add_to_group(group)
 
 
@@ -493,9 +492,86 @@ func is_point_inside(point: Vector2) -> bool:
 ## -----------------------------------------------------------------------------
 
 
+## This assumes that we are being delivered an event to tell us that the mouse
+## has either entered or exited our bounding rectangle, and returns whether or
+## not we should handle that event.
+##
+## In particular, if there are multiple tokens sharing the same physical space,
+## then only the token that is uppermost in the draw order (and thus lower in
+## the tree) should handle the event; others should ignore it.
+func _should_handle_mouse_state() -> bool:
+    # Collect all of the areas that overlap with our token, if any; this is
+    # directly calculated by the collision handler.
+    #
+    # This tells us only those areas whose bounds touch ours, even if they are
+    # not currently candidates for a mouse enter/exit ecvent.
+    #
+    # If there are no such overlaps, then we should definitely handle the event.
+    var overlaps : Array[Area2D] = get_overlapping_areas()
+    if len(overlaps) == 0:
+        return true
+
+    # The is as least one overlap with us, so we need to double check if we
+    # should be handling the event or not. Capture the current mouse location
+    # and our index in the tree
+    var mouse = get_viewport().get_mouse_position()
+    var index = get_index()
+
+    print_verbose("mouse position is %s" % str(mouse))
+    print_verbose("%s:%s(%d) has %d overlaps; checking" % [name, token_details.name, index, len(overlaps)])
+
+    # Scan over all of the tokens that overlap us. If we find any that should be
+    # handling the event instead of us, the loop prematurely exits with a false
+    # return value.
+    for overlap: BaseToken in overlaps:
+        print_verbose("  testing %s:%s(%d)" % [overlap.name, overlap.token_details.name, overlap.get_index()])
+
+        # We can't conflict with nodes that are not actually visible on screen.
+        if not overlap.visible:
+            print_verbose("    not currently visible in the scene tree")
+            continue
+
+        # We don't conflict with things that are not tokens.
+        if "token_details" not in overlap:
+            print_verbose("    it does not appear to be a token")
+            continue
+
+        # If the other token does not have our parent, there's not a lot to
+        # do, since our index is specific to our position under our parent.
+        if get_parent() != overlap.get_parent():
+            print_verbose("    has a different parent")
+            continue
+
+        # If the captured mouse position is not in the collion space for this
+        # overlapped token, we don't need to consider it because it's not going
+        # to trigger a competing event.
+        if not overlap.is_point_inside(mouse):
+            print_verbose("    mouse is not currently inside it")
+            continue
+
+        # This might compete with us; if it has a higher index, it's topmost on
+        # the screen in relation to us, in which case we should not handle this
+        # event.
+        if overlap.get_index() > index:
+            print_verbose("  token is above us; skipping this event")
+            return false
+        else:
+            print_verbose("    token is below us")
+
+    print_verbose("  no overlaps above us; handling this event")
+    return true
+
+
+## -----------------------------------------------------------------------------
+
+
 # When the mouse enters or exits a token, emit a signal so that interested
 # parties can tell which token has the "mouse focus"
 func _mouse_enter_exit_state_change(entered: bool) -> void:
+    # Don't handle this event if we're not supposed to.
+    if _should_handle_mouse_state() == false:
+        return
+
     if entered:
         token_mouse_in.emit(self)
     else:
