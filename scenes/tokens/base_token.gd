@@ -475,6 +475,24 @@ func _ready() -> void:
 ## -----------------------------------------------------------------------------
 
 
+## Given a vector that represents a position on the screen, determine whether or
+## not that point is within the bounding rectangle of this token.
+func is_point_inside(point: Vector2) -> bool:
+    # Get the rectangle that bounds the token, and then convert the incoming
+    # point into the local coordinate space of the collider.
+    var bounds = $Collider.shape as RectangleShape2D
+    var local_point = $Collider.global_transform.affine_inverse() * point
+
+    # The location of the bounding box is at its center, so get the size and
+    # split it in two so that we can see if we're within the range of points or
+    # not.
+    var half_extents = bounds.size / 2.0
+    return abs(local_point.x) <= half_extents.x and abs(local_point.y) <= half_extents.y
+
+
+## -----------------------------------------------------------------------------
+
+
 # When the mouse enters or exits a token, emit a signal so that interested
 # parties can tell which token has the "mouse focus"
 func _mouse_enter_exit_state_change(entered: bool) -> void:
