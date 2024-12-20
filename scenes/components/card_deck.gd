@@ -21,6 +21,11 @@ class_name CardDeck extends BaseToken
 ## id; if invalid or empty, cards deal on top of the deck.
 @export var deck_pile_id : String
 
+## If true, when the deck is created, the cards in it will be shuffled. When
+## this is false, the cards in the deck will be in the order specified in the
+## deck layout resource.
+@export var deck_shuffle := true
+
 # The cards that appear in the deck; this stores the nodes, which have already
 # been added to the tree (or will be, if we're still starting up), but this
 # gives us an easy handle on them.
@@ -123,6 +128,10 @@ func _load_cards() -> void:
         get_parent().add_child.call_deferred(new_card)
         _cards.append(new_card)
 
+    # If we are supposed to shuffle the deck on load, do that now.
+    if deck_shuffle:
+        shuffle_cards()
+
 
 ## -----------------------------------------------------------------------------
 
@@ -147,6 +156,14 @@ func deal_card(dest_token: BaseToken, face_up: bool) -> void:
     # If the deck is empty now, flip it over.
     if len(_cards) == 0:
         execute_tween(flip_token)
+
+
+## Shuffle all of the cards that are currently within the _cards array that
+## specifies the contents of this deck. This leaves out of the shuffle any cards
+## that have previously been dealt.
+func shuffle_cards() -> void:
+    print("shuffling: %s" % token_details.name)
+    _cards.shuffle()
 
 
 func _input(event: InputEvent):

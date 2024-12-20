@@ -23,6 +23,7 @@
 position = Vector2(112, 144)
 scale = Vector2(0.5, 0.5)
 deck_pile_id = ""
+deck_shuffle = false
 token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
@@ -33,6 +34,7 @@ position = Vector2(608, 144)
 scale = Vector2(0.5, 0.5)
 deck_cards = ExtResource("4_2raot")
 deck_pile_id = "_event_pile"
+deck_shuffle = true
 token_id = "_event_deck"
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
