@@ -57,7 +57,6 @@ enum TokenOrientation {
 ## The underlying statistics and information for this game token
 @export var token_details : TokenDetails:
     set(value):
-        #print("setting token details: %s" % value)
         token_details = value
         set_texture_for_facing(token_facing)
 
@@ -176,6 +175,7 @@ func set_texture_for_facing(facing: TokenOrientation):
         texture = token_details.front_image if facing == TokenOrientation.FACE_UP else token_details.back_image
     if texture == null:
         print("There is no defined texture for this facing!")
+        push_warning("token flipped to a side that has no texture defined")
         texture = _missing_placeholder
 
     # Since our textures are padded out on the sides, in order to set the
@@ -585,7 +585,8 @@ func _input(event: InputEvent):
             print("Grabbing Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
         else:
             print("Dropping Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
-            dump()
+            if OS.is_stdout_verbose():
+                dump()
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
