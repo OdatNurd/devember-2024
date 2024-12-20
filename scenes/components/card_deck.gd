@@ -245,13 +245,27 @@ func _input(event: InputEvent):
         return
 
     if event is InputEventMouseButton and event.pressed:
-        # Try to find the token that represents the pile we should be dealing
-        # to; if we don't find one, then deal to our own location instead.
-        var dest_token = find_token_by_id(deck_pile_id, "_card_piles")
-        if dest_token == null:
-            dest_token = self
+        match event.button_index:
+            # Left mouse button deals; if ctrl is held down, the deal is face down
+            MouseButton.MOUSE_BUTTON_LEFT:
+                # Try to find the token that represents the pile we should be dealing
+                # to; if we don't find one, then deal to our own location instead.
+                var dest_token = find_token_by_id(deck_pile_id, "_card_piles")
+                if dest_token == null:
+                    dest_token = self
 
-        deal_card(dest_token, event.button_index == 1)
+                # Face up if ctrl is not pressed, face down otherwise.
+                deal_card(dest_token, not event.ctrl_pressed)
+
+            # Right mouse button shuffles cards that are still in the deck
+            MouseButton.MOUSE_BUTTON_RIGHT:
+                shuffle_cards()
+
+            # Middle button gathers all of the cards in the deck back.
+            MouseButton.MOUSE_BUTTON_MIDDLE:
+                gather_cards()
+
+
 
 
 ## -----------------------------------------------------------------------------
