@@ -60,6 +60,7 @@ func _enter_tree() -> void:
 # is dealt.
 func _load_cards() -> void:
     if deck_cards == null:
+        push_warning("no deck contents are defined for this deck")
         print("cannot load cards; no deck defined")
         return
 
@@ -72,14 +73,24 @@ func _load_cards() -> void:
     if token_id != null and token_id != '':
         deck_group = "%s_cards" % token_id
     if deck_group == null:
-        print("Warning; cannot add deck cards to our group; we have no id")
+        push_warning("cannot add deck cards to our group; we have no id")
 
     var card := deck_cards.card_scene
+    var counter := 0
     for item in deck_cards.cards:
-        print("Adding card: %s" % item.token)
+        counter += 1
+        print_verbose("Adding card %d: %s" % [counter, item.token])
 
-        # Create the card and save it.
+        # Create the card and give it a node name that explicitly calls out who
+        # created it and what its resource name was. We also include its index
+        # in the deck, both for informational purposes and because that ensures
+        # that the name is distinct.
+        # TODO: The deck group could be null here, in which case the name will
+        #       asplode.
         var new_card = card.instantiate() as BaseCard
+        new_card.name = "%s_%d_%s" % [
+            deck_group, counter, item.token.resource_path.get_basename().get_file()]
+
         if deck_group != null:
             new_card._deferred_groups.append(deck_group)
 
