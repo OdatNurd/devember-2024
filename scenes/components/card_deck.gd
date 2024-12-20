@@ -88,11 +88,21 @@ func _load_cards() -> void:
         # TODO: The deck group could be null here, in which case the name will
         #       asplode.
         var new_card = card.instantiate() as BaseCard
+
         new_card.name = "%s_%d_%s" % [
             deck_group, counter, item.token.resource_path.get_basename().get_file()]
 
+        # If there is a deck group, add it to the list of groups this token
+        # should join when it enters the tree.
         if deck_group != null:
             new_card._deferred_groups.append(deck_group)
+
+            # Since the deck group is made of the token ID of the deck, if we
+            # have a group we have a deck, so record who owns us and what card
+            # in the deck layout we are as well.
+            new_card.deck_name = token_id
+            new_card.deck_order = counter
+
 
         # Set the position and make it hidden
         new_card.position = Vector2(position.x, position.y)

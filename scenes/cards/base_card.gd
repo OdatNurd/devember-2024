@@ -14,6 +14,15 @@ class_name BaseCard extends BaseToken
 @export_group("Card Details", "card")
 
 
+# When this card is part of a deck of cards, this specifies the token_id of the
+# deck. Otherwise, this is null.
+var deck_name : String
+
+# When deck_name is not null, this value specifies what order it was in natively
+# in the deck when it was loaded. Otherwise, this is -1.
+var deck_order := -1
+
+
 ## -----------------------------------------------------------------------------
 
 
