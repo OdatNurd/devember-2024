@@ -52,6 +52,22 @@ func _enter_tree() -> void:
 ## -----------------------------------------------------------------------------
 
 
+## Determine the underling group name to be used for the cards that exist
+## within this deck. This is based on the token_id of the deck, which should not
+## be null or an empty string.
+##
+## The return value will be null if token_id of the deck is not valid.
+func _get_deck_group() -> String:
+    var deck_group = null
+    if token_id != null and token_id != '':
+        deck_group = "%s_cards" % token_id
+
+    return deck_group
+
+
+## -----------------------------------------------------------------------------
+
+
 # Using our configured resource, create all of the required cards in the deck.
 #
 # This creates the appropriate card instances and gets them ready to be used in
@@ -74,9 +90,7 @@ func _load_cards() -> void:
     # Create a group based on the ID of this deck, if any. This looks all super
     # gross because apparently if a ternary can produce one of two different
     # types in this duck typed language, the debugger loses its shit.
-    var deck_group = null
-    if token_id != null and token_id != '':
-        deck_group = "%s_cards" % token_id
+    var deck_group := _get_deck_group()
     if deck_group == null:
         push_warning("cannot add deck cards to our group; we have no id")
 
@@ -158,12 +172,71 @@ func deal_card(dest_token: BaseToken, face_up: bool) -> void:
         execute_tween(flip_token)
 
 
+## Given a card that exists within this deck, return the card back to the deck
+## position via the same style of animation as was used to animate it.
+##
+## If the card is not visible on the screen, this will do nothing.
+func return_card(card: BaseCard) -> void:
+    # If this card is not visible, then we don't need to return it because the
+    # player can't see it anyway.
+    if not card.visible:
+        return
+
+    card.execute_tween(card.move_card.bind(self.rotation, self.scale,
+                                      self.position, TokenOrientation.FACE_DOWN,
+                                      false, true))
+
+
 ## Shuffle all of the cards that are currently within the _cards array that
 ## specifies the contents of this deck. This leaves out of the shuffle any cards
 ## that have previously been dealt.
 func shuffle_cards() -> void:
     print("shuffling: %s" % token_details.name)
     _cards.shuffle()
+
+
+## Gather up all of the cards that were originally dealt from this deck that
+## are on the table, animate them back into the deck and hide them.
+##
+## If the option to shuffle on load is set, then also shuffle the cards.
+## Otherwise, this pulls them back into the same order they were in trhe deck
+## to begin with.
+func gather_cards() -> void:
+    print("gathering: %s" % token_details.name)
+
+    # Get the deck group; if we don't have one, we can't gather cards.
+    var deck_group := _get_deck_group()
+    if deck_group == null:
+        push_error("cannot gather cards; we have no id")
+        return
+
+    # Using the group associated with this specific deck, find all of the
+    # cards. This will find all of them, both dealt and undealt.
+    var all_cards := find_token_by_group(deck_group)
+
+    # For each card that we found, if it's currently visible on the screen,
+    # tween it back to the deck location and hide it. Anything that's not
+    # currently visible hasn't been dealt and doesn't need to change.
+    for card in all_cards:
+        return_card(card)
+
+    # Replace the current deck cards with the new, full list. Our versions only
+    # contains the cards that were not yet dealt out.
+    _cards = []
+    _cards.assign(all_cards)
+
+    # If we're supposed to shuffle the deck, then shuffle it now; otherwise,
+    # sort the cards back into the original deck order.
+    if deck_shuffle:
+        shuffle_cards()
+    else:
+        print("returning to deck order: %s" % token_details.name)
+        _cards.sort_custom(func(l,r): return l.deck_order < r.deck_order)
+
+    # If we are currently face up, then we should flip face down since we are
+    # only face up when we're empty.
+    if token_facing == TokenOrientation.FACE_UP:
+        execute_tween(flip_token)
 
 
 func _input(event: InputEvent):
