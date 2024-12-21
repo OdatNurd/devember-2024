@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://dhf3q54t22jdb"]
 
-[ext_resource type="Texture2D" uid="uid://by465au6h1y37" path="res://assets/cards/events/event_back_light.png" id="1_w124q"]
+[ext_resource type="Texture2D" uid="uid://by465au6h1y37" path="res://assets/cards/events/event_back_light.png" id="1_debm6"]
 [ext_resource type="Script" path="res://resources/token_details.gd" id="2_jntrc"]
 
 [resource]
 script = ExtResource("2_jntrc")
 name = "Event Card Discard Pile"
 token_type = 3
-front_image = ExtResource("1_w124q")
+front_image = ExtResource("1_debm6")

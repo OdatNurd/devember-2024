@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://bf28lrryhd5cj"]
+
+[ext_resource type="Texture2D" uid="uid://kenex7h6b2ox" path="res://assets/cards/planets/planet_back_light.png" id="1_tjpbx"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="2_jy5u5"]
+
+[resource]
+script = ExtResource("2_jy5u5")
+name = "Planet Card Discard Pile"
+token_type = 3
+front_image = ExtResource("1_tjpbx")

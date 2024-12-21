@@ -1,37 +1,36 @@
-[gd_scene load_steps=17 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=9 format=3 uid="uid://6vnn22c55ymf"]
 
-[ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="2_8i1h4"]
-[ext_resource type="Resource" uid="uid://bc0kv63h2e0ex" path="res://resources/cards/planets/zepht.tres" id="3_ldqra"]
+[ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
 [ext_resource type="PackedScene" uid="uid://clmahh3f61741" path="res://scenes/components/card_pile.tscn" id="5_ca025"]
-[ext_resource type="PackedScene" uid="uid://cfbesw2hlqwra" path="res://scenes/cards/event_card.tscn" id="5_kx2b2"]
-[ext_resource type="Resource" uid="uid://dhf3q54t22jdb" path="res://resources/components/event_card_pile.tres" id="6_hfabm"]
+[ext_resource type="Resource" uid="uid://bf28lrryhd5cj" path="res://resources/components/planet_card_pile.tres" id="5_n05fg"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
-[ext_resource type="Resource" uid="uid://dyq8kggsvc4r" path="res://resources/tokens/cards/planets/zepht.tres" id="8_xbp4g"]
-[ext_resource type="Resource" uid="uid://b3t4fnqpxvcbb" path="res://resources/cards/planets/azerbot.tres" id="9_85dsw"]
+[ext_resource type="Resource" uid="uid://dhf3q54t22jdb" path="res://resources/components/event_card_pile.tres" id="8_rsfwa"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
 [ext_resource type="Resource" uid="uid://dc3bmdxd40yba" path="res://resources/components/event_card_deck.tres" id="9_rgc6p"]
-[ext_resource type="Resource" uid="uid://b263m77vikrb1" path="res://resources/cards/events/pirate_1.tres" id="10_j2i62"]
-[ext_resource type="Resource" uid="uid://ed0fjvn4dpx3" path="res://resources/tokens/cards/planets/azerbot.tres" id="10_mib77"]
-[ext_resource type="Resource" uid="uid://cid1l47u2yn4" path="res://resources/tokens/cards/events/pirate_1.tres" id="11_br11e"]
-[ext_resource type="Resource" uid="uid://3cs7mjugh011" path="res://resources/cards/events/invader_1.tres" id="12_1np4r"]
-[ext_resource type="Resource" uid="uid://bvg3sg8hgsg7c" path="res://resources/tokens/cards/events/invader_1.tres" id="13_ynbos"]
 
 [node name="Main" type="Node2D"]
 
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
-position = Vector2(112, 144)
-scale = Vector2(0.5, 0.5)
-deck_pile_id = ""
+position = Vector2(80, 104)
+scale = Vector2(0.4, 0.4)
+deck_cards = ExtResource("2_pkepa")
+deck_pile_id = "_planet_pile"
 deck_shuffle = false
 token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
 token_zoom = 0.6
 
+[node name="PlanetPile" parent="." instance=ExtResource("5_ca025")]
+position = Vector2(80.0001, 384)
+scale = Vector2(0.35, 0.35)
+token_id = "_planet_pile"
+token_details = ExtResource("5_n05fg")
+
 [node name="EventDeck" parent="." instance=ExtResource("8_7vjud")]
-position = Vector2(608, 144)
-scale = Vector2(0.5, 0.5)
+position = Vector2(640, 112)
+scale = Vector2(0.4, 0.4)
 deck_cards = ExtResource("4_2raot")
 deck_pile_id = "_event_pile"
 deck_shuffle = true
@@ -41,35 +40,7 @@ token_facing = 1
 token_zoom = 0.6
 
 [node name="EventPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(280, 176)
+position = Vector2(648, 384)
 scale = Vector2(0.35, 0.35)
 token_id = "_event_pile"
-token_details = ExtResource("6_hfabm")
-
-[node name="PlanetCard" parent="." instance=ExtResource("2_8i1h4")]
-position = Vector2(249, 377)
-scale = Vector2(0.35, 0.35)
-card_details = ExtResource("3_ldqra")
-token_details = ExtResource("8_xbp4g")
-token_zoom = 0.75
-
-[node name="PlanetCard2" parent="." instance=ExtResource("2_8i1h4")]
-position = Vector2(80, 377)
-scale = Vector2(0.35, 0.35)
-card_details = ExtResource("9_85dsw")
-token_details = ExtResource("10_mib77")
-token_zoom = 0.75
-
-[node name="EventCard" parent="." instance=ExtResource("5_kx2b2")]
-position = Vector2(640, 377)
-scale = Vector2(0.35, 0.35)
-card_details = ExtResource("10_j2i62")
-token_details = ExtResource("11_br11e")
-token_zoom = 0.75
-
-[node name="EventCard2" parent="." instance=ExtResource("5_kx2b2")]
-position = Vector2(472, 377)
-scale = Vector2(0.35, 0.35)
-card_details = ExtResource("12_1np4r")
-token_details = ExtResource("13_ynbos")
-token_zoom = 0.75
+token_details = ExtResource("8_rsfwa")
