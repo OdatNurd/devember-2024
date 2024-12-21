@@ -25,6 +25,10 @@ window/size/viewport_width=720
 window/size/viewport_height=480
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
+
 [input]
 
 token_flip={
