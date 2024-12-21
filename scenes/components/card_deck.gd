@@ -85,6 +85,11 @@ func _load_cards() -> void:
         print("cannot load cards; no deck defined")
         return
 
+    # Invert the deck_cards list so that we create the deck bottom up; since we
+    # bottom deal for speed, decks with no shuffle will have a reversed natural
+    # deck order if we create top down.
+    deck_cards.cards.reverse()
+
     print("Creating %d cards for %s" % [len(deck_cards.cards), token_details.name])
 
     # Create a group based on the ID of this deck, if any. This looks all super
