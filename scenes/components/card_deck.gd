@@ -149,7 +149,7 @@ func _load_cards() -> void:
 
     # If we are supposed to shuffle the deck on load, do that now.
     if deck_shuffle:
-        shuffle_cards()
+        shuffle_cards(false)
 
 
 ## -----------------------------------------------------------------------------
@@ -196,9 +196,15 @@ func return_card(card: BaseCard, delay: float) -> bool:
 ## Shuffle all of the cards that are currently within the _cards array that
 ## specifies the contents of this deck. This leaves out of the shuffle any cards
 ## that have previously been dealt.
-func shuffle_cards() -> void:
+##
+## The shuffle can either be animated on screen, or done behind the scenes. When
+## animate is true, the animation will be delayed by the delay time (in seconds)
+## provided.
+func shuffle_cards(animate: bool, delay: float = 0.0) -> void:
     print("shuffling: %s" % token_details.name)
     _cards.shuffle()
+    if animate:
+        execute_tween(wiggle_card.bind(delay))
 
 
 ## Gather up all of the cards that were originally dealt from this deck that
@@ -233,18 +239,18 @@ func gather_cards() -> void:
     _cards = []
     _cards.assign(all_cards)
 
-    # If we're supposed to shuffle the deck, then shuffle it now; otherwise,
-    # sort the cards back into the original deck order.
-    if deck_shuffle:
-        shuffle_cards()
-    else:
-        print("returning to deck order: %s" % token_details.name)
-        _cards.sort_custom(func(l,r): return l.deck_order < r.deck_order)
-
     # If we are currently face up, then we should flip face down since we are
     # only face up when we're empty.
     if token_facing == TokenOrientation.FACE_UP:
         execute_tween(flip_token)
+
+    # If we're supposed to shuffle the deck, then shuffle it now; otherwise,
+    # sort the cards back into the original deck order.
+    if deck_shuffle:
+        shuffle_cards(true, delay + 0.75)
+    else:
+        print("returning to deck order: %s" % token_details.name)
+        _cards.sort_custom(func(l,r): return l.deck_order < r.deck_order)
 
 
 func _input(event: InputEvent):
@@ -267,7 +273,7 @@ func _input(event: InputEvent):
 
             # Right mouse button shuffles cards that are still in the deck
             MouseButton.MOUSE_BUTTON_RIGHT:
-                shuffle_cards()
+                shuffle_cards(true)
 
             # Middle button gathers all of the cards in the deck back.
             MouseButton.MOUSE_BUTTON_MIDDLE:
