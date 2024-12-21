@@ -110,6 +110,11 @@ var is_grabbed := false
 # that when the mouse moves we can adjust accordingly.
 var drag_offset : Vector2
 
+# When a zoom happens, we get brought to the top of the view stack so that we
+# are visible; when the zoom is removed, we need to go back. This stores our
+# index amongst our siblings at the point at which the zoom started.
+var pre_zoom_index : int
+
 # When we do things like flip or rotate tokens, we use a Tween to generate the
 # animation; We keep a single tween variable for this; when it is null, there
 # is no tween currently in progress; otherwise it is the tween that is currently
@@ -319,14 +324,27 @@ func rotate_token(tween: Tween, clockwise: bool) -> bool:
 
 
 ## Change the current scale of the token from its current configuation to the
-## scale passed in.
-func scale_token(tween: Tween, new_scale: Vector2) -> bool:
+## scale passed in. The zoom is considered to be a zoom in or out depending on
+## the state of the boolean. This is used to determine if we need to adjust the
+## scene order of this token or not.
+func scale_token(tween: Tween, zoom_in: bool, new_scale: Vector2) -> bool:
     # If the destination scale is the same as the current scale, there is
     # nothing to do.
     if new_scale == scale:
         return false
 
+    # On a zoom in, save our position in the tree and jump to the top; on a zoom
+    # out, put us back where we started.
+    # If we're zooming in, start by saving the scene index and tweening a
+    # change to bring us to the front.
+    if zoom_in:
+        pre_zoom_index = get_index()
+        tween.tween_callback(move_to_front)
+    else:
+        tween.tween_callback(func (): if get_index() != pre_zoom_index: get_parent().move_child(self, pre_zoom_index))
+
     tween.tween_property(self, "scale", new_scale, 0.5).set_trans(Tween.TransitionType.TRANS_ELASTIC).set_ease(Tween.EaseType.EASE_OUT)
+
     return true
 
 
@@ -587,7 +605,7 @@ func deactivate() -> void:
     is_active = false
     is_grabbed = false
     $Texture.material.set_shader_parameter("width", 0)
-    scale = spawn_scale
+    execute_tween(scale_token.bind(false, spawn_scale))
 
 
 ## -----------------------------------------------------------------------------
@@ -671,8 +689,9 @@ func _input(event: InputEvent):
 
     # Zoom the token in somewhat for easier viewing
     elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S or middle button click
-        var new_scale := Vector2(token_zoom, token_zoom) if event.is_action_pressed("token_zoom") else spawn_scale
-        execute_tween(scale_token.bind(new_scale))
+        var zoom_in := true if event.is_action_pressed("token_zoom") else false
+        var new_scale := Vector2(token_zoom, token_zoom) if zoom_in else spawn_scale
+        execute_tween(scale_token.bind(zoom_in, new_scale))
 
     # Rotate to the left or right 90 degrees
     elif event.is_action_pressed("token_rotate_left") or event.is_action_pressed("token_rotate_right"): # A,D
