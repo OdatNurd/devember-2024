@@ -391,6 +391,22 @@ func restore_token(tween: Tween) -> bool:
 ## -----------------------------------------------------------------------------
 
 
+## Perform a simple wiggle of the card on the screen, to visually call it out.
+func wiggle_card(tween: Tween, delay: float = 0.0) -> bool:
+    var left = rotation + (-PI / 4)
+    var right = rotation + (PI / 4)
+
+    tween.tween_property(self, "rotation", left, 0.15).set_trans(Tween.TransitionType.TRANS_BOUNCE).set_ease(Tween.EaseType.EASE_IN_OUT).set_delay(delay)
+    tween.tween_property(self, "rotation", right, 0.15).set_trans(Tween.TransitionType.TRANS_BOUNCE).set_ease(Tween.EaseType.EASE_IN_OUT)
+    tween.tween_property(self, "rotation", left, 0.15).set_trans(Tween.TransitionType.TRANS_BOUNCE).set_ease(Tween.EaseType.EASE_IN_OUT)
+    tween.tween_property(self, "rotation", rotation, 0.15).set_trans(Tween.TransitionType.TRANS_BOUNCE).set_ease(Tween.EaseType.EASE_IN_OUT)
+
+    return true
+
+
+## -----------------------------------------------------------------------------
+
+
 ## Move this node from the position and state that it is currently in to the
 ## designated position. This is done via an animation tween on the tween
 ## provided.
@@ -403,7 +419,7 @@ func restore_token(tween: Tween) -> bool:
 func move_card(tween: Tween,
                new_rotation: float, new_scale: Vector2, new_pos: Vector2,
                new_facing: TokenOrientation, new_visiblity: bool,
-               save_state_on_finish: bool, start_delay: float = 0.0):
+               save_state_on_finish: bool, start_delay: float = 0.0) -> bool:
     # Turn off mouse detection for the token, move it to the front of the stack,
     # and unhide it.
     tween.tween_property(self, "detect_mouse", false, 0.01).set_delay(start_delay)
