@@ -181,15 +181,16 @@ func deal_card(dest_token: BaseToken, face_up: bool) -> void:
 ## position via the same style of animation as was used to animate it.
 ##
 ## If the card is not visible on the screen, this will do nothing.
-func return_card(card: BaseCard) -> void:
+func return_card(card: BaseCard, delay: float) -> bool:
     # If this card is not visible, then we don't need to return it because the
     # player can't see it anyway.
     if not card.visible:
-        return
+        return false
 
     card.execute_tween(card.move_card.bind(self.rotation, self.scale,
                                       self.position, TokenOrientation.FACE_DOWN,
-                                      false, true))
+                                      false, true, delay))
+    return true
 
 
 ## Shuffle all of the cards that are currently within the _cards array that
@@ -222,8 +223,10 @@ func gather_cards() -> void:
     # For each card that we found, if it's currently visible on the screen,
     # tween it back to the deck location and hide it. Anything that's not
     # currently visible hasn't been dealt and doesn't need to change.
+    var delay := 0.0
     for card in all_cards:
-        return_card(card)
+        if return_card(card, delay):
+            delay += 0.1
 
     # Replace the current deck cards with the new, full list. Our versions only
     # contains the cards that were not yet dealt out.

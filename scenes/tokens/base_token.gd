@@ -403,10 +403,10 @@ func restore_token(tween: Tween) -> bool:
 func move_card(tween: Tween,
                new_rotation: float, new_scale: Vector2, new_pos: Vector2,
                new_facing: TokenOrientation, new_visiblity: bool,
-               save_state_on_finish: bool):
+               save_state_on_finish: bool, start_delay: float = 0.0):
     # Turn off mouse detection for the token, move it to the front of the stack,
     # and unhide it.
-    tween.tween_property(self, "detect_mouse", false, 0.01)
+    tween.tween_property(self, "detect_mouse", false, 0.01).set_delay(start_delay)
     tween.tween_callback(move_to_front)
     tween.tween_property(self, "visible", true, 0.01)
 
