@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=15 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
@@ -8,6 +8,12 @@
 [ext_resource type="Resource" uid="uid://dhf3q54t22jdb" path="res://resources/components/event_card_pile.tres" id="8_rsfwa"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
 [ext_resource type="Resource" uid="uid://dc3bmdxd40yba" path="res://resources/components/event_card_deck.tres" id="9_rgc6p"]
+[ext_resource type="PackedScene" uid="uid://frsysu72v2qt" path="res://scenes/components/player_aid.tscn" id="9_y0p3h"]
+[ext_resource type="Resource" uid="uid://c3r542f7c3vqh" path="res://resources/components/player_turn_aid.tres" id="10_ain7i"]
+[ext_resource type="Resource" uid="uid://div5gi5e37av8" path="res://resources/components/vectorium_track.tres" id="11_e53xx"]
+[ext_resource type="Resource" uid="uid://dgc3ser3okfh4" path="res://resources/components/ship_back.tres" id="12_kp8wr"]
+[ext_resource type="Resource" uid="uid://7lt3ibq7pgb6" path="res://resources/components/ship_front.tres" id="12_kt8qx"]
+[ext_resource type="Resource" uid="uid://dirkyjvdopj8l" path="res://resources/components/ship_middle.tres" id="12_t8yao"]
 
 [node name="Main" type="Node2D"]
 
@@ -23,24 +29,54 @@ token_facing = 1
 token_zoom = 0.6
 
 [node name="PlanetPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(80.0001, 384)
+position = Vector2(72, 312)
 scale = Vector2(0.35, 0.35)
 token_id = "_planet_pile"
 token_details = ExtResource("5_n05fg")
 
 [node name="EventDeck" parent="." instance=ExtResource("8_7vjud")]
-position = Vector2(640, 112)
+position = Vector2(720, 112)
 scale = Vector2(0.4, 0.4)
 deck_cards = ExtResource("4_2raot")
 deck_pile_id = "_event_pile"
-deck_shuffle = true
 token_id = "_event_deck"
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6
 
 [node name="EventPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(648, 384)
+position = Vector2(728, 312)
 scale = Vector2(0.35, 0.35)
 token_id = "_event_pile"
 token_details = ExtResource("8_rsfwa")
+
+[node name="PlayerAid" parent="." instance=ExtResource("9_y0p3h")]
+position = Vector2(568, 112)
+scale = Vector2(0.3, 0.3)
+token_details = ExtResource("10_ain7i")
+token_zoom = 0.6
+
+[node name="Vectorium" parent="." instance=ExtResource("9_y0p3h")]
+position = Vector2(256, 96)
+rotation = -1.5708
+scale = Vector2(0.35, 0.35)
+token_details = ExtResource("11_e53xx")
+token_zoom = 0.5
+
+[node name="ShipBack" parent="." instance=ExtResource("9_y0p3h")]
+position = Vector2(232, 480)
+scale = Vector2(0.35, 0.35)
+token_details = ExtResource("12_kp8wr")
+token_zoom = 0.5
+
+[node name="ShipMiddle" parent="." instance=ExtResource("9_y0p3h")]
+position = Vector2(408, 480)
+scale = Vector2(0.35, 0.35)
+token_details = ExtResource("12_t8yao")
+token_zoom = 0.5
+
+[node name="ShipFront" parent="." instance=ExtResource("9_y0p3h")]
+position = Vector2(588, 480)
+scale = Vector2(0.35, 0.35)
+token_details = ExtResource("12_kt8qx")
+token_zoom = 0.5
