@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://c3r542f7c3vqh"]
+
+[ext_resource type="Texture2D" uid="uid://be2r1iyq2fw2t" path="res://assets/components/player_aid.png" id="1_qnena"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="2_2s30a"]
+
+[resource]
+script = ExtResource("2_2s30a")
+name = "Player Turn Aid"
+token_type = 4
+front_image = ExtResource("1_qnena")
+back_image = ExtResource("1_qnena")

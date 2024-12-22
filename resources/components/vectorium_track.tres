@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://div5gi5e37av8"]
+
+[ext_resource type="Texture2D" uid="uid://dc5krx10cd6gs" path="res://assets/components/vectorium.png" id="1_vinkg"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="2_5dsl5"]
+
+[resource]
+script = ExtResource("2_5dsl5")
+name = "Vectorium Display"
+token_type = 4
+front_image = ExtResource("1_vinkg")
+back_image = ExtResource("1_vinkg")

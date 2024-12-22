@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://dgc3ser3okfh4"]
+
+[ext_resource type="Texture2D" uid="uid://biq5oueep3rlp" path="res://assets/components/ship_back.png" id="1_1vqr4"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="1_k77ev"]
+
+[resource]
+script = ExtResource("1_k77ev")
+name = "Ship Back"
+token_type = 4
+front_image = ExtResource("1_1vqr4")
+back_image = ExtResource("1_1vqr4")

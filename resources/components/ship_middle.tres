@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://dirkyjvdopj8l"]
+
+[ext_resource type="Texture2D" uid="uid://phsbiodfs7xm" path="res://assets/components/ship_middle.png" id="1_qd5jx"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="2_uxybh"]
+
+[resource]
+script = ExtResource("2_uxybh")
+name = "Ship Middle"
+token_type = 4
+front_image = ExtResource("1_qd5jx")
+back_image = ExtResource("1_qd5jx")
