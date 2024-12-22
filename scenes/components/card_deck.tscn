@@ -19,6 +19,8 @@ size = Vector2(102, 132)
 [node name="GameToken" instance=ExtResource("1_hjjcw")]
 script = ExtResource("2_6poyd")
 deck_cards = null
+deck_pile_id = ""
+deck_shuffle = true
 
 [node name="Texture" parent="." index="0"]
 material = SubResource("ShaderMaterial_oqu1b")
