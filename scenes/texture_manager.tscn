@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1egy33b7j17"]
+
+[ext_resource type="Script" path="res://scenes/texture_manager.gd" id="1_ltq3l"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_ltq3l")
