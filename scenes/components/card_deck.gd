@@ -139,7 +139,6 @@ func _load_cards() -> void:
 
         # Set up the other token properties to match those of the deal token.
         new_card.token_padding = token_padding
-        new_card.token_outline_width = token_outline_width
         new_card.token_zoom = token_zoom
         new_card.scale = scale
 

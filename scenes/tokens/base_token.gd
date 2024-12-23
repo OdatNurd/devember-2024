@@ -29,6 +29,10 @@ signal token_grabbed_or_dropped(token: Node2D, grabbed: bool)
 @onready var _missing_placeholder : Texture = load('res://assets/placeholder_missing.png')
 
 
+# The material that we apply to a token when it has the activation status.
+@onready var _activation_material : Material = load("res://resources/materials/token_activation_material.tres")
+
+
 ## -----------------------------------------------------------------------------
 
 
@@ -74,8 +78,6 @@ enum TokenOrientation {
 ## e.g. a value of 8 pixels here is a final value of 16 pixels total.
 @export var token_padding := 16
 
-## When this token is activated, create an outline of this width
-@export var token_outline_width := 10
 
 ## When zooming this token, what should the scale value be set to. If this is
 ## smaller than the scale of the token in the scene, it will shrink instead.
@@ -614,13 +616,13 @@ func _mouse_enter_exit_state_change(entered: bool) -> void:
 
 func activate() -> void:
     is_active = true
-    $Texture.material.set_shader_parameter("width", token_outline_width)
+    $Texture.material = _activation_material
 
 
 func deactivate() -> void:
     is_active = false
     is_grabbed = false
-    $Texture.material.set_shader_parameter("width", 0)
+    $Texture.material = null
     execute_tween(scale_token.bind(false, spawn_scale))
 
 
