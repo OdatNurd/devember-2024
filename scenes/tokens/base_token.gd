@@ -32,6 +32,9 @@ signal token_grabbed_or_dropped(token: Node2D, grabbed: bool)
 # The material that we apply to a token when it has the activation status.
 @onready var _activation_material : Material = load("res://resources/materials/token_activation_material.tres")
 
+# The material that we apply to a token when it is being dragged;
+@onready var _shadow_material : Material = load("res://resources/materials/drop_shadow_material.tres")
+
 
 ## -----------------------------------------------------------------------------
 
@@ -692,10 +695,12 @@ func _input(event: InputEvent):
     if event is InputEventMouseButton and event.button_index == 1:
         is_grabbed = event.pressed
         if is_grabbed == true:
+            $Texture.material = _shadow_material
             drag_offset = position - event.position
             move_to_front()
             print("Grabbing Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
         else:
+            $Texture.material = _activation_material
             print("Dropping Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
             if OS.is_stdout_verbose():
                 dump()

@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c5txmjb316007"]
+
+[ext_resource type="Shader" path="res://assets/shaders/token_drop_shadow.gdshader" id="1_avni4"]
+
+[resource]
+shader = ExtResource("1_avni4")
+shader_parameter/debug = false
+shader_parameter/border_scale = 2.0
+shader_parameter/shadow_offset = Vector2(-15, -15)
+shader_parameter/color = Color(0.15, 0.15, 0.15, 0.772549)
+shader_parameter/blur_amount = 2.5
+shader_parameter/shadow_scale = 1.5
+shader_parameter/disable_rotating = false
