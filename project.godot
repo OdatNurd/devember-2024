@@ -22,8 +22,8 @@ TextureManager="*res://scenes/texture_manager.tscn"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=600
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
 [editor_plugins]
@@ -63,4 +63,4 @@ token_zoom={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-environment/defaults/default_clear_color=Color(0.354829, 0.218179, 0.471178, 1)
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
