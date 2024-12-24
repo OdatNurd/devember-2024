@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=16 format=3 uid="uid://6vnn22c55ymf"]
 
+[ext_resource type="PackedScene" uid="uid://dpy217t6gkbfo" path="res://scenes/starfield.tscn" id="1_2txeq"]
 [ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
 [ext_resource type="PackedScene" uid="uid://clmahh3f61741" path="res://scenes/components/card_pile.tscn" id="5_ca025"]
@@ -16,6 +17,9 @@
 [ext_resource type="Resource" uid="uid://dirkyjvdopj8l" path="res://resources/components/ship_middle.tres" id="12_t8yao"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Starfield" parent="." instance=ExtResource("1_2txeq")]
+amount = 500
 
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(80, 104)

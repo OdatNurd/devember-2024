@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpy217t6gkbfo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iacq4"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_psb22"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 360, 1)
+spread = 0.0
+initial_velocity_min = 2.0
+initial_velocity_max = 6.0
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 6.0
+color = Color(0.74978, 0.74978, 0.74978, 1)
+
+[node name="Starfield" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_iacq4")
+position = Vector2(-100, 360)
+amount = 500
+process_material = SubResource("ParticleProcessMaterial_psb22")
+lifetime = 700.0
+preprocess = 30.0
+speed_scale = 20.0
+randomness = 1.0
+visibility_rect = Rect2(-100, 360, 1380, 720)
+trail_lifetime = 0.4
