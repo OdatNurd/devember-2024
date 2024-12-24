@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://v8nfsd5l0cyt"]
+
+[ext_resource type="Script" path="res://resources/token_details.gd" id="1_83yd6"]
+[ext_resource type="Texture2D" uid="uid://cxv0g613h2mt0" path="res://assets/components/cargo_box.png" id="1_avixn"]
+
+[resource]
+script = ExtResource("1_83yd6")
+name = "Cargo Container"
+token_type = 4
+front_image = ExtResource("1_avixn")
+back_image = ExtResource("1_avixn")

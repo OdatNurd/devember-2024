@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://cbsl8prn4n1he"]
+
+[ext_resource type="Texture2D" uid="uid://bfsuo621xuu5v" path="res://assets/components/marker_box.png" id="1_m5g2l"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="1_ukxrj"]
+
+[resource]
+script = ExtResource("1_ukxrj")
+name = "Marker Token"
+token_type = 4
+front_image = ExtResource("1_m5g2l")
+back_image = ExtResource("1_m5g2l")

@@ -26,3 +26,19 @@ allowing for easy viewing of the progression of the project over the given time
 period. Note that due to the vagaries of streaming into the night colliding with
 real life, sometimes the last commits are made and tagged after streams end or
 (in rare cases) the next day at some point prior to the stream.
+
+
+## Extra Assets
+
+Apart from the TGOV assets for cards that are outlined above, other graphics
+that are used as tokens include:
+
+- 5 card markers: the Blue Star from:
+    https://opengameart.org/content/ui-pack
+
+- 5 cargo tokens: Crate image from:
+    https://opengameart.org/content/2d-wooden-box
+
+- 1 ship location token: Made by: `Hanna.fhch`
+    https://opengameart.org/content/rocket-png
+

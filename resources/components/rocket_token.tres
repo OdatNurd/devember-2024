@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TokenDetails" load_steps=3 format=3 uid="uid://bhcj87p25quhd"]
+
+[ext_resource type="Texture2D" uid="uid://c677gng67yw3t" path="res://assets/components/rocket_token.png" id="1_3w0eb"]
+[ext_resource type="Script" path="res://resources/token_details.gd" id="1_7hgtr"]
+
+[resource]
+script = ExtResource("1_7hgtr")
+name = "Rocket Token"
+token_type = 4
+front_image = ExtResource("1_3w0eb")
+back_image = ExtResource("1_3w0eb")
