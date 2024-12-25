@@ -469,6 +469,12 @@ func is_point_inside(point: Vector2) -> bool:
 ## then only the token that is uppermost in the draw order (and thus lower in
 ## the tree) should handle the event; others should ignore it.
 func _should_handle_mouse_state() -> bool:
+    # If we do not have any token details, or we do but they say that we should
+    # not allow activation, then there is no need to process mouse state updates
+    # because we are not allowed to respond to them anyway.
+    if token_details == null or not token_details.can_activate:
+        return false
+
     # Collect all of the areas that overlap with our token, if any; this is
     # directly calculated by the collision handler.
     #
@@ -608,8 +614,19 @@ func find_token_by_id(search_id: String, group: String) -> BaseToken:
 # This is the weird dildo fight of input; as far as input is concerned, it gets
 # everything everywhere all at once.
 func _input(event: InputEvent):
-    # Don't consume any input events if this node is not the active node
-    if not is_active:
+    # Input is not accepts if:
+    #  - We have no token details, since that describes how input is accepted
+    #  - Token details say we cannot be activated
+    #  - We can be activated but currently are not
+    if token_details == null or not token_details.can_activate or not is_active:
+        return
+
+    # Capture if there are any interactions that this token can undertake; if
+    # there is not, then we can leave because we can't do anything. The value is
+    # used later as well.
+    var interactive = (token_details.can_flip or token_details.can_rotate or
+                       token_details.can_grab or token_details.can_zoom)
+    if not interactive:
         return
 
     # If we are currently grabbed and this is a mouse motion event, then we want
@@ -622,7 +639,7 @@ func _input(event: InputEvent):
     # end up accidentally mapped to a key. Also is_action_pressed() seems to
     # only return true for the first frame this happens in, and then it starts
     # reporting as unpressed, which would screw up dragging.
-    if event is InputEventMouseButton and event.button_index == 1:
+    if event is InputEventMouseButton and event.button_index == 1 and token_details.can_grab:
         is_grabbed = event.pressed
         if is_grabbed == true:
             $Texture.material = _shadow_material
@@ -637,21 +654,23 @@ func _input(event: InputEvent):
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
-    elif event.is_action_pressed("token_flip"): # W or right mouse button
+    elif event.is_action_pressed("token_flip") and token_details.can_flip: # W or right mouse button
         execute_tween(flip_token)
 
     # Zoom the token in somewhat for easier viewing
-    elif event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"): # S or middle button click
+    elif ((event.is_action_pressed("token_zoom") or event.is_action_released("token_zoom"))
+           and token_details.can_zoom): # S or middle button click
         var zoom_in := true if event.is_action_pressed("token_zoom") else false
         var new_scale := Vector2(token_zoom, token_zoom) if zoom_in else spawn_scale
         execute_tween(scale_token.bind(zoom_in, new_scale))
 
     # Rotate to the left or right 90 degrees
-    elif event.is_action_pressed("token_rotate_left") or event.is_action_pressed("token_rotate_right"): # A,D
+    elif ((event.is_action_pressed("token_rotate_left") or event.is_action_pressed("token_rotate_right"))
+           and token_details.can_rotate): # A,D
         execute_tween(rotate_token.bind(event.is_action_pressed("token_rotate_right")))
 
     # Reset token rotation back to the default; leaves the flip state alone
-    elif event.is_action_pressed("token_reset"): # R
+    elif event.is_action_pressed("token_reset") and interactive: # R
         execute_tween(restore_token)
 
 

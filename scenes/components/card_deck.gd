@@ -7,6 +7,11 @@ class_name CardDeck extends BaseToken
 ##
 ## In a deck, the token being face up means that it's empty, while being face
 ## down means that it has some number of cards in it.
+##
+## As a customized extension of the base token, this only respects the
+## can_activate property of the token_details currently; all other states are
+## ignored because the custom _input() logic does not allow carrying out any of
+## those actions anywa.
 
 
 ## -----------------------------------------------------------------------------

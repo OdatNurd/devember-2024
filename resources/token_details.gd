@@ -28,6 +28,28 @@ enum TokenType { NONE, CARD, DECK, PILE, PLAYER_AID }
 @export var back_image : Texture
 
 
+## Whether or not this token can be activated; activated means that when
+## hovering over it, it gains a green outline highlight. Tokens must be
+## activated to accept input.
+@export var can_activate := true
+
+## Whether or not this token responds to being flipped over. Requires the token
+## to be activated.
+@export var can_flip := true
+
+## Whether or not this token responds to being rotated. Requires the token
+## to be activated.
+@export var can_rotate := true
+
+## Whether or not this token responds to being grabbed. Requires the token
+## to be activated.
+@export var can_grab := true
+
+## Whether or not this token responds to being zoomed. Requires the token
+## to be activated.
+@export var can_zoom := true
+
+
 ## -----------------------------------------------------------------------------
 
 
