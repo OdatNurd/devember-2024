@@ -96,31 +96,31 @@ token_details = ExtResource("6_ukqf2")
 token_zoom = 0.6
 
 [node name="Token1" parent="." instance=ExtResource("5_gwqsj")]
-position = Vector2(389, 392)
+position = Vector2(200, 83)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
 [node name="Token2" parent="." instance=ExtResource("5_gwqsj")]
-position = Vector2(432, 392)
+position = Vector2(75, 598)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
 [node name="Token3" parent="." instance=ExtResource("5_gwqsj")]
-position = Vector2(477, 392)
+position = Vector2(166, 567)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
 [node name="Token4" parent="." instance=ExtResource("5_gwqsj")]
-position = Vector2(522, 392)
+position = Vector2(421, 674)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
 [node name="Token5" parent="." instance=ExtResource("5_gwqsj")]
-position = Vector2(568, 392)
+position = Vector2(631, 557)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
