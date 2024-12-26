@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b6jljhnlo5d7j"]
+
+[ext_resource type="Shader" path="res://assets/shaders/game_token_activation.gdshader" id="1_cfhnu"]
+
+[resource]
+shader = ExtResource("1_cfhnu")
+shader_parameter/width = 5
+shader_parameter/outline_color = Color(1, 0.35, 0, 1)
+shader_parameter/flickering_speed = 5.0
+shader_parameter/minimal_flickering_alpha = 0.0

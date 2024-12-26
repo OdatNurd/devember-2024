@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=21 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://dpy217t6gkbfo" path="res://scenes/starfield.tscn" id="1_2txeq"]
 [ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://dgc3ser3okfh4" path="res://resources/components/ship_back.tres" id="12_kp8wr"]
 [ext_resource type="Resource" uid="uid://7lt3ibq7pgb6" path="res://resources/components/ship_front.tres" id="12_kt8qx"]
 [ext_resource type="Resource" uid="uid://dirkyjvdopj8l" path="res://resources/components/ship_middle.tres" id="12_t8yao"]
+[ext_resource type="Material" uid="uid://b6jljhnlo5d7j" path="res://resources/materials/marker_idle_material.tres" id="18_5wwtw"]
 [ext_resource type="Resource" uid="uid://v8nfsd5l0cyt" path="res://resources/components/cargo_box.tres" id="18_m53r3"]
 [ext_resource type="Resource" uid="uid://cbsl8prn4n1he" path="res://resources/components/marker_token.tres" id="19_ww48j"]
 [ext_resource type="PackedScene" uid="uid://bf4a5pr0l3bjo" path="res://scenes/components/marker_token.tscn" id="20_58ucr"]
@@ -94,63 +95,74 @@ rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("6_ukqf2")
 token_zoom = 0.6
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Token1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(200, 83)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Token2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(75, 598)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Token3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(166, 567)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Token4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(421, 674)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Token5" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(631, 557)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Cargo1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(312, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Cargo2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(344, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Cargo3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(376, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Cargo4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(408, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Cargo5" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(440, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
+token_idle_material = ExtResource("18_5wwtw")

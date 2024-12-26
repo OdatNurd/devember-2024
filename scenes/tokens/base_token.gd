@@ -30,10 +30,10 @@ signal token_grabbed_or_dropped(token: Node2D, grabbed: bool)
 
 
 # The material that we apply to a token when it has the activation status.
-@onready var _activation_material : Material = load("res://resources/materials/token_activation_material.tres")
+@onready var _activation_material : ShaderMaterial = load("res://resources/materials/token_activation_material.tres")
 
 # The material that we apply to a token when it is being dragged;
-@onready var _shadow_material : Material = load("res://resources/materials/drop_shadow_material.tres")
+@onready var _shadow_material : ShaderMaterial = load("res://resources/materials/drop_shadow_material.tres")
 
 
 ## -----------------------------------------------------------------------------
@@ -67,7 +67,6 @@ enum TokenOrientation {
         token_details = value
         set_texture_for_facing(token_facing)
 
-
 ## Which orientation the token is in
 @export var token_facing := TokenOrientation.FACE_UP:
     set(value):
@@ -79,6 +78,10 @@ enum TokenOrientation {
 ## When zooming this token, what should the scale value be set to. If this is
 ## smaller than the scale of the token in the scene, it will shrink instead.
 @export var token_zoom := 1.0
+
+## If set, The token will use this shader on itself while it is idle; that is
+## while it is not active or while it is being dragged on the screen.
+@export var token_idle_material : ShaderMaterial
 
 
 ## -----------------------------------------------------------------------------
@@ -435,6 +438,10 @@ func _ready() -> void:
     # When we're ready, set the texture based on our current facing.
     set_texture_for_facing(token_facing)
 
+    # If there is an idle material, apply it to the texture now.
+    if token_idle_material != null:
+        $Texture.material = token_idle_material
+
     # Capture the spawn properties of the token so that they can be restored
     # later if desired.
     save_spawn_state()
@@ -561,7 +568,7 @@ func activate() -> void:
 func deactivate() -> void:
     is_active = false
     is_grabbed = false
-    $Texture.material = null
+    $Texture.material = token_idle_material
     execute_tween(scale_token.bind(false, spawn_scale))
 
 
