@@ -4,7 +4,6 @@
 [ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
 [ext_resource type="PackedScene" uid="uid://clmahh3f61741" path="res://scenes/components/card_pile.tscn" id="5_ca025"]
-[ext_resource type="PackedScene" uid="uid://ck1j4k8x2sx7v" path="res://scenes/tokens/base_token.tscn" id="5_gwqsj"]
 [ext_resource type="Resource" uid="uid://bf28lrryhd5cj" path="res://resources/components/planet_card_pile.tres" id="5_n05fg"]
 [ext_resource type="Resource" uid="uid://bhcj87p25quhd" path="res://resources/components/rocket_token.tres" id="6_ukqf2"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
@@ -19,6 +18,7 @@
 [ext_resource type="Resource" uid="uid://dirkyjvdopj8l" path="res://resources/components/ship_middle.tres" id="12_t8yao"]
 [ext_resource type="Resource" uid="uid://v8nfsd5l0cyt" path="res://resources/components/cargo_box.tres" id="18_m53r3"]
 [ext_resource type="Resource" uid="uid://cbsl8prn4n1he" path="res://resources/components/marker_token.tres" id="19_ww48j"]
+[ext_resource type="PackedScene" uid="uid://bf4a5pr0l3bjo" path="res://scenes/components/marker_token.tscn" id="20_58ucr"]
 
 [node name="Main" type="Node2D"]
 
@@ -88,68 +88,68 @@ scale = Vector2(0.5, 0.5)
 token_details = ExtResource("12_kt8qx")
 token_zoom = 0.5
 
-[node name="RocketToken" parent="." instance=ExtResource("5_gwqsj")]
+[node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(665, 472)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("6_ukqf2")
 token_zoom = 0.6
 
-[node name="Token1" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Token1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(200, 83)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
-[node name="Token2" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Token2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(75, 598)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
-[node name="Token3" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Token3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(166, 567)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
-[node name="Token4" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Token4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(421, 674)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
-[node name="Token5" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Token5" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(631, 557)
 scale = Vector2(0.3, 0.3)
 token_details = ExtResource("19_ww48j")
 token_zoom = 0.4
 
-[node name="Cargo1" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Cargo1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(312, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
 
-[node name="Cargo2" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Cargo2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(344, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
 
-[node name="Cargo3" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Cargo3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(376, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
 
-[node name="Cargo4" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Cargo4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(408, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")
 token_zoom = 0.3
 
-[node name="Cargo5" parent="." instance=ExtResource("5_gwqsj")]
+[node name="Cargo5" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(440, 488)
 scale = Vector2(0.2, 0.2)
 token_details = ExtResource("18_m53r3")

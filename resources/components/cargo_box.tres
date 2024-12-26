@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_83yd6")
 name = "Cargo Container"
-token_type = 4
+token_type = 5
 front_image = ExtResource("1_avixn")
 back_image = ExtResource("1_avixn")
 can_activate = true

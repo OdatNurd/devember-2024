@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_ukxrj")
 name = "Marker Token"
-token_type = 4
+token_type = 5
 front_image = ExtResource("1_m5g2l")
 back_image = ExtResource("1_m5g2l")
 can_activate = true

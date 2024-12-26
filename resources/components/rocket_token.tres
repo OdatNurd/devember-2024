@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_7hgtr")
 name = "Rocket Token"
-token_type = 4
+token_type = 5
 front_image = ExtResource("1_3w0eb")
 back_image = ExtResource("1_3w0eb")
 can_activate = true
