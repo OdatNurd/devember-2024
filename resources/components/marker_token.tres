@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://resources/token_details.gd" id="1_ukxrj"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_ukxrj")
 name = "Marker Token"
 token_type = 5

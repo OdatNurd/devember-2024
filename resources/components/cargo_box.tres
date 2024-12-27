@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cxv0g613h2mt0" path="res://assets/components/cargo_box.png" id="1_avixn"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_83yd6")
 name = "Cargo Container"
 token_type = 5
