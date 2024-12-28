@@ -117,6 +117,12 @@ var drag_offset : Vector2
 # index amongst our siblings at the point at which the zoom started.
 var pre_zoom_index : int
 
+# When a zoom happens, we might need to adjust the position of the token in the
+# viewport to ensure that it is fully visible. When every zoom starts, this
+# stores the position it was in so that when the zoom is reset, we can put the
+# token back to the same position it started in.
+var pre_zoom_position : Vector2
+
 # When we do things like flip or rotate tokens, we use a Tween to generate the
 # animation; We keep a single tween variable for this; when it is null, there
 # is no tween currently in progress; otherwise it is the tween that is currently
@@ -274,15 +280,28 @@ func scale_token(tween: Tween, zoom_in: bool, new_scale: Vector2) -> bool:
     if new_scale == scale:
         return false
 
+    # Grab the position that we want to move the token to during the zoom.
+    # When we're zooming in, we save the current position and then figure
+    # where we might need to move to keep us visible. When we zoom out, we
+    # always return to the position that we were in before the zoom started.
+    var zoom_pos : Vector2
+
     # On a zoom in, save our position in the tree and jump to the top; on a zoom
     # out, put us back where we started.
     # If we're zooming in, start by saving the scene index and tweening a
     # change to bring us to the front.
     if zoom_in:
         pre_zoom_index = get_index()
+        pre_zoom_position = position
+        zoom_pos = _get_zoom_pos(new_scale)
         tween.tween_callback(move_to_front)
     else:
+        zoom_pos = pre_zoom_position
         tween.tween_callback(func (): if get_index() != pre_zoom_index: get_parent().move_child(self, pre_zoom_index))
+
+    # If we are not currently at the position we should be, move there first.
+    if position != zoom_pos:
+        tween.tween_property(self, "position", zoom_pos, 0.4).set_trans(Tween.TransitionType.TRANS_QUART)
 
     tween.tween_property(self, "scale", new_scale, 0.5).set_trans(Tween.TransitionType.TRANS_ELASTIC).set_ease(Tween.EaseType.EASE_OUT)
 
@@ -629,6 +648,51 @@ func _did_drop() -> void:
 ## -----------------------------------------------------------------------------
 
 
+# Takes the scale that we are going to zoom to and verifies that if this token
+# is zoomed to that scale, that it will fully fit within the bounds of the
+# viewport without any edges spilling over.
+#
+# The return value is the position at which the token should be moved to prior
+# to the zoom so that the whole token fits within the screen. This might be the
+# original position, or it might be a new position.
+func _get_zoom_pos(zoom_scale: Vector2) -> Vector2:
+    # The returned zoom position; it starts at the position we're currently at.
+    var zoom_pos := Vector2(position)
+
+    # In order to determine if we are going to violate the viewport extents, we
+    # need the size of the current viewport.
+    var viewport = get_viewport().get_size()
+
+    # Gather the collision shape we use and get its size. We then multiply that
+    # by the scale we are going to zoom by, so that we can determine what our
+    # final zoomed size will be. Once we have that, split both values in half
+    # because we are sized about our center.
+    var extents = (($Collider.shape as RectangleShape2D).size * zoom_scale) / 2.0
+
+    # Get the padding value that we want to add to our values when we move to
+    # make sure there is a bit of extra visual space.
+    var padding = TextureManager.token_padding
+
+    # If the lower X or Y position is too close to the left or top respectively
+    # after our new size calculation, shift us to the right or down by just
+    # enough to keep us in bounds.
+    if position.x < extents.x:
+        zoom_pos.x += (extents.x - position.x + padding)
+    elif position.x > viewport.x - extents.x:
+        zoom_pos.x += (viewport.x - extents.x - position.x - padding)
+
+    # Do the same on the right and bottom.
+    if position.y < extents.y:
+        zoom_pos.y += (extents.y - position.y + padding)
+    elif position.y > viewport.y - extents.y:
+        zoom_pos.y += (viewport.y - extents.y - position.y - padding)
+
+    return zoom_pos
+
+
+## -----------------------------------------------------------------------------
+
+
 # This is the weird dildo fight of input; as far as input is concerned, it gets
 # everything everywhere all at once.
 func _input(event: InputEvent):
@@ -679,6 +743,7 @@ func _input(event: InputEvent):
            and token_details.can_zoom): # S or middle button click
         var zoom_in := true if event.is_action_pressed("token_zoom") else false
         var new_scale := Vector2(token_zoom, token_zoom) if zoom_in else spawn_scale
+
         execute_tween(scale_token.bind(zoom_in, new_scale))
 
     # Rotate to the left or right 90 degrees
