@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://resources/token_details.gd" id="20_moh38"]
 [ext_resource type="Texture2D" uid="uid://cxv0g613h2mt0" path="res://assets/components/cargo_box.png" id="21_16chc"]
 
-[sub_resource type="Resource" id="Resource_bbvxn"]
+[sub_resource type="Resource" id="Resource_6n4it"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -39,7 +39,7 @@ can_zoom = false
 resource_local_to_scene = true
 radius = 16.0
 
-[sub_resource type="Resource" id="Resource_3ieuk"]
+[sub_resource type="Resource" id="Resource_yu2up"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -52,7 +52,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_3g0jv"]
+[sub_resource type="Resource" id="Resource_pms4o"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -65,7 +65,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_g3aqx"]
+[sub_resource type="Resource" id="Resource_ky5bn"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -78,7 +78,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_bp8lo"]
+[sub_resource type="Resource" id="Resource_3a8ia"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -91,7 +91,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_0thuj"]
+[sub_resource type="Resource" id="Resource_4pm78"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -104,7 +104,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_qri3f"]
+[sub_resource type="Resource" id="Resource_qd0ue"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -117,7 +117,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_4mhv2"]
+[sub_resource type="Resource" id="Resource_lks0p"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -130,7 +130,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_fnjp2"]
+[sub_resource type="Resource" id="Resource_klay7"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -143,7 +143,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_2xu0u"]
+[sub_resource type="Resource" id="Resource_6r13m"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -236,7 +236,7 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(200, 85)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_bbvxn")
+token_details = SubResource("Resource_6n4it")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -366,7 +366,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(74, 600)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_3ieuk")
+token_details = SubResource("Resource_yu2up")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -406,7 +406,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(162, 568)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_3g0jv")
+token_details = SubResource("Resource_pms4o")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -446,7 +446,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(421, 675)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_g3aqx")
+token_details = SubResource("Resource_ky5bn")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -486,7 +486,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(630, 560)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_bp8lo")
+token_details = SubResource("Resource_3a8ia")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -525,34 +525,34 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(312, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_0thuj")
+token_details = SubResource("Resource_4pm78")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(344, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_qri3f")
+token_details = SubResource("Resource_qd0ue")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(376, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_4mhv2")
+token_details = SubResource("Resource_lks0p")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(408, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_fnjp2")
+token_details = SubResource("Resource_klay7")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate5" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(440, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_2xu0u")
+token_details = SubResource("Resource_6r13m")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
