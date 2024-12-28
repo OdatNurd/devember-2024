@@ -9,6 +9,8 @@ size = Vector2(102, 132)
 
 [node name="GameToken" instance=ExtResource("1_g8nhb")]
 script = ExtResource("2_3xb68")
+marker_snap_group = ""
+marker_snap_distance = 16
 
 [node name="Collider" parent="." index="1"]
 shape = SubResource("RectangleShape2D_3xsjl")

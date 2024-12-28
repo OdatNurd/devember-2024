@@ -618,6 +618,17 @@ func find_token_by_id(search_id: String, group: String) -> BaseToken:
 ## -----------------------------------------------------------------------------
 
 
+# Invoked every time a token is dropped; the token can use this to decide if it
+# wants to take any action in regards to the drop. The base class version of
+# this only shows that something was dropped.
+func _did_drop() -> void:
+    if OS.is_stdout_verbose():
+        dump()
+
+
+## -----------------------------------------------------------------------------
+
+
 # This is the weird dildo fight of input; as far as input is concerned, it gets
 # everything everywhere all at once.
 func _input(event: InputEvent):
@@ -656,8 +667,7 @@ func _input(event: InputEvent):
         else:
             $Texture.material = _activation_material
             print("Dropping Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
-            if OS.is_stdout_verbose():
-                dump()
+            _did_drop()
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
