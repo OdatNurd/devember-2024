@@ -16,5 +16,11 @@ class_name DeckCard extends Resource
 ## The internal statistics for this card, if any
 @export var card: CardDetails
 
+## The snapping group that this card should be in, if any
+@export var snap_group: String
+
+## The snap distance that this card should use, if snapping is enabled.
+@export var snap_distance: int
+
 
 ## -----------------------------------------------------------------------------

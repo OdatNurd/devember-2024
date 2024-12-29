@@ -580,7 +580,7 @@ position = Vector2(461, 463)
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="PlanetSnap24" type="Marker2D" parent="PlanetCardSnapPoints"]
+[node name="PlanetSnap24" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
 position = Vector2(558, 463)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap24" groups=["_planet_snap_points"]]
@@ -627,8 +627,8 @@ token_zoom = 0.8
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="PlanetPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(200, 96)
-scale = Vector2(0.35, 0.35)
+position = Vector2(176, 93)
+scale = Vector2(0.25, 0.25)
 token_id = "_planet_pile"
 token_details = ExtResource("5_n05fg")
 

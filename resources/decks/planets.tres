@@ -38,76 +38,106 @@
 script = ExtResource("2_arkx8")
 token = ExtResource("4_2jbn1")
 card = ExtResource("3_c56m5")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_tqyrp"]
 script = ExtResource("2_arkx8")
 token = ExtResource("6_07a16")
 card = ExtResource("5_d3uro")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_jyird"]
 script = ExtResource("2_arkx8")
 token = ExtResource("8_aaci2")
 card = ExtResource("7_rax8o")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_bfxqe"]
 script = ExtResource("2_arkx8")
 token = ExtResource("12_tac80")
 card = ExtResource("11_tgspt")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_qgb78"]
 script = ExtResource("2_arkx8")
 token = ExtResource("14_rgoyi")
 card = ExtResource("13_88ak3")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_56ydi"]
 script = ExtResource("2_arkx8")
 token = ExtResource("16_hrdnf")
 card = ExtResource("15_081yr")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_m4gr2"]
 script = ExtResource("2_arkx8")
 token = ExtResource("18_e5euq")
 card = ExtResource("17_ich1t")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_0wyiw"]
 script = ExtResource("2_arkx8")
 token = ExtResource("20_qhkc5")
 card = ExtResource("19_p7hpt")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_ll1vb"]
 script = ExtResource("2_arkx8")
 token = ExtResource("22_f2epm")
 card = ExtResource("21_8vgcp")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_w4yl4"]
 script = ExtResource("2_arkx8")
 token = ExtResource("24_s0c34")
 card = ExtResource("23_03jkv")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_5cfxr"]
 script = ExtResource("2_arkx8")
 token = ExtResource("26_a23r8")
 card = ExtResource("25_vaxa5")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_v2wis"]
 script = ExtResource("2_arkx8")
 token = ExtResource("28_fuqyg")
 card = ExtResource("27_ojjc3")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_p3bb3"]
 script = ExtResource("2_arkx8")
 token = ExtResource("30_4pqvj")
 card = ExtResource("29_tx28h")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_0d6eg"]
 script = ExtResource("2_arkx8")
 token = ExtResource("32_kp70h")
 card = ExtResource("31_ae5vi")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [sub_resource type="Resource" id="Resource_vnjxa"]
 script = ExtResource("2_arkx8")
 token = ExtResource("34_0h388")
 card = ExtResource("33_67bko")
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [resource]
 script = ExtResource("3_7xrfl")

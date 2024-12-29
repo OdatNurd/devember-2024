@@ -146,6 +146,10 @@ func _load_cards() -> void:
         new_card.token_zoom = token_zoom
         new_card.scale = scale
 
+        # Set up the snapping that was requested
+        new_card.snap_group = item.snap_group
+        new_card.snap_distance = item.snap_distance
+
         # Inject the card into the tree; it is currently invisible.
         get_parent().add_child.call_deferred(new_card)
         _cards.append(new_card)
