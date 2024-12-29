@@ -5,6 +5,6 @@
 [resource]
 shader = ExtResource("1_cfhnu")
 shader_parameter/width = 5
-shader_parameter/outline_color = Color(1, 0.35, 0, 1)
+shader_parameter/outline_color = Color(0.643871, 0.00325229, 0.638474, 1)
 shader_parameter/flickering_speed = 5.0
 shader_parameter/minimal_flickering_alpha = 0.0
