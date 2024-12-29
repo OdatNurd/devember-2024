@@ -164,76 +164,78 @@ can_zoom = false
 [node name="Starfield" parent="." instance=ExtResource("1_2txeq")]
 
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
-position = Vector2(80, 104)
-scale = Vector2(0.4, 0.4)
+position = Vector2(64, 80)
+scale = Vector2(0.3, 0.3)
 deck_cards = ExtResource("2_pkepa")
 deck_pile_id = "_planet_pile"
 token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
 token_zoom = 0.8
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="StartingCardEarth" parent="." instance=ExtResource("5_pu6ro")]
-position = Vector2(523, 338)
+position = Vector2(232, 336)
 scale = Vector2(0.5, 0.5)
 card_details = ExtResource("6_rrgeo")
 token_details = ExtResource("7_8dq3p")
 
 [node name="PlanetPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(120, 352)
-scale = Vector2(0.5, 0.5)
+position = Vector2(72, 440)
+scale = Vector2(0.35, 0.35)
 token_id = "_planet_pile"
 token_details = ExtResource("5_n05fg")
 
 [node name="EventDeck" parent="." instance=ExtResource("8_7vjud")]
-position = Vector2(720, 112)
-scale = Vector2(0.4, 0.4)
+position = Vector2(1216, 80)
+scale = Vector2(0.3, 0.3)
 deck_cards = ExtResource("4_2raot")
 deck_pile_id = "_event_pile"
 token_id = "_event_deck"
 token_details = ExtResource("9_rgc6p")
 token_facing = 1
 token_zoom = 0.6
+token_idle_material = ExtResource("18_5wwtw")
 
 [node name="EventPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(728, 312)
+position = Vector2(1208, 424)
 scale = Vector2(0.35, 0.35)
 token_id = "_event_pile"
 token_details = ExtResource("8_rsfwa")
 
 [node name="PlayerAid" parent="." instance=ExtResource("9_y0p3h")]
-position = Vector2(1120, 212)
+position = Vector2(376, 592)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("10_ain7i")
 token_zoom = 0.8
 
 [node name="Vectorium" parent="." instance=ExtResource("9_y0p3h")]
-position = Vector2(295, 104)
+position = Vector2(133, 625)
 rotation = -1.5708
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("11_e53xx")
 token_zoom = 0.5
 
 [node name="ShipBack" parent="." instance=ExtResource("9_y0p3h")]
-position = Vector2(160, 600)
+position = Vector2(617, 621)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("12_kp8wr")
 token_zoom = 0.5
 
 [node name="ShipMiddle" parent="." instance=ExtResource("9_y0p3h")]
-position = Vector2(424, 600)
+position = Vector2(881, 621)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("12_t8yao")
 token_zoom = 0.5
 
 [node name="ShipFront" parent="." instance=ExtResource("9_y0p3h")]
-position = Vector2(688, 600)
+position = Vector2(1145, 621)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("12_kt8qx")
 token_zoom = 0.5
 
 [node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(564, 410)
+position = Vector2(304, 352)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("6_ukqf2")
@@ -241,7 +243,7 @@ token_zoom = 0.6
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="VectoriumStar" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(200, 85)
+position = Vector2(38, 606)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
 token_details = SubResource("Resource_uml3r")
@@ -251,127 +253,127 @@ token_idle_material = ExtResource("18_5wwtw")
 [node name="Vectorium2" type="Node" parent="."]
 
 [node name="Vectorium1" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(276, 40)
+position = Vector2(114, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium1"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium2" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(314, 40)
+position = Vector2(152, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium2"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium3" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(351, 40)
+position = Vector2(189, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium3"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium4" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(388, 40)
+position = Vector2(226, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium4"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium5" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(200, 85)
+position = Vector2(38, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium5"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium6" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(239, 85)
+position = Vector2(77, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium6"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium7" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(276, 85)
+position = Vector2(114, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium7"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium8" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(313, 85)
+position = Vector2(151, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium8"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium9" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(351, 84)
+position = Vector2(189, 605)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium9"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium10" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(389, 85)
+position = Vector2(227, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium10"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium11" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(200, 128)
+position = Vector2(38, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium11"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium12" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(239, 129)
+position = Vector2(77, 650)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium12"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium13" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(276, 128)
+position = Vector2(114, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium13"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium14" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(313, 128)
+position = Vector2(151, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium14"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium15" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(351, 129)
+position = Vector2(189, 650)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium15"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium16" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(388, 128)
+position = Vector2(226, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium16"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium17" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(200, 172)
+position = Vector2(38, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium17"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium18" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(238, 172)
+position = Vector2(76, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium18"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium19" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(276, 172)
+position = Vector2(114, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium19"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium20" type="Marker2D" parent="Vectorium2" groups=["_vectorium_snap_points"]]
-position = Vector2(313, 172)
+position = Vector2(151, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Vectorium2/Vectorium20"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="EngineStar" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(74, 600)
+position = Vector2(531, 621)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
 token_details = SubResource("Resource_vglw2")
@@ -381,37 +383,37 @@ token_idle_material = ExtResource("18_5wwtw")
 [node name="Engine" type="Node" parent="."]
 
 [node name="Engine1" type="Marker2D" parent="Engine" groups=["_vectorium_snap_points"]]
-position = Vector2(74, 536)
+position = Vector2(531, 557)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engine/Engine1"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine2" type="Marker2D" parent="Engine" groups=["_vectorium_snap_points"]]
-position = Vector2(66, 568)
+position = Vector2(523, 589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engine/Engine2"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine3" type="Marker2D" parent="Engine" groups=["_vectorium_snap_points"]]
-position = Vector2(74, 600)
+position = Vector2(531, 621)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engine/Engine3"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine4" type="Marker2D" parent="Engine" groups=["_vectorium_snap_points"]]
-position = Vector2(66, 633)
+position = Vector2(523, 654)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engine/Engine4"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine5" type="Marker2D" parent="Engine" groups=["_vectorium_snap_points"]]
-position = Vector2(74, 667)
+position = Vector2(531, 688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engine/Engine5"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="DefenseStar" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(162, 568)
+position = Vector2(619, 589)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
 token_details = SubResource("Resource_5pi0b")
@@ -421,37 +423,37 @@ token_idle_material = ExtResource("18_5wwtw")
 [node name="Defences" type="Node" parent="."]
 
 [node name="Defences1" type="Marker2D" parent="Defences" groups=["_vectorium_snap_points"]]
-position = Vector2(171, 538)
+position = Vector2(628, 559)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Defences/Defences1"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences2" type="Marker2D" parent="Defences" groups=["_vectorium_snap_points"]]
-position = Vector2(164, 568)
+position = Vector2(621, 589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Defences/Defences2"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences3" type="Marker2D" parent="Defences" groups=["_vectorium_snap_points"]]
-position = Vector2(163, 603)
+position = Vector2(620, 624)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Defences/Defences3"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences4" type="Marker2D" parent="Defences" groups=["_vectorium_snap_points"]]
-position = Vector2(165, 637)
+position = Vector2(622, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Defences/Defences4"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences5" type="Marker2D" parent="Defences" groups=["_vectorium_snap_points"]]
-position = Vector2(172, 667)
+position = Vector2(629, 688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Defences/Defences5"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="CargoToken" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(421, 675)
+position = Vector2(878, 696)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
 token_details = SubResource("Resource_44wk8")
@@ -461,37 +463,37 @@ token_idle_material = ExtResource("18_5wwtw")
 [node name="Cargo" type="Node" parent="."]
 
 [node name="Cargo1" type="Marker2D" parent="Cargo" groups=["_vectorium_snap_points"]]
-position = Vector2(341, 680)
+position = Vector2(798, 701)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cargo/Cargo1"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo2" type="Marker2D" parent="Cargo" groups=["_vectorium_snap_points"]]
-position = Vector2(380, 678)
+position = Vector2(837, 699)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cargo/Cargo2"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo3" type="Marker2D" parent="Cargo" groups=["_vectorium_snap_points"]]
-position = Vector2(421, 675)
+position = Vector2(878, 696)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cargo/Cargo3"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo4" type="Marker2D" parent="Cargo" groups=["_vectorium_snap_points"]]
-position = Vector2(461, 668)
+position = Vector2(918, 689)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cargo/Cargo4"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo5" type="Marker2D" parent="Cargo" groups=["_vectorium_snap_points"]]
-position = Vector2(499, 659)
+position = Vector2(956, 680)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cargo/Cargo5"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="WeaponStar" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(630, 560)
+position = Vector2(1087, 581)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
 token_details = SubResource("Resource_8helj")
@@ -501,65 +503,65 @@ token_idle_material = ExtResource("18_5wwtw")
 [node name="Weapons" type="Node" parent="."]
 
 [node name="Weapon1" type="Marker2D" parent="Weapons" groups=["_vectorium_snap_points"]]
-position = Vector2(625, 525)
+position = Vector2(1082, 546)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapons/Weapon1"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon2" type="Marker2D" parent="Weapons" groups=["_vectorium_snap_points"]]
-position = Vector2(630, 560)
+position = Vector2(1087, 581)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapons/Weapon2"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon3" type="Marker2D" parent="Weapons" groups=["_vectorium_snap_points"]]
-position = Vector2(630, 597)
+position = Vector2(1087, 618)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapons/Weapon3"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon4" type="Marker2D" parent="Weapons" groups=["_vectorium_snap_points"]]
-position = Vector2(630, 637)
+position = Vector2(1087, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapons/Weapon4"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon5" type="Marker2D" parent="Weapons" groups=["_vectorium_snap_points"]]
-position = Vector2(627, 673)
+position = Vector2(1084, 694)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapons/Weapon5"]
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(312, 488)
+position = Vector2(816, 512)
 scale = Vector2(0.2, 0.2)
 token_details = SubResource("Resource_h8pla")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(344, 488)
+position = Vector2(848, 512)
 scale = Vector2(0.2, 0.2)
 token_details = SubResource("Resource_5i4k8")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(376, 488)
+position = Vector2(880, 512)
 scale = Vector2(0.2, 0.2)
 token_details = SubResource("Resource_y7yy3")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(408, 488)
+position = Vector2(912, 512)
 scale = Vector2(0.2, 0.2)
 token_details = SubResource("Resource_irel7")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate5" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(440, 488)
+position = Vector2(944, 512)
 scale = Vector2(0.2, 0.2)
 token_details = SubResource("Resource_w1inq")
 token_zoom = 0.3
