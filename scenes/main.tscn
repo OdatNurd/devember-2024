@@ -25,6 +25,10 @@
 [ext_resource type="Script" path="res://resources/token_details.gd" id="20_moh38"]
 [ext_resource type="Texture2D" uid="uid://cxv0g613h2mt0" path="res://assets/components/cargo_box.png" id="21_16chc"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dy7cb"]
+resource_local_to_scene = true
+radius = 16.0
+
 [sub_resource type="Resource" id="Resource_h8pla"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
@@ -102,10 +106,6 @@ can_flip = false
 can_rotate = false
 can_grab = true
 can_zoom = false
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dy7cb"]
-resource_local_to_scene = true
-radius = 16.0
 
 [sub_resource type="Resource" id="Resource_vglw2"]
 resource_local_to_scene = true
@@ -417,6 +417,204 @@ scale = Vector2(0.25, 0.25)
 mouse_filter = 2
 color = Color(0.26, 0.26, 0.26, 0.298039)
 
+[node name="PlanetCardSnapPoints" type="Node" parent="."]
+
+[node name="PlanetSnap1" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(364, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap1"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap2" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(461, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap2"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap3" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(558, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap3"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap4" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(655, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap4"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap5" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(752, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap5"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap6" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(845, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap6"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap7" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(942, 67)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap7"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap8" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(364, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap8"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap9" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(461, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap9"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap10" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(558, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap10"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap11" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(655, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap11"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap12" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(752, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap12"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap13" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(845, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap13"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap14" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(942, 199)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap14"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap15" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(364, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap15"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap16" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(461, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap16"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap17" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(558, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap17"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap18" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(655, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap18"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap19" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(752, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap19"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap20" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(845, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap20"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap21" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(942, 331)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap21"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap22" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(364, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap22"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap23" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(461, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap23"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap24" type="Marker2D" parent="PlanetCardSnapPoints"]
+position = Vector2(558, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap24" groups=["_planet_snap_points"]]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap25" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(655, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap25"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap26" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(752, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap26"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap27" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(845, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap27"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="PlanetSnap28" type="Marker2D" parent="PlanetCardSnapPoints" groups=["_planet_snap_points"]]
+position = Vector2(942, 463)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlanetCardSnapPoints/PlanetSnap28"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(64, 80)
 scale = Vector2(0.3, 0.3)
@@ -452,13 +650,13 @@ token_id = "_event_pile"
 token_details = ExtResource("8_rsfwa")
 
 [node name="StartingCardEarth" parent="." instance=ExtResource("5_pu6ro")]
-position = Vector2(256, 448)
+position = Vector2(655, 331)
 scale = Vector2(0.25, 0.25)
 card_details = ExtResource("6_rrgeo")
 token_details = ExtResource("7_8dq3p")
 
 [node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(248, 392)
+position = Vector2(688, 360)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("6_ukqf2")
@@ -545,24 +743,21 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(114, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium1"]
-shape = SubResource("CircleShape2D_dy7cb")
-
-[node name="Vectorium2" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
-position = Vector2(152, 561)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium2"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium3" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(189, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium3"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium4" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(226, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium4"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium5" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
@@ -575,90 +770,112 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(77, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium6"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium7" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(114, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium7"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium8" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(151, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium8"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="Vectorium2" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+position = Vector2(152, 561)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium2"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium9" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(189, 605)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium9"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium10" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(227, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium10"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium11" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(38, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium11"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium12" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(77, 650)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium12"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium13" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(114, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium13"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium14" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(151, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium14"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium15" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(189, 650)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium15"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium16" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(226, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium16"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium17" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(38, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium17"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium18" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(76, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium18"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium19" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(114, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium19"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium20" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(151, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium20"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="EngineStar" parent="." instance=ExtResource("20_58ucr")]
@@ -675,30 +892,35 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(531, 557)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine1"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine2" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(523, 589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine2"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine3" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(531, 621)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine3"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine4" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(523, 654)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine4"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Engine5" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(531, 688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine5"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="DefenseStar" parent="." instance=ExtResource("20_58ucr")]
@@ -715,30 +937,35 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(628, 559)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences1"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences2" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(621, 589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences2"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences3" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(620, 624)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences3"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences4" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(622, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences4"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Defences5" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(629, 688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences5"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="CargoToken" parent="." instance=ExtResource("20_58ucr")]
@@ -755,30 +982,35 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(798, 701)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo1"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo2" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(837, 699)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo2"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo3" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(878, 696)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo3"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo4" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(918, 689)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo4"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Cargo5" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(956, 680)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo5"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="WeaponStar" parent="." instance=ExtResource("20_58ucr")]
@@ -795,28 +1027,33 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(1082, 546)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon1"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon2" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(1087, 581)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon2"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon3" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(1087, 618)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon3"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon4" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(1087, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon4"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Weapon5" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
 position = Vector2(1084, 694)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon5"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
