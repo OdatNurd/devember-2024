@@ -86,6 +86,23 @@ enum TokenOrientation {
 
 ## -----------------------------------------------------------------------------
 
+
+@export_group("Snap Details", "snap")
+
+
+## If set to a string, this marker will try to snap iteself to the cloest
+## snap point in this group when it is dropped.
+@export var snap_group : String = ''
+
+
+## Marker tokens can snap themselves to the closest snapping point when you
+## drop them. This sets the distance (in pixels) for the snap effect. Larger
+## values allow the snap to happen from a further distance.
+@export var snap_distance := 16
+
+
+## -----------------------------------------------------------------------------
+
 # A list of groups that this token should be added to when it enters the scene
 # tree. By default this is always the _token group, since this is a token.
 # This can be augmented at any point prior to us entering the tree to adjust
@@ -454,6 +471,10 @@ func _ready() -> void:
             token_details.back_image = TextureManager.alpha_pad(token_details.back_image)
         _missing_placeholder = TextureManager.alpha_pad(_missing_placeholder)
 
+        # Distance is measured as the square for speed, so adjust the tolerance to
+        # that scale.
+        snap_distance *= snap_distance
+
     # When we're ready, set the texture based on our current facing.
     set_texture_for_facing(token_facing)
 
@@ -643,6 +664,27 @@ func find_token_by_id(search_id: String, group: String) -> BaseToken:
 func _did_drop() -> void:
     if OS.is_stdout_verbose():
         dump()
+
+    # If there is not a snap group for this token, we don't need to proceed.
+    if snap_group == '':
+        return
+
+    # Find all of the snap points in the group.
+    var markers : Array = get_tree().get_nodes_in_group(snap_group)
+
+    # Stores the closest found snap point to this marker's position.
+    var closest_dist = 1000000000000
+    var closest = null
+
+    for i in range(len(markers)):
+        var dist = position.distance_squared_to(markers[i]. position)
+        if dist < closest_dist:
+            closest_dist = dist
+            closest = markers[i]
+
+    # If the closest marker is in tolerance, snap us.
+    if closest_dist <= snap_distance:
+        position = closest.position
 
 
 ## -----------------------------------------------------------------------------

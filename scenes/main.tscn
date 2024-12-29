@@ -29,7 +29,7 @@
 resource_local_to_scene = true
 radius = 16.0
 
-[sub_resource type="Resource" id="Resource_h8pla"]
+[sub_resource type="Resource" id="Resource_gnkwk"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -42,7 +42,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_5i4k8"]
+[sub_resource type="Resource" id="Resource_e2eln"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -55,7 +55,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_y7yy3"]
+[sub_resource type="Resource" id="Resource_ss60y"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -68,7 +68,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_irel7"]
+[sub_resource type="Resource" id="Resource_ljrhg"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -81,7 +81,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_w1inq"]
+[sub_resource type="Resource" id="Resource_d3s42"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -94,7 +94,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_uml3r"]
+[sub_resource type="Resource" id="Resource_ek6ld"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -107,7 +107,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_vglw2"]
+[sub_resource type="Resource" id="Resource_vlceh"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -120,7 +120,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_5pi0b"]
+[sub_resource type="Resource" id="Resource_p2umc"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -133,7 +133,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_44wk8"]
+[sub_resource type="Resource" id="Resource_dycii"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -146,7 +146,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_8helj"]
+[sub_resource type="Resource" id="Resource_px7p7"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -654,6 +654,8 @@ position = Vector2(655, 331)
 scale = Vector2(0.25, 0.25)
 card_details = ExtResource("6_rrgeo")
 token_details = ExtResource("7_8dq3p")
+snap_group = ""
+snap_distance = 16
 
 [node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(688, 360)
@@ -697,181 +699,181 @@ token_zoom = 0.5
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 688)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_h8pla")
+token_details = SubResource("Resource_gnkwk")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 656)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_5i4k8")
+token_details = SubResource("Resource_e2eln")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 624)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_y7yy3")
+token_details = SubResource("Resource_ss60y")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 592)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_irel7")
+token_details = SubResource("Resource_ljrhg")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
-[node name="Crate5" parent="." instance=ExtResource("20_58ucr")]
+[node name="Crate5" parent="." groups=["_star_snap_points"] instance=ExtResource("20_58ucr")]
 position = Vector2(464, 560)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_w1inq")
+token_details = SubResource("Resource_d3s42")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="VectoriumStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(38, 606)
 scale = Vector2(0.3, 0.3)
-marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_uml3r")
+token_details = SubResource("Resource_ek6ld")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
+snap_group = "_star_snap_points"
 
 [node name="VectoriumSnapPoints" type="Node" parent="."]
 
-[node name="Vectorium1" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium1" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(114, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium1"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium3" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium3" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(189, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium3"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium4" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium4" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(226, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium4"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium5" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium5" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(38, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium5"]
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium6" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium6" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(77, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium6"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium7" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium7" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(114, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium7"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium8" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium8" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(151, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium8"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium2" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium2" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(152, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium2"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium9" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium9" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(189, 605)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium9"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium10" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium10" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(227, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium10"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium11" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium11" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(38, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium11"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium12" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium12" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(77, 650)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium12"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium13" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium13" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(114, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium13"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium14" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium14" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(151, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium14"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium15" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium15" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(189, 650)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium15"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium16" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium16" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(226, 649)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium16"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium17" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium17" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(38, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium17"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium18" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium18" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(76, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium18"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium19" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium19" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(114, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium19"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Vectorium20" type="Marker2D" parent="VectoriumSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Vectorium20" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(151, 693)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium20"]
@@ -881,42 +883,42 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="EngineStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(531, 621)
 scale = Vector2(0.3, 0.3)
-marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_vglw2")
+token_details = SubResource("Resource_vlceh")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
+snap_group = "_star_snap_points"
 
 [node name="ShipEngineSnapPoints" type="Node" parent="."]
 
-[node name="Engine1" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Engine1" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(531, 557)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine1"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Engine2" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Engine2" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(523, 589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine2"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Engine3" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Engine3" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(531, 621)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine3"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Engine4" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Engine4" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(523, 654)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine4"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Engine5" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Engine5" type="Marker2D" parent="ShipEngineSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(531, 688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipEngineSnapPoints/Engine5"]
@@ -926,42 +928,42 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="DefenseStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(619, 589)
 scale = Vector2(0.3, 0.3)
-marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_5pi0b")
+token_details = SubResource("Resource_p2umc")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
+snap_group = "_star_snap_points"
 
 [node name="ShipDefencesSnapPoints" type="Node" parent="."]
 
-[node name="Defences1" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Defences1" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(628, 559)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences1"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Defences2" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Defences2" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(621, 589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences2"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Defences3" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Defences3" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(620, 624)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences3"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Defences4" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Defences4" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(622, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences4"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Defences5" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Defences5" type="Marker2D" parent="ShipDefencesSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(629, 688)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipDefencesSnapPoints/Defences5"]
@@ -971,42 +973,42 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="CargoToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(878, 696)
 scale = Vector2(0.3, 0.3)
-marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_44wk8")
+token_details = SubResource("Resource_dycii")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
+snap_group = "_star_snap_points"
 
 [node name="ShipCargoSnapPoints" type="Node" parent="."]
 
-[node name="Cargo1" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Cargo1" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(798, 701)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo1"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Cargo2" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Cargo2" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(837, 699)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo2"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Cargo3" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Cargo3" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(878, 696)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo3"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Cargo4" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Cargo4" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(918, 689)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo4"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Cargo5" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Cargo5" type="Marker2D" parent="ShipCargoSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(956, 680)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipCargoSnapPoints/Cargo5"]
@@ -1016,42 +1018,42 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="WeaponStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(1087, 581)
 scale = Vector2(0.3, 0.3)
-marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_8helj")
+token_details = SubResource("Resource_px7p7")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
+snap_group = "_star_snap_points"
 
 [node name="ShipWeaponsSnapPoints" type="Node" parent="."]
 
-[node name="Weapon1" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Weapon1" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(1082, 546)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon1"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Weapon2" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Weapon2" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(1087, 581)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon2"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Weapon3" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Weapon3" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(1087, 618)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon3"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Weapon4" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Weapon4" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(1087, 658)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon4"]
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
-[node name="Weapon5" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_vectorium_snap_points"]]
+[node name="Weapon5" type="Marker2D" parent="ShipWeaponsSnapPoints" groups=["_star_snap_points"]]
 position = Vector2(1084, 694)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShipWeaponsSnapPoints/Weapon5"]
