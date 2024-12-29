@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DeckLayout" load_steps=52 format=3 uid="uid://mt2yyq4dvju4"]
+[gd_resource type="Resource" script_class="DeckLayout" load_steps=49 format=3 uid="uid://mt2yyq4dvju4"]
 
 [ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="1_k7l2i"]
 [ext_resource type="Script" path="res://resources/deck_card.gd" id="2_arkx8"]
@@ -9,8 +9,6 @@
 [ext_resource type="Resource" uid="uid://ddh4et8ijmoh5" path="res://resources/tokens/cards/planets/cathan.tres" id="6_07a16"]
 [ext_resource type="Resource" uid="uid://dpiisgc2odpnw" path="res://resources/cards/planets/corolis.tres" id="7_rax8o"]
 [ext_resource type="Resource" uid="uid://kviouyk78mme" path="res://resources/tokens/cards/planets/corolis.tres" id="8_aaci2"]
-[ext_resource type="Resource" uid="uid://bkee6icj6fha3" path="res://resources/cards/planets/earth.tres" id="9_3mnrx"]
-[ext_resource type="Resource" uid="uid://c8wbbv24qosv3" path="res://resources/tokens/cards/planets/earth.tres" id="10_yp3fr"]
 [ext_resource type="Resource" uid="uid://rstpjdnsx1jc" path="res://resources/cards/planets/kailing.tres" id="11_tgspt"]
 [ext_resource type="Resource" uid="uid://biqs2nxoinjss" path="res://resources/tokens/cards/planets/kailing.tres" id="12_tac80"]
 [ext_resource type="Resource" uid="uid://cghua1iq4s2jv" path="res://resources/cards/planets/nu_earth.tres" id="13_88ak3"]
@@ -50,11 +48,6 @@ card = ExtResource("5_d3uro")
 script = ExtResource("2_arkx8")
 token = ExtResource("8_aaci2")
 card = ExtResource("7_rax8o")
-
-[sub_resource type="Resource" id="Resource_hkoxs"]
-script = ExtResource("2_arkx8")
-token = ExtResource("10_yp3fr")
-card = ExtResource("9_3mnrx")
 
 [sub_resource type="Resource" id="Resource_bfxqe"]
 script = ExtResource("2_arkx8")
@@ -119,5 +112,5 @@ card = ExtResource("33_67bko")
 [resource]
 script = ExtResource("3_7xrfl")
 card_scene = ExtResource("1_k7l2i")
-cards = Array[ExtResource("2_arkx8")]([SubResource("Resource_eji8x"), SubResource("Resource_tqyrp"), SubResource("Resource_jyird"), SubResource("Resource_hkoxs"), SubResource("Resource_bfxqe"), SubResource("Resource_qgb78"), SubResource("Resource_56ydi"), SubResource("Resource_m4gr2"), SubResource("Resource_0wyiw"), SubResource("Resource_ll1vb"), SubResource("Resource_w4yl4"), SubResource("Resource_5cfxr"), SubResource("Resource_v2wis"), SubResource("Resource_p3bb3"), SubResource("Resource_0d6eg"), SubResource("Resource_vnjxa")])
+cards = Array[ExtResource("2_arkx8")]([SubResource("Resource_eji8x"), SubResource("Resource_tqyrp"), SubResource("Resource_jyird"), SubResource("Resource_bfxqe"), SubResource("Resource_qgb78"), SubResource("Resource_56ydi"), SubResource("Resource_m4gr2"), SubResource("Resource_0wyiw"), SubResource("Resource_ll1vb"), SubResource("Resource_w4yl4"), SubResource("Resource_5cfxr"), SubResource("Resource_v2wis"), SubResource("Resource_p3bb3"), SubResource("Resource_0d6eg"), SubResource("Resource_vnjxa")])
 shuffled = false

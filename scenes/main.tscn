@@ -1,11 +1,14 @@
-[gd_scene load_steps=33 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=36 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://dpy217t6gkbfo" path="res://scenes/starfield.tscn" id="1_2txeq"]
 [ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
 [ext_resource type="Resource" uid="uid://ciuuqonw5luly" path="res://resources/decks/events.tres" id="4_2raot"]
 [ext_resource type="PackedScene" uid="uid://clmahh3f61741" path="res://scenes/components/card_pile.tscn" id="5_ca025"]
 [ext_resource type="Resource" uid="uid://bf28lrryhd5cj" path="res://resources/components/planet_card_pile.tres" id="5_n05fg"]
+[ext_resource type="PackedScene" uid="uid://bm5ydtkqjdcgr" path="res://scenes/cards/planet_card.tscn" id="5_pu6ro"]
+[ext_resource type="Resource" uid="uid://bkee6icj6fha3" path="res://resources/cards/planets/earth.tres" id="6_rrgeo"]
 [ext_resource type="Resource" uid="uid://bhcj87p25quhd" path="res://resources/components/rocket_token.tres" id="6_ukqf2"]
+[ext_resource type="Resource" uid="uid://c8wbbv24qosv3" path="res://resources/tokens/cards/planets/earth.tres" id="7_8dq3p"]
 [ext_resource type="PackedScene" uid="uid://csg6c7unopfor" path="res://scenes/components/card_deck.tscn" id="8_7vjud"]
 [ext_resource type="Resource" uid="uid://dhf3q54t22jdb" path="res://resources/components/event_card_pile.tres" id="8_rsfwa"]
 [ext_resource type="Resource" uid="uid://bw2dd0cwcdiv3" path="res://resources/components/planet_card_deck.tres" id="9_gmk7r"]
@@ -22,7 +25,7 @@
 [ext_resource type="Script" path="res://resources/token_details.gd" id="20_moh38"]
 [ext_resource type="Texture2D" uid="uid://cxv0g613h2mt0" path="res://assets/components/cargo_box.png" id="21_16chc"]
 
-[sub_resource type="Resource" id="Resource_6n4it"]
+[sub_resource type="Resource" id="Resource_uml3r"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -39,7 +42,7 @@ can_zoom = false
 resource_local_to_scene = true
 radius = 16.0
 
-[sub_resource type="Resource" id="Resource_yu2up"]
+[sub_resource type="Resource" id="Resource_vglw2"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -52,7 +55,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_pms4o"]
+[sub_resource type="Resource" id="Resource_5pi0b"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -65,7 +68,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_ky5bn"]
+[sub_resource type="Resource" id="Resource_44wk8"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -78,7 +81,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_3a8ia"]
+[sub_resource type="Resource" id="Resource_8helj"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -91,7 +94,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_4pm78"]
+[sub_resource type="Resource" id="Resource_h8pla"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -104,7 +107,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_qd0ue"]
+[sub_resource type="Resource" id="Resource_5i4k8"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -117,7 +120,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_lks0p"]
+[sub_resource type="Resource" id="Resource_y7yy3"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -130,7 +133,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_klay7"]
+[sub_resource type="Resource" id="Resource_irel7"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -143,7 +146,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_6r13m"]
+[sub_resource type="Resource" id="Resource_w1inq"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -165,11 +168,16 @@ position = Vector2(80, 104)
 scale = Vector2(0.4, 0.4)
 deck_cards = ExtResource("2_pkepa")
 deck_pile_id = "_planet_pile"
-deck_shuffle = false
 token_id = "_planet_deck"
 token_details = ExtResource("9_gmk7r")
 token_facing = 1
 token_zoom = 0.8
+
+[node name="StartingCardEarth" parent="." instance=ExtResource("5_pu6ro")]
+position = Vector2(523, 338)
+scale = Vector2(0.5, 0.5)
+card_details = ExtResource("6_rrgeo")
+token_details = ExtResource("7_8dq3p")
 
 [node name="PlanetPile" parent="." instance=ExtResource("5_ca025")]
 position = Vector2(120, 352)
@@ -225,7 +233,7 @@ token_details = ExtResource("12_kt8qx")
 token_zoom = 0.5
 
 [node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(665, 472)
+position = Vector2(564, 410)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("6_ukqf2")
@@ -236,7 +244,7 @@ token_idle_material = ExtResource("18_5wwtw")
 position = Vector2(200, 85)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_6n4it")
+token_details = SubResource("Resource_uml3r")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -366,7 +374,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(74, 600)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_yu2up")
+token_details = SubResource("Resource_vglw2")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -406,7 +414,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(162, 568)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_pms4o")
+token_details = SubResource("Resource_5pi0b")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -446,7 +454,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(421, 675)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_ky5bn")
+token_details = SubResource("Resource_44wk8")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -486,7 +494,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(630, 560)
 scale = Vector2(0.3, 0.3)
 marker_snap_group = "_vectorium_snap_points"
-token_details = SubResource("Resource_3a8ia")
+token_details = SubResource("Resource_8helj")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 
@@ -525,34 +533,34 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(312, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_4pm78")
+token_details = SubResource("Resource_h8pla")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(344, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_qd0ue")
+token_details = SubResource("Resource_5i4k8")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(376, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_lks0p")
+token_details = SubResource("Resource_y7yy3")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(408, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_klay7")
+token_details = SubResource("Resource_irel7")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate5" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(440, 488)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_6r13m")
+token_details = SubResource("Resource_w1inq")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
