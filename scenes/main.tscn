@@ -654,8 +654,8 @@ position = Vector2(655, 331)
 scale = Vector2(0.25, 0.25)
 card_details = ExtResource("6_rrgeo")
 token_details = ExtResource("7_8dq3p")
-snap_group = ""
-snap_distance = 16
+snap_group = "_planet_snap_points"
+snap_distance = 44
 
 [node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(688, 360)
