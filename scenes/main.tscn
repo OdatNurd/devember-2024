@@ -644,8 +644,8 @@ token_zoom = 0.6
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="EventPile" parent="." instance=ExtResource("5_ca025")]
-position = Vector2(1080, 96)
-scale = Vector2(0.35, 0.35)
+position = Vector2(1072, 120)
+scale = Vector2(0.45, 0.45)
 token_id = "_event_pile"
 token_details = ExtResource("8_rsfwa")
 
@@ -766,6 +766,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 position = Vector2(38, 606)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VectoriumSnapPoints/Vectorium5"]
+visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
 [node name="Vectorium6" type="Marker2D" parent="VectoriumSnapPoints" groups=["_star_snap_points"]]
