@@ -30,7 +30,7 @@
 resource_local_to_scene = true
 radius = 16.0
 
-[sub_resource type="Resource" id="Resource_v8v5v"]
+[sub_resource type="Resource" id="Resource_hej12"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -43,7 +43,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_8agkr"]
+[sub_resource type="Resource" id="Resource_s4fb3"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -56,7 +56,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_fq21f"]
+[sub_resource type="Resource" id="Resource_i280g"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -69,7 +69,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_1h7on"]
+[sub_resource type="Resource" id="Resource_1soc5"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -82,7 +82,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_t66sd"]
+[sub_resource type="Resource" id="Resource_myw7i"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -95,7 +95,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_4e5jg"]
+[sub_resource type="Resource" id="Resource_107w3"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -108,7 +108,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_hm3oq"]
+[sub_resource type="Resource" id="Resource_6kyqh"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -121,7 +121,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_ootem"]
+[sub_resource type="Resource" id="Resource_ao2d6"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -134,7 +134,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_wwrax"]
+[sub_resource type="Resource" id="Resource_xxgur"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -147,7 +147,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_5noh6"]
+[sub_resource type="Resource" id="Resource_8bij3"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -530,6 +530,204 @@ position = Vector2(942, 463)
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
+[node name="RocketSnapPoints" type="Node" parent="."]
+
+[node name="RocketSnap1" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(383, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap1"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap2" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(480, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap2"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap3" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(577, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap3"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap4" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(674, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap4"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap5" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(771, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap5"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap6" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(864, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap6"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap7" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(961, 102)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap7"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap8" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(383, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap8"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap9" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(480, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap9"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap10" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(577, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap10"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap11" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(674, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap11"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap12" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(771, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap12"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap13" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(864, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap13"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap14" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(961, 234)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap14"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap15" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(383, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap15"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap16" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(480, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap16"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap17" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(577, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap17"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap18" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(674, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap18"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap19" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(771, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap19"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap20" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(864, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap20"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap21" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(961, 366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap21"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap22" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(383, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap22"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap23" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(480, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap23"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap24" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(577, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap24"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap25" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(674, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap25"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap26" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(771, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap26"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap27" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(864, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap27"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
+[node name="RocketSnap28" type="Marker2D" parent="RocketSnapPoints" groups=["_rocket_snap_points"]]
+position = Vector2(961, 498)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketSnapPoints/RocketSnap28"]
+visible = false
+shape = SubResource("CircleShape2D_dy7cb")
+
 [node name="PlanetDeck" parent="." instance=ExtResource("8_7vjud")]
 position = Vector2(64, 80)
 scale = Vector2(0.3, 0.3)
@@ -573,12 +771,14 @@ snap_group = "_planet_snap_points"
 snap_distance = 44
 
 [node name="RocketToken" parent="." instance=ExtResource("20_58ucr")]
-position = Vector2(688, 360)
+position = Vector2(674, 366)
 rotation = -0.785398
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("6_ukqf2")
 token_zoom = 0.6
 token_idle_material = ExtResource("18_5wwtw")
+snap_group = "_rocket_snap_points"
+snap_distance = 32
 
 [node name="PlayerAid" parent="." instance=ExtResource("9_y0p3h")]
 position = Vector2(104, 400)
@@ -614,42 +814,42 @@ token_zoom = 0.5
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 688)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_v8v5v")
+token_details = SubResource("Resource_hej12")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 656)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_8agkr")
+token_details = SubResource("Resource_s4fb3")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 624)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_fq21f")
+token_details = SubResource("Resource_i280g")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 592)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_1h7on")
+token_details = SubResource("Resource_1soc5")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate5" parent="." groups=["_star_snap_points"] instance=ExtResource("20_58ucr")]
 position = Vector2(464, 560)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_t66sd")
+token_details = SubResource("Resource_myw7i")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="VectoriumStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(38, 606)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_4e5jg")
+token_details = SubResource("Resource_107w3")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -799,7 +999,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="EngineStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(531, 621)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_hm3oq")
+token_details = SubResource("Resource_6kyqh")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -844,7 +1044,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="DefenseStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(619, 589)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_ootem")
+token_details = SubResource("Resource_ao2d6")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -889,7 +1089,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="CargoToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(878, 696)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_wwrax")
+token_details = SubResource("Resource_xxgur")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -934,7 +1134,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="WeaponStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(1087, 581)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_5noh6")
+token_details = SubResource("Resource_8bij3")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
