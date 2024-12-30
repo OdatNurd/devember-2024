@@ -24,5 +24,5 @@ lifetime = 700.0
 preprocess = 30.0
 speed_scale = 20.0
 randomness = 1.0
-visibility_rect = Rect2(-100, 360, 1380, 720)
+visibility_rect = Rect2(-100, -100, 1380, 820)
 trail_lifetime = 0.4
