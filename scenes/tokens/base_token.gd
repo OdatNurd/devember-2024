@@ -660,8 +660,9 @@ func find_token_by_id(search_id: String, group: String) -> BaseToken:
 
 # Invoked every time a token is dropped; the token can use this to decide if it
 # wants to take any action in regards to the drop. The base class version of
-# this only shows that something was dropped.
-func _did_drop() -> void:
+# this shows what was dropped and then tries to snap based on configured
+# parameters.
+func _did_drop(cursor_pos: Vector2) -> void:
     if OS.is_stdout_verbose():
         dump()
 
@@ -677,7 +678,7 @@ func _did_drop() -> void:
     var closest = null
 
     for i in range(len(markers)):
-        var dist = position.distance_squared_to(markers[i]. position)
+        var dist = cursor_pos.distance_squared_to(markers[i].position)
         if dist < closest_dist:
             closest_dist = dist
             closest = markers[i]
@@ -773,7 +774,7 @@ func _input(event: InputEvent):
         else:
             $Texture.material = _activation_material
             print("Dropping Token: %s (%s)" % [token_details.name, token_details.token_type_name()])
-            _did_drop()
+            _did_drop(event.position)
         token_grabbed_or_dropped.emit(self, is_grabbed)
 
     # Flip the token front to back; via keyboard or right click.
