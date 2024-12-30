@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://6vnn22c55ymf"]
+[gd_scene load_steps=37 format=3 uid="uid://6vnn22c55ymf"]
 
 [ext_resource type="PackedScene" uid="uid://dpy217t6gkbfo" path="res://scenes/starfield.tscn" id="1_2txeq"]
 [ext_resource type="Resource" uid="uid://mt2yyq4dvju4" path="res://resources/decks/planets.tres" id="2_pkepa"]
@@ -24,12 +24,13 @@
 [ext_resource type="PackedScene" uid="uid://bf4a5pr0l3bjo" path="res://scenes/components/marker_token.tscn" id="20_58ucr"]
 [ext_resource type="Script" path="res://resources/token_details.gd" id="20_moh38"]
 [ext_resource type="Texture2D" uid="uid://cxv0g613h2mt0" path="res://assets/components/cargo_box.png" id="21_16chc"]
+[ext_resource type="Texture2D" uid="uid://2w53jt6d7dhm" path="res://assets/white_dot.png" id="25_xxc40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dy7cb"]
 resource_local_to_scene = true
 radius = 16.0
 
-[sub_resource type="Resource" id="Resource_gnkwk"]
+[sub_resource type="Resource" id="Resource_heo0m"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -42,7 +43,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_e2eln"]
+[sub_resource type="Resource" id="Resource_o58hu"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -55,7 +56,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_ss60y"]
+[sub_resource type="Resource" id="Resource_u8ej3"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -68,7 +69,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_ljrhg"]
+[sub_resource type="Resource" id="Resource_augeh"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -81,7 +82,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_d3s42"]
+[sub_resource type="Resource" id="Resource_a5tuy"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -94,7 +95,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_ek6ld"]
+[sub_resource type="Resource" id="Resource_i1dc1"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -107,7 +108,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_vlceh"]
+[sub_resource type="Resource" id="Resource_c3wx0"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -120,7 +121,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_p2umc"]
+[sub_resource type="Resource" id="Resource_2n4s0"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -133,7 +134,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_dycii"]
+[sub_resource type="Resource" id="Resource_4nwxv"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -146,7 +147,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_px7p7"]
+[sub_resource type="Resource" id="Resource_py8w3"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -165,257 +166,173 @@ can_zoom = false
 
 [node name="PlanetCardPlayPositions" type="Node" parent="."]
 
-[node name="PlanetSpot1" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 320.0
-offset_top = 4.0
-offset_right = 680.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot1" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(365, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot2" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 416.0
-offset_top = 4.0
-offset_right = 776.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot2" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(461, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot3" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 512.0
-offset_top = 4.0
-offset_right = 872.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot3" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(557, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot4" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 608.0
-offset_top = 4.0
-offset_right = 968.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot4" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(653, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot5" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 704.0
-offset_top = 4.0
-offset_right = 1064.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot5" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(749, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot6" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 800.0
-offset_top = 4.0
-offset_right = 1160.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot6" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(845, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot7" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 896.0
-offset_top = 4.0
-offset_right = 1256.0
-offset_bottom = 504.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot8" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(941, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot8" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 320.0
-offset_top = 136.0
-offset_right = 680.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot7" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(365, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot9" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 416.0
-offset_top = 136.0
-offset_right = 776.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot9" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(461, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot10" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 512.0
-offset_top = 136.0
-offset_right = 872.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot10" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(557, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot11" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 608.0
-offset_top = 136.0
-offset_right = 968.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot11" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(653, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot12" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 704.0
-offset_top = 136.0
-offset_right = 1064.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot12" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(749, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot13" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 800.0
-offset_top = 136.0
-offset_right = 1160.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot13" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(845, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot14" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 896.0
-offset_top = 136.0
-offset_right = 1256.0
-offset_bottom = 636.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot14" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(941, 198)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot15" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 320.0
-offset_top = 268.0
-offset_right = 680.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot15" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(365, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot16" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 416.0
-offset_top = 268.0
-offset_right = 776.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot16" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(461, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot17" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 512.0
-offset_top = 268.0
-offset_right = 872.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot17" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(557, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot18" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 608.0
-offset_top = 268.0
-offset_right = 968.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot18" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(653, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot19" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 704.0
-offset_top = 268.0
-offset_right = 1064.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot19" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(749, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot20" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 800.0
-offset_top = 268.0
-offset_right = 1160.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot20" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(845, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot21" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 896.0
-offset_top = 268.0
-offset_right = 1256.0
-offset_bottom = 768.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot21" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(941, 330)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot22" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 320.0
-offset_top = 400.0
-offset_right = 680.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot22" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(365, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot23" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 416.0
-offset_top = 400.0
-offset_right = 776.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot23" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(461, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot24" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 512.0
-offset_top = 400.0
-offset_right = 872.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot24" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(557, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot25" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 608.0
-offset_top = 400.0
-offset_right = 968.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot25" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(653, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot26" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 704.0
-offset_top = 400.0
-offset_right = 1064.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot26" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(749, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot27" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 800.0
-offset_top = 400.0
-offset_right = 1160.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot27" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(845, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot28" type="ColorRect" parent="PlanetCardPlayPositions"]
-offset_left = 896.0
-offset_top = 400.0
-offset_right = 1256.0
-offset_bottom = 900.0
-scale = Vector2(0.25, 0.25)
-mouse_filter = 2
-color = Color(0.26, 0.26, 0.26, 0.298039)
+[node name="PlanetSpot28" type="Sprite2D" parent="PlanetCardPlayPositions"]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(941, 462)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
 
 [node name="PlanetCardSnapPoints" type="Node" parent="."]
 
@@ -699,42 +616,42 @@ token_zoom = 0.5
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 688)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_gnkwk")
+token_details = SubResource("Resource_heo0m")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 656)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_e2eln")
+token_details = SubResource("Resource_o58hu")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 624)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_ss60y")
+token_details = SubResource("Resource_u8ej3")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 592)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_ljrhg")
+token_details = SubResource("Resource_augeh")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate5" parent="." groups=["_star_snap_points"] instance=ExtResource("20_58ucr")]
 position = Vector2(464, 560)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_d3s42")
+token_details = SubResource("Resource_a5tuy")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="VectoriumStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(38, 606)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_ek6ld")
+token_details = SubResource("Resource_i1dc1")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -884,7 +801,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="EngineStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(531, 621)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_vlceh")
+token_details = SubResource("Resource_c3wx0")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -929,7 +846,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="DefenseStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(619, 589)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_p2umc")
+token_details = SubResource("Resource_2n4s0")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -974,7 +891,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="CargoToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(878, 696)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_dycii")
+token_details = SubResource("Resource_4nwxv")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -1019,7 +936,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="WeaponStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(1087, 581)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_px7p7")
+token_details = SubResource("Resource_py8w3")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
