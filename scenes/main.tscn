@@ -30,7 +30,7 @@
 resource_local_to_scene = true
 radius = 16.0
 
-[sub_resource type="Resource" id="Resource_yre4c"]
+[sub_resource type="Resource" id="Resource_v8v5v"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -43,7 +43,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_4dgqy"]
+[sub_resource type="Resource" id="Resource_8agkr"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -56,7 +56,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_q5pq2"]
+[sub_resource type="Resource" id="Resource_fq21f"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -69,7 +69,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_vt45w"]
+[sub_resource type="Resource" id="Resource_1h7on"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -82,7 +82,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_o2vvq"]
+[sub_resource type="Resource" id="Resource_t66sd"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Cargo Container"
@@ -95,7 +95,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_jad5o"]
+[sub_resource type="Resource" id="Resource_4e5jg"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -108,7 +108,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_1280c"]
+[sub_resource type="Resource" id="Resource_hm3oq"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -121,7 +121,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_cjdk5"]
+[sub_resource type="Resource" id="Resource_ootem"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -134,7 +134,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_fw57v"]
+[sub_resource type="Resource" id="Resource_wwrax"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -147,7 +147,7 @@ can_rotate = false
 can_grab = true
 can_zoom = false
 
-[sub_resource type="Resource" id="Resource_h1h0w"]
+[sub_resource type="Resource" id="Resource_5noh6"]
 resource_local_to_scene = true
 script = ExtResource("20_moh38")
 name = "Marker Token"
@@ -164,171 +164,169 @@ can_zoom = false
 
 [node name="Starfield" parent="." instance=ExtResource("1_2txeq")]
 
-[node name="PlanetCardPlayPositions" type="Node" parent="."]
-
-[node name="PlanetSpot1" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot1" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(365, 66)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot2" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot2" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(461, 66)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot3" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot3" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(557, 66)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot4" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot4" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(653, 66)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot5" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot5" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(749, 66)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot6" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot6" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(845, 66)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot8" type="Sprite2D" parent="PlanetCardPlayPositions"]
-modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
-position = Vector2(941, 66)
-scale = Vector2(90, 125)
-texture = ExtResource("25_xxc40")
-
-[node name="PlanetSpot7" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot7" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(365, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot9" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot8" type="Sprite2D" parent="."]
+modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
+position = Vector2(941, 66)
+scale = Vector2(90, 125)
+texture = ExtResource("25_xxc40")
+
+[node name="PlanetSpot9" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(461, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot10" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot10" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(557, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot11" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot11" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(653, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot12" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot12" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(749, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot13" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot13" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(845, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot14" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot14" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(941, 198)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot15" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot15" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(365, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot16" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot16" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(461, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot17" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot17" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(557, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot18" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot18" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(653, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot19" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot19" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(749, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot20" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot20" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(845, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot21" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot21" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(941, 330)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot22" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot22" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(365, 462)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot23" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot23" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(461, 462)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot24" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot24" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(557, 462)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot25" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot25" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(653, 462)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot26" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot26" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(749, 462)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot27" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot27" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(845, 462)
 scale = Vector2(90, 125)
 texture = ExtResource("25_xxc40")
 
-[node name="PlanetSpot28" type="Sprite2D" parent="PlanetCardPlayPositions"]
+[node name="PlanetSpot28" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
 position = Vector2(941, 462)
 scale = Vector2(90, 125)
@@ -616,42 +614,42 @@ token_zoom = 0.5
 [node name="Crate1" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 688)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_yre4c")
+token_details = SubResource("Resource_v8v5v")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate2" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 656)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_4dgqy")
+token_details = SubResource("Resource_8agkr")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate3" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 624)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_q5pq2")
+token_details = SubResource("Resource_fq21f")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate4" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(464, 592)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_vt45w")
+token_details = SubResource("Resource_1h7on")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="Crate5" parent="." groups=["_star_snap_points"] instance=ExtResource("20_58ucr")]
 position = Vector2(464, 560)
 scale = Vector2(0.2, 0.2)
-token_details = SubResource("Resource_o2vvq")
+token_details = SubResource("Resource_t66sd")
 token_zoom = 0.3
 token_idle_material = ExtResource("18_5wwtw")
 
 [node name="VectoriumStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(38, 606)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_jad5o")
+token_details = SubResource("Resource_4e5jg")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -801,7 +799,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="EngineStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(531, 621)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_1280c")
+token_details = SubResource("Resource_hm3oq")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -846,7 +844,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="DefenseStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(619, 589)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_cjdk5")
+token_details = SubResource("Resource_ootem")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -891,7 +889,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="CargoToken" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(878, 696)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_fw57v")
+token_details = SubResource("Resource_wwrax")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
@@ -936,7 +934,7 @@ shape = SubResource("CircleShape2D_dy7cb")
 [node name="WeaponStar" parent="." instance=ExtResource("20_58ucr")]
 position = Vector2(1087, 581)
 scale = Vector2(0.3, 0.3)
-token_details = SubResource("Resource_h1h0w")
+token_details = SubResource("Resource_5noh6")
 token_zoom = 0.4
 token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_star_snap_points"
