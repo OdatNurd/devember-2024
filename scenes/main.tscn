@@ -165,7 +165,20 @@ can_zoom = false
 [node name="Main" type="Node2D"]
 script = ExtResource("1_osxqp")
 
-[node name="Starfield" parent="." instance=ExtResource("1_2txeq")]
+[node name="Layout" type="Container" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewGameConfirmation" type="ConfirmationDialog" parent="Layout"]
+title = "New Game?"
+initial_position = 1
+size = Vector2i(459, 100)
+ok_button_text = "Heck Yeah!"
+dialog_text = "Would you like to reset everything and start a new game?"
+cancel_button_text = "Hell No!"
 
 [node name="FindShipButton" type="Button" parent="."]
 offset_left = 32.0
@@ -179,6 +192,15 @@ icon = ExtResource("26_2cvut")
 icon_alignment = 1
 vertical_icon_alignment = 0
 expand_icon = true
+
+[node name="NewGameButton" type="Button" parent="."]
+offset_left = 288.0
+offset_top = 680.0
+offset_right = 416.0
+offset_bottom = 712.0
+text = "New Game"
+
+[node name="Starfield" parent="." instance=ExtResource("1_2txeq")]
 
 [node name="PlanetSpot1" type="Sprite2D" parent="."]
 modulate = Color(0.258824, 0.258824, 0.258824, 0.298039)
@@ -778,7 +800,7 @@ scale = Vector2(0.45, 0.45)
 token_id = "_event_pile"
 token_details = ExtResource("8_rsfwa")
 
-[node name="StartingCardEarth" parent="." instance=ExtResource("5_pu6ro")]
+[node name="StartingCardEarth" parent="." groups=["_resettable_player_aids"] instance=ExtResource("5_pu6ro")]
 position = Vector2(655, 331)
 scale = Vector2(0.25, 0.25)
 card_details = ExtResource("6_rrgeo")
@@ -796,7 +818,7 @@ token_idle_material = ExtResource("18_5wwtw")
 snap_group = "_rocket_snap_points"
 snap_distance = 32
 
-[node name="PlayerAid" parent="." instance=ExtResource("9_y0p3h")]
+[node name="PlayerAid" parent="." groups=["_resettable_player_aids"] instance=ExtResource("9_y0p3h")]
 position = Vector2(104, 400)
 scale = Vector2(0.5, 0.5)
 token_details = ExtResource("10_ain7i")
@@ -1192,4 +1214,7 @@ position = Vector2(1084, 694)
 visible = false
 shape = SubResource("CircleShape2D_dy7cb")
 
+[connection signal="canceled" from="Layout/NewGameConfirmation" to="." method="_on_new_game_canceled"]
+[connection signal="confirmed" from="Layout/NewGameConfirmation" to="." method="_on_new_game_confirmation"]
 [connection signal="pressed" from="FindShipButton" to="." method="_on_find_ship_button_pressed"]
+[connection signal="pressed" from="NewGameButton" to="." method="_on_new_game_button_pressed"]
