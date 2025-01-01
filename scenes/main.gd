@@ -50,24 +50,34 @@ func _on_new_game_confirmation() -> void:
     print("Request for a new game confirmed")
     var resets = []
 
-    # Gather a list of all of the tokens that we can reset back to their initial
-    # spawn locations.
+    # Find all of the card decks that are defined and get them to gather the
+    # cards that they contain. This will cause all of the dealt cards to be
+    # pulled back to the deck, flippuing and rotating back into the deck
+    # position before hiding.
     #
-    # The rocket token is part of the marker token sets and the Earth card is
-    # part of the resettable player aids; we need to make sure that the tokens
-    # reset after those, or the earth card will cover the ship.
+    # The cards are pulled in deck order, unless the deck is marked as being
+    # shuffled, in which case it will also shuffle.
+    for deck in get_tree().get_nodes_in_group('_card_decks'):
+        deck.gather_cards()
+
+    # Grab all of the tokens that represent card piles, player aids and tokens
+    # that need to be reset.
     resets.append_array(get_tree().get_nodes_in_group('_card_piles'))
     resets.append_array(get_tree().get_nodes_in_group('_resettable_player_aids'))
     resets.append_array(get_tree().get_nodes_in_group('_marker_tokens'))
 
-    # Reset them now
+    # Tell them all to reset back to their stored starting location bow. This
+    # will fire all of the tweens and return back asyncronously.
     for token in resets:
         token.execute_tween(token.restore_token)
 
-    # For the card decks, we need to invoke a different command, since they
-    # need to recall their decks.
-    for deck in get_tree().get_nodes_in_group('_card_decks'):
-        deck.gather_cards()
+    for tween in get_tree().get_processed_tweens():
+        if tween.is_valid():
+            await tween.finished
+
+    # Ensure that the ship token is on top; this also calls attention to it in
+    # a way that makes it appear as if the ship is just arriving. Meta!
+    _on_find_ship_button_pressed()
 
 
 # This is invoked when the player presses the button for a new game and then
