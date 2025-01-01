@@ -4,3 +4,6 @@
 
 # TODO is for stream rememberances only.
 TODO.md
+
+# Sublime Text project files and workspace files.
+*.sublime-*
